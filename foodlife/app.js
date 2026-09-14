@@ -72,7 +72,8 @@ function renderIngredient(key,scroll=true){
  $("ingredientNote").textContent=tr("Approximate nutrition per 100g. Choose a dish below or browse by country.","100g 기준 참고 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.");
  $("kcalValue").textContent=d[2]; $("protein").textContent=d[3]+"g"; $("carbs").textContent=d[4]+"g"; $("fat").textContent=d[5]+"g";
  $("result").classList.remove("hidden");
- renderDishCards(DISHES.filter(x=>x.main.includes(key)),$("dishGrid"));\n renderCountryCards();
+ renderDishCards(DISHES.filter(x=>x.main.includes(key)),$("dishGrid"));
+ renderCountryCards();
  if(scroll) $("result").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderDishCards(list,target){
@@ -91,7 +92,8 @@ function renderRecipe(d,scroll=true){
  $("recipeSteps").innerHTML=(lang==="ko"?d.stepsKo:d.steps).map(x=>"<li>"+x+"</li>").join("");
  if(scroll)$("recipe").scrollIntoView({behavior:"smooth",block:"start"});
 }
-let country="Korea",region="All",type="All";\nconst COUNTRY_META={Korea:["🇰🇷","한국"],India:["🇮🇳","인도"],USA:["🇺🇸","미국"],China:["🇨🇳","중국"],Spain:["🇪🇸","스페인"],Japan:["🇯🇵","일본"]};
+let country="Korea",region="All",type="All";
+const COUNTRY_META={Korea:["🇰🇷","한국"],India:["🇮🇳","인도"],USA:["🇺🇸","미국"],China:["🇨🇳","중국"],Spain:["🇪🇸","스페인"],Japan:["🇯🇵","일본"]};
 function uniq(arr){return [...new Set(arr)]}
 function filterButton(text,val,kind,active){
  const b=document.createElement("button");b.textContent=text;b.className=active?"active":"";b.onclick=()=>{if(kind==="region")region=val;if(kind==="type")type=val;renderExplorerFilters()};return b
