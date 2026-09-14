@@ -1,6 +1,6 @@
 const $=id=>document.getElementById(id);
 let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
-let currentKey=null,currentDish=null,returnTarget="result";
+let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
 
 const I={
  chicken:["Chicken","닭고기",165,31,0,3.6,["chicken","닭","닭고기","닭가슴살"]],
@@ -65,12 +65,22 @@ function applyLang(){
  if(currentKey) renderIngredient(currentKey,false);
  if(currentDish && !$("recipe").classList.contains("hidden")) renderRecipe(currentDish,false);
 }
+function round1(n){return Math.round(n*10)/10}
+function updateNutrition(){
+ if(!currentKey)return; const d=I[currentKey]; const factor=currentAmount/100;
+ $("kcalValue").textContent=Math.round(d[2]*factor);
+ $("kcalBasis").textContent="kcal / "+currentAmount+"g";
+ $("protein").textContent=round1(d[3]*factor)+"g";
+ $("carbs").textContent=round1(d[4]*factor)+"g";
+ $("fat").textContent=round1(d[5]*factor)+"g";
+ document.querySelectorAll(".amount-presets button").forEach(b=>b.classList.toggle("active",Number(b.dataset.grams)===currentAmount));
+}
 function renderIngredient(key,scroll=true){
- currentKey=key; const d=I[key];
+ currentKey=key; currentAmount=100; const d=I[key];
  $("ingredientName").textContent=tr(d[1],d[0])===d[0]?d[0]:d[1];
  $("ingredientName").textContent=lang==="ko"?d[1]:d[0];
  $("ingredientNote").textContent=tr("Approximate nutrition per 100g. Choose a dish below or browse by country.","100g 기준 참고 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.");
- $("kcalValue").textContent=d[2]; $("protein").textContent=d[3]+"g"; $("carbs").textContent=d[4]+"g"; $("fat").textContent=d[5]+"g";
+ $("amountInput").value=currentAmount; updateNutrition();
  $("result").classList.remove("hidden");
  renderDishCards(DISHES.filter(x=>x.main.includes(key)),$("dishGrid"));
  renderCountryCards();
@@ -139,6 +149,8 @@ $("searchForm").addEventListener("submit",e=>{
  }
 });
 document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredientInput").value=b.dataset.query;renderIngredient(findIngredient(b.dataset.query))});
+$("amountInput").addEventListener("input",e=>{const v=Math.max(1,Math.min(5000,Number(e.target.value)||1));currentAmount=v;updateNutrition()});
+document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{currentAmount=Number(b.dataset.grams);$("amountInput").value=currentAmount;updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
 function showExplorer(){ $("explorer").classList.remove("hidden");renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth"})}
 $("exploreBtn").onclick=showExplorer;
