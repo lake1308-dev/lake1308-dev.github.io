@@ -4,83 +4,100 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Food & Life — Ingredient to World Cuisine</title>
-  <meta name="description" content="Search an ingredient, check nutrition, discover dishes from around the world, and get a simple recipe.">
+  <meta name="description" content="Search ingredients, check nutrition, and discover dishes from around the world.">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="./">Food & Life</a>
-    <button id="langBtn" class="lang-btn" type="button">한국어</button>
-  </header>
+<header class="topbar">
+  <a class="brand" href="./">Food & Life</a>
+  <nav>
+    <button id="exploreBtn" class="nav-btn" type="button" data-en="Explore world food" data-ko="세계요리 둘러보기">Explore world food</button>
+    <button id="langBtn" class="nav-btn" type="button">한국어</button>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow" data-en="One ingredient. A world of food." data-ko="하나의 재료에서, 세계의 음식으로.">One ingredient. A world of food.</p>
-      <h1 data-en="What do you have?" data-ko="어떤 재료가 있나요?">What do you have?</h1>
-      <p class="sub" data-en="Search one ingredient. See calories, nutrition, dishes and recipes." data-ko="재료 하나를 검색하면 칼로리·영양·세계요리·레시피를 바로 보여드려요.">Search one ingredient. See calories, nutrition, dishes and recipes.</p>
+<main>
+  <section class="hero">
+    <p class="eyebrow" data-en="One ingredient. A world of food." data-ko="하나의 재료에서, 세계의 음식으로.">One ingredient. A world of food.</p>
+    <h1 data-en="What do you have?" data-ko="어떤 재료가 있나요?">What do you have?</h1>
+    <p class="sub" data-en="Search an ingredient first. Nutrition and dishes come next." data-ko="재료부터 검색하세요. 영양정보와 만들 수 있는 요리가 바로 이어집니다.">Search an ingredient first. Nutrition and dishes come next.</p>
+    <form id="searchForm" class="search-box">
+      <input id="ingredientInput" autocomplete="off" placeholder="Chicken, egg, tomato, rice..." aria-label="Ingredient">
+      <button type="submit" data-en="Search" data-ko="검색">Search</button>
+    </form>
+    <div class="quick">
+      <button data-query="chicken">Chicken</button>
+      <button data-query="egg">Egg</button>
+      <button data-query="tofu">Tofu</button>
+      <button data-query="rice">Rice</button>
+      <button data-query="tomato">Tomato</button>
+      <button data-query="salmon">Salmon</button>
+    </div>
+    <p class="coverage" data-en="Prototype library: 30+ everyday ingredients · more being added" data-ko="프로토타입 재료사전: 자주 쓰는 재료 30종+ · 계속 확장 중">Prototype library: 30+ everyday ingredients · more being added</p>
+  </section>
 
-      <form id="searchForm" class="search-box">
-        <input id="ingredientInput" autocomplete="off" placeholder="Try: chicken, tofu, potato" aria-label="Ingredient">
-        <button type="submit" data-en="Search" data-ko="검색">Search</button>
-      </form>
-      <div class="quick">
-        <button data-query="chicken">Chicken</button>
-        <button data-query="tofu">Tofu</button>
-        <button data-query="potato">Potato</button>
+  <section id="result" class="result hidden" aria-live="polite">
+    <div class="ingredient-card">
+      <div>
+        <span class="label" data-en="INGREDIENT" data-ko="재료">INGREDIENT</span>
+        <h2 id="ingredientName"></h2>
+        <p id="ingredientNote"></p>
       </div>
-    </section>
+      <div class="kcal"><strong id="kcalValue"></strong><span>kcal / 100g</span></div>
+    </div>
+    <div class="macro-grid">
+      <div><span data-en="Protein" data-ko="단백질">Protein</span><strong id="protein"></strong></div>
+      <div><span data-en="Carbs" data-ko="탄수화물">Carbs</span><strong id="carbs"></strong></div>
+      <div><span data-en="Fat" data-ko="지방">Fat</span><strong id="fat"></strong></div>
+    </div>
 
-    <section id="result" class="result hidden" aria-live="polite">
-      <div class="ingredient-card">
-        <div>
-          <span class="label" data-en="INGREDIENT" data-ko="재료">INGREDIENT</span>
-          <h2 id="ingredientName"></h2>
-          <p id="ingredientNote"></p>
-        </div>
-        <div class="kcal">
-          <strong id="kcalValue"></strong>
-          <span>kcal / 100g</span>
-        </div>
+    <div class="filter-head">
+      <div>
+        <span class="label" data-en="DISHES" data-ko="요리">DISHES</span>
+        <h2 data-en="What can I cook?" data-ko="이 재료로 뭘 만들 수 있을까요?">What can I cook?</h2>
       </div>
+      <button id="openExplorer" class="outline" type="button" data-en="Browse by country →" data-ko="나라별로 보기 →">Browse by country →</button>
+    </div>
+    <div id="dishGrid" class="dish-grid"></div>
+  </section>
 
-      <div class="macro-grid">
-        <div><span data-en="Protein" data-ko="단백질">Protein</span><strong id="protein"></strong></div>
-        <div><span data-en="Carbs" data-ko="탄수화물">Carbs</span><strong id="carbs"></strong></div>
-        <div><span data-en="Fat" data-ko="지방">Fat</span><strong id="fat"></strong></div>
-      </div>
+  <section id="explorer" class="explorer hidden">
+    <div class="section-heading">
+      <span class="label" data-en="WORLD FOOD" data-ko="세계요리">WORLD FOOD</span>
+      <h2 data-en="Choose a country, region and cooking style" data-ko="나라 · 지역 · 요리방식을 골라보세요">Choose a country, region and cooking style</h2>
+      <p data-en="You can browse even without searching an ingredient." data-ko="재료를 검색하지 않아도 세계요리를 둘러볼 수 있어요.">You can browse even without searching an ingredient.</p>
+    </div>
+    <div class="step">
+      <b data-en="1. Country" data-ko="1. 나라">1. Country</b>
+      <div id="countryFilters" class="chips"></div>
+    </div>
+    <div class="step">
+      <b data-en="2. Region" data-ko="2. 지역">2. Region</b>
+      <div id="regionFilters" class="chips"></div>
+    </div>
+    <div class="step">
+      <b data-en="3. Cooking style" data-ko="3. 요리방식">3. Cooking style</b>
+      <div id="typeFilters" class="chips"></div>
+    </div>
+    <div id="exploreGrid" class="dish-grid"></div>
+  </section>
 
-      <div class="section-title">
-        <div>
-          <span class="label" data-en="DISCOVER" data-ko="요리 추천">DISCOVER</span>
-          <h2 data-en="What can I cook?" data-ko="이 재료로 뭘 만들 수 있을까요?">What can I cook?</h2>
-        </div>
-      </div>
-      <div id="dishGrid" class="dish-grid"></div>
-    </section>
+  <section id="recipe" class="recipe hidden">
+    <button id="recipeBack" class="back" type="button" data-en="← Back" data-ko="← 뒤로">← Back</button>
+    <span class="label" data-en="RECIPE" data-ko="레시피">RECIPE</span>
+    <h2 id="recipeName"></h2>
+    <p id="recipeMeta"></p>
+    <div class="recipe-layout">
+      <div><h3 data-en="Ingredients" data-ko="필요한 재료">Ingredients</h3><ul id="recipeIngredients"></ul></div>
+      <div><h3 data-en="How to cook" data-ko="만드는 방법">How to cook</h3><ol id="recipeSteps"></ol></div>
+    </div>
+  </section>
+</main>
 
-    <section id="recipe" class="recipe hidden">
-      <button id="recipeBack" class="back" type="button" data-en="← Back to dishes" data-ko="← 요리 목록으로">← Back to dishes</button>
-      <span class="label" data-en="RECIPE" data-ko="레시피">RECIPE</span>
-      <h2 id="recipeName"></h2>
-      <p id="recipeMeta"></p>
-
-      <div class="recipe-layout">
-        <div>
-          <h3 data-en="Ingredients" data-ko="필요한 재료">Ingredients</h3>
-          <ul id="recipeIngredients"></ul>
-        </div>
-        <div>
-          <h3 data-en="How to cook" data-ko="만드는 방법">How to cook</h3>
-          <ol id="recipeSteps"></ol>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <strong>Food & Life</strong>
-    <span data-en="Prototype — nutrition values are approximate." data-ko="프로토타입 — 영양 수치는 참고용입니다.">Prototype — nutrition values are approximate.</span>
-  </footer>
-  <script src="app.js"></script>
+<footer>
+  <strong>Food & Life</strong>
+  <span data-en="Prototype · nutrition values are approximate." data-ko="프로토타입 · 영양 수치는 참고용입니다.">Prototype · nutrition values are approximate.</span>
+</footer>
+<script src="app.js"></script>
 </body>
 </html>
