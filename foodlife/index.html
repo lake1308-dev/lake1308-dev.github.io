@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Food & Life — Ingredient to World Cuisine</title>
+  <meta name="description" content="Search an ingredient, check nutrition, discover dishes from around the world, and get a simple recipe.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./">Food & Life</a>
+    <button id="langBtn" class="lang-btn" type="button">한국어</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow" data-en="One ingredient. A world of food." data-ko="하나의 재료에서, 세계의 음식으로.">One ingredient. A world of food.</p>
+      <h1 data-en="What do you have?" data-ko="어떤 재료가 있나요?">What do you have?</h1>
+      <p class="sub" data-en="Search one ingredient. See calories, nutrition, dishes and recipes." data-ko="재료 하나를 검색하면 칼로리·영양·세계요리·레시피를 바로 보여드려요.">Search one ingredient. See calories, nutrition, dishes and recipes.</p>
+
+      <form id="searchForm" class="search-box">
+        <input id="ingredientInput" autocomplete="off" placeholder="Try: chicken, tofu, potato" aria-label="Ingredient">
+        <button type="submit" data-en="Search" data-ko="검색">Search</button>
+      </form>
+      <div class="quick">
+        <button data-query="chicken">Chicken</button>
+        <button data-query="tofu">Tofu</button>
+        <button data-query="potato">Potato</button>
+      </div>
+    </section>
+
+    <section id="result" class="result hidden" aria-live="polite">
+      <div class="ingredient-card">
+        <div>
+          <span class="label" data-en="INGREDIENT" data-ko="재료">INGREDIENT</span>
+          <h2 id="ingredientName"></h2>
+          <p id="ingredientNote"></p>
+        </div>
+        <div class="kcal">
+          <strong id="kcalValue"></strong>
+          <span>kcal / 100g</span>
+        </div>
+      </div>
+
+      <div class="macro-grid">
+        <div><span data-en="Protein" data-ko="단백질">Protein</span><strong id="protein"></strong></div>
+        <div><span data-en="Carbs" data-ko="탄수화물">Carbs</span><strong id="carbs"></strong></div>
+        <div><span data-en="Fat" data-ko="지방">Fat</span><strong id="fat"></strong></div>
+      </div>
+
+      <div class="section-title">
+        <div>
+          <span class="label" data-en="DISCOVER" data-ko="요리 추천">DISCOVER</span>
+          <h2 data-en="What can I cook?" data-ko="이 재료로 뭘 만들 수 있을까요?">What can I cook?</h2>
+        </div>
+      </div>
+      <div id="dishGrid" class="dish-grid"></div>
+    </section>
+
+    <section id="recipe" class="recipe hidden">
+      <button id="recipeBack" class="back" type="button" data-en="← Back to dishes" data-ko="← 요리 목록으로">← Back to dishes</button>
+      <span class="label" data-en="RECIPE" data-ko="레시피">RECIPE</span>
+      <h2 id="recipeName"></h2>
+      <p id="recipeMeta"></p>
+
+      <div class="recipe-layout">
+        <div>
+          <h3 data-en="Ingredients" data-ko="필요한 재료">Ingredients</h3>
+          <ul id="recipeIngredients"></ul>
+        </div>
+        <div>
+          <h3 data-en="How to cook" data-ko="만드는 방법">How to cook</h3>
+          <ol id="recipeSteps"></ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Food & Life</strong>
+    <span data-en="Prototype — nutrition values are approximate." data-ko="프로토타입 — 영양 수치는 참고용입니다.">Prototype — nutrition values are approximate.</span>
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
