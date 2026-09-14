@@ -141,6 +141,6 @@ $("searchForm").addEventListener("submit",e=>{
 document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredientInput").value=b.dataset.query;renderIngredient(findIngredient(b.dataset.query))});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
 function showExplorer(){ $("explorer").classList.remove("hidden");renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth"})}
-$("exploreBtn").onclick=showExplorer;$("openExplorer").onclick=showExplorer;
+$("exploreBtn").onclick=showExplorer;
 $("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget).scrollIntoView({behavior:"smooth"})};
 applyLang();
