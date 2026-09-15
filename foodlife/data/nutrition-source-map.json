@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0",
+  "purpose": "Keep canonical ingredient identity separate from official nutrient records and preparation states.",
+  "fields": [
+    "ingredient_id",
+    "source_id",
+    "source_record_id",
+    "source_food_name",
+    "country",
+    "preparation_state",
+    "edible_state",
+    "basis_amount",
+    "basis_unit",
+    "retrieved_at",
+    "verification_status",
+    "review_notes"
+  ],
+  "rules": [
+    "A canonical ingredient may map to multiple official records.",
+    "Raw, boiled, grilled, roasted, dried and other states are never silently merged.",
+    "Website default must select an explicit representative record and display its basis.",
+    "If K-FIND and USDA differ, retain both source records; do not average them automatically."
+  ],
+  "records": []
+}
