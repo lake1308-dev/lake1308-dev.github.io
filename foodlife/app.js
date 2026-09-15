@@ -2,6 +2,7 @@ const $=id=>document.getElementById(id);
 let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
 let DB_INGREDIENTS=[],DB_ALIAS=new Map();
+const SMALL_SERVING_CATEGORIES=new Set(["spice","seasoning","sweetener","oil"]);
 
 const I={
  chicken:["Chicken","닭고기",165,31,0,3.6,["chicken","닭","닭고기","닭가슴살"]],
@@ -85,6 +86,11 @@ function findIngredient(raw){
  return null;
 }
 function getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||null}
+function servingPresets(id){
+ const x=getIngredient(id);
+ if(x && SMALL_SERVING_CATEGORIES.has(x.category)) return [1,5,10,15,30];
+ return [50,100,150,200];
+}
 function nutritionFor(id){
  if(I[id])return {kcal:I[id][2],protein_g:I[id][3],carbs_g:I[id][4],fat_g:I[id][5],legacy:true};
  const x=getIngredient(id);return x?.nutrition_per_100g||{};
@@ -124,7 +130,10 @@ function renderAllergy(key){
  else host.innerHTML='<p class="allergy-status">✓ '+tr("No common major allergen identified","일반적인 주요 알레르겐 해당 없음")+'</p><p>'+tr(a[1],a[2])+'</p>';
 }
 function renderIngredient(key,scroll=true){
- currentKey=key; currentAmount=100; const d=I[key], db=getIngredient(key);
+ currentKey=key; const d=I[key], db=getIngredient(key);
+ const presets=servingPresets(key); currentAmount=presets.includes(100)?100:(presets.includes(5)?5:presets[0]);
+ document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.g=presets[i];b.textContent=presets[i]+"g";b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
+ $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  $("ingredientNote").textContent=tr("Approximate nutrition per 100g. Choose a dish below or browse by country.","100g 기준 참고 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.");
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
