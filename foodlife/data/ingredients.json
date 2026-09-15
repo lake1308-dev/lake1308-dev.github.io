@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "schema": {
     "ingredient": [
       "id",
@@ -7717,6 +7717,487 @@
       "allergens": [],
       "sources": [],
       "verification_status": "pending"
+    },
+    {
+      "id": "fish_cake",
+      "names": {
+        "ko": "어묵",
+        "en": "Fish cake"
+      },
+      "aliases": {
+        "ko": [
+          "오뎅",
+          "오뎅꼬치",
+          "부산어묵"
+        ],
+        "en": [
+          "fish cake",
+          "oden fish cake"
+        ]
+      },
+      "category": "processed_seafood",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "fish"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "garaetteok",
+      "names": {
+        "ko": "가래떡",
+        "en": "Garaetteok"
+      },
+      "aliases": {
+        "ko": [
+          "흰떡",
+          "떡볶이떡"
+        ],
+        "en": [
+          "garaetteok",
+          "Korean rice cake stick"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "tteokguk_tteok",
+      "names": {
+        "ko": "떡국떡",
+        "en": "Sliced rice cake"
+      },
+      "aliases": {
+        "ko": [
+          "떡국용 떡"
+        ],
+        "en": [
+          "tteokguk tteok",
+          "sliced rice cake"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "sirutteok",
+      "names": {
+        "ko": "시루떡",
+        "en": "Sirutteok"
+      },
+      "aliases": {
+        "ko": [
+          "시루 떡"
+        ],
+        "en": [
+          "sirutteok",
+          "steamed rice cake"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "baekseolgi",
+      "names": {
+        "ko": "백설기",
+        "en": "Baekseolgi"
+      },
+      "aliases": {
+        "ko": [
+          "백설기떡"
+        ],
+        "en": [
+          "baekseolgi",
+          "white steamed rice cake"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "injeolmi",
+      "names": {
+        "ko": "인절미",
+        "en": "Injeolmi"
+      },
+      "aliases": {
+        "ko": [
+          "콩고물떡"
+        ],
+        "en": [
+          "injeolmi"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "songpyeon",
+      "names": {
+        "ko": "송편",
+        "en": "Songpyeon"
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "songpyeon"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "jeolpyeon",
+      "names": {
+        "ko": "절편",
+        "en": "Jeolpyeon"
+      },
+      "aliases": {
+        "ko": [],
+        "en": [
+          "jeolpyeon"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "chapssaltteok",
+      "names": {
+        "ko": "찹쌀떡",
+        "en": "Glutinous rice cake"
+      },
+      "aliases": {
+        "ko": [
+          "모찌떡"
+        ],
+        "en": [
+          "chapssaltteok",
+          "glutinous rice cake"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "yaksik",
+      "names": {
+        "ko": "약식",
+        "en": "Yaksik"
+      },
+      "aliases": {
+        "ko": [
+          "약밥"
+        ],
+        "en": [
+          "yaksik",
+          "sweet rice with nuts"
+        ]
+      },
+      "category": "rice_cake",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "tree_nut"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "acorn_jelly",
+      "names": {
+        "ko": "도토리묵",
+        "en": "Acorn jelly"
+      },
+      "aliases": {
+        "ko": [
+          "도토리 묵"
+        ],
+        "en": [
+          "acorn jelly",
+          "dotori muk"
+        ]
+      },
+      "category": "jelly",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "mung_bean_jelly",
+      "names": {
+        "ko": "청포묵",
+        "en": "Mung bean jelly"
+      },
+      "aliases": {
+        "ko": [
+          "녹두묵"
+        ],
+        "en": [
+          "mung bean jelly",
+          "cheongpomuk"
+        ]
+      },
+      "category": "jelly",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "konjac",
+      "names": {
+        "ko": "곤약",
+        "en": "Konjac"
+      },
+      "aliases": {
+        "ko": [
+          "곤약묵"
+        ],
+        "en": [
+          "konjac",
+          "konnyaku"
+        ]
+      },
+      "category": "jelly",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "eomuk_broth",
+      "names": {
+        "ko": "어묵국물",
+        "en": "Fish cake broth"
+      },
+      "aliases": {
+        "ko": [
+          "오뎅국물"
+        ],
+        "en": [
+          "fish cake broth",
+          "oden broth"
+        ]
+      },
+      "category": "prepared_food",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "fish"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "tteokbokki_sauce",
+      "names": {
+        "ko": "떡볶이양념",
+        "en": "Tteokbokki sauce"
+      },
+      "aliases": {
+        "ko": [
+          "떡볶이 소스"
+        ],
+        "en": [
+          "tteokbokki sauce"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
     }
   ],
   "allergen_taxonomy": [
@@ -7879,11 +8360,11 @@
     }
   },
   "progress": {
-    "ingredient_records": 250,
+    "ingredient_records": 265,
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Phase-one canonical catalog complete. Next focus: official nutrition/allergen verification and website migration to JSON data."
+    "note": "Phase-one complete; demand-led expansion started with Korean processed foods and rice-cake variants."
   },
   "ingestion_plan": {
     "strategy": "official bulk/API first, manual verification for ambiguous foods",
