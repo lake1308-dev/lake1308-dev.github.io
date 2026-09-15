@@ -1,0 +1,247 @@
+{
+  "version": "0.1.0",
+  "schema": {
+    "ingredient": [
+      "id",
+      "names",
+      "aliases",
+      "category",
+      "nutrition_per_100g",
+      "allergens",
+      "sources"
+    ],
+    "nutrition": [
+      "kcal",
+      "protein_g",
+      "carbs_g",
+      "fat_g",
+      "sat_fat_g",
+      "sugars_g",
+      "fiber_g",
+      "sodium_mg",
+      "cholesterol_mg"
+    ]
+  },
+  "source_policy": {
+    "nutrition": [
+      "K-FIND (MFDS, Korea)",
+      "USDA FoodData Central (US)"
+    ],
+    "allergens": [
+      "FDA official allergen guidance",
+      "country-specific official labeling authorities"
+    ],
+    "note": "Health-related values require source provenance. Missing values remain null rather than guessed."
+  },
+  "ingredients": [
+    {
+      "id": "chicken_breast_raw",
+      "names": {
+        "ko": "닭고기 가슴살",
+        "en": "Chicken breast"
+      },
+      "aliases": {
+        "ko": [
+          "닭가슴살",
+          "닭고기"
+        ],
+        "en": [
+          "chicken breast",
+          "chicken"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "egg_whole",
+      "names": {
+        "ko": "달걀",
+        "en": "Egg"
+      },
+      "aliases": {
+        "ko": [
+          "계란"
+        ],
+        "en": [
+          "egg",
+          "whole egg"
+        ]
+      },
+      "category": "egg",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "egg"
+      ],
+      "sources": []
+    },
+    {
+      "id": "tofu",
+      "names": {
+        "ko": "두부",
+        "en": "Tofu"
+      },
+      "aliases": {
+        "ko": [
+          "콩두부"
+        ],
+        "en": [
+          "tofu"
+        ]
+      },
+      "category": "soy",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "soy"
+      ],
+      "sources": []
+    },
+    {
+      "id": "rice_cooked",
+      "names": {
+        "ko": "쌀밥",
+        "en": "Cooked rice"
+      },
+      "aliases": {
+        "ko": [
+          "밥",
+          "흰밥"
+        ],
+        "en": [
+          "rice",
+          "white rice"
+        ]
+      },
+      "category": "grain",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "milk_cow",
+      "names": {
+        "ko": "우유",
+        "en": "Milk"
+      },
+      "aliases": {
+        "ko": [
+          "흰우유"
+        ],
+        "en": [
+          "cow milk",
+          "milk"
+        ]
+      },
+      "category": "dairy",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "milk"
+      ],
+      "sources": []
+    },
+    {
+      "id": "shrimp",
+      "names": {
+        "ko": "새우",
+        "en": "Shrimp"
+      },
+      "aliases": {
+        "ko": [
+          "대하"
+        ],
+        "en": [
+          "shrimp",
+          "prawn"
+        ]
+      },
+      "category": "shellfish",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "crustacean_shellfish"
+      ],
+      "sources": []
+    }
+  ],
+  "allergen_taxonomy": [
+    "milk",
+    "egg",
+    "fish",
+    "crustacean_shellfish",
+    "tree_nut",
+    "peanut",
+    "wheat",
+    "soy",
+    "sesame"
+  ],
+  "roadmap": {
+    "ingredient_target_phase1": 250,
+    "recipe_target_phase1": 500,
+    "languages_phase1": [
+      "ko",
+      "en"
+    ],
+    "regions": "country-specific culinary regions"
+  }
+}
