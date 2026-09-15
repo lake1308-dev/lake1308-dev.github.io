@@ -74,6 +74,7 @@ function applyLang(){
  $("langBtn").textContent=lang==="ko"?"English":"한국어";
  $("ingredientInput").placeholder=lang==="ko"?"닭, 계란, 토마토, 밥...":"Chicken, egg, tomato, rice...";
  $("recipeSearchInput").placeholder=lang==="ko"?"닭볶음탕, 한국요리, 매운 요리...":"Chicken curry, Korean, spicy...";
+ $("countrySearchInput").placeholder=lang==="ko"?"베트남, 그리스, 브라질...":"Vietnam, Greece, Brazil...";
  renderExplorerFilters();
  if(currentKey) renderIngredient(currentKey,false);
  if(currentDish && !$("recipe").classList.contains("hidden")) renderRecipe(currentDish,false);
@@ -127,27 +128,40 @@ function renderRecipe(d,scroll=true){
  if(scroll)$("recipe").scrollIntoView({behavior:"smooth",block:"start"});
 }
 let country="Korea",region="All",type="All";
-const COUNTRY_META={Korea:["🇰🇷","한국"],India:["🇮🇳","인도"],USA:["🇺🇸","미국"],China:["🇨🇳","중국"],Spain:["🇪🇸","스페인"],Japan:["🇯🇵","일본"]};
+const COUNTRY_META={
+ Korea:["🇰🇷","한국"],USA:["🇺🇸","미국"],China:["🇨🇳","중국"],Japan:["🇯🇵","일본"],India:["🇮🇳","인도"],Italy:["🇮🇹","이탈리아"],France:["🇫🇷","프랑스"],Mexico:["🇲🇽","멕시코"],Thailand:["🇹🇭","태국"],Spain:["🇪🇸","스페인"],
+ Vietnam:["🇻🇳","베트남"],Turkey:["🇹🇷","튀르키예"],Greece:["🇬🇷","그리스"],Germany:["🇩🇪","독일"],Brazil:["🇧🇷","브라질"],Indonesia:["🇮🇩","인도네시아"],Malaysia:["🇲🇾","말레이시아"],Philippines:["🇵🇭","필리핀"],Portugal:["🇵🇹","포르투갈"],Morocco:["🇲🇦","모로코"]
+};
+const FEATURED_COUNTRIES=["Korea","USA","China","Japan","India","Italy","France","Mexico","Thailand","Spain"];
+const REGION_META={
+ Korea:[["Seoul/Gyeonggi","서울·경기"],["Gangwon","강원"],["Chungcheong","충청"],["Gyeongsang","경상"],["Jeolla","전라"],["Jeju","제주"]],
+ USA:[["Northeast","북동부"],["South","남부"],["Midwest","중서부"],["Southwest","남서부"],["West Coast","서부해안"],["Hawaii","하와이"]],
+ China:[["Sichuan","쓰촨"],["Cantonese","광둥"],["Shandong","산둥"],["Jiangsu/Zhejiang","장쑤·저장"],["Hunan","후난"],["Northeast","동북"]],
+ Japan:[["Hokkaido","홋카이도"],["Kanto","간토"],["Kansai","간사이"],["Chubu","주부"],["Chugoku/Shikoku","주고쿠·시코쿠"],["Kyushu/Okinawa","규슈·오키나와"]],
+ India:[["North India","북인도"],["South India","남인도"],["West India","서인도"],["East India","동인도"],["Northeast India","북동인도"]],
+ Italy:[["North Italy","북부"],["Central Italy","중부"],["South Italy","남부"],["Sicily/Sardinia","시칠리아·사르데냐"]],
+ France:[["North/Paris","북부·파리"],["West","서부"],["East","동부"],["Southwest","남서부"],["Provence/Mediterranean","프로방스·지중해"]],
+ Mexico:[["North","북부"],["Central","중부"],["Pacific","태평양 연안"],["Gulf","멕시코만"],["Oaxaca","오악사카"],["Yucatan","유카탄"]],
+ Thailand:[["North","북부"],["Northeast/Isan","북동부·이산"],["Central","중부"],["South","남부"]],
+ Spain:[["North","북부"],["Catalonia","카탈루냐"],["Central","중부"],["Valencia","발렌시아"],["Andalusia","안달루시아"],["Islands","도서지역"]]
+};
 function uniq(arr){return [...new Set(arr)]}
 function filterButton(text,val,kind,active){
  const b=document.createElement("button");b.textContent=text;b.className=active?"active":"";b.onclick=()=>{if(kind==="region")region=val;if(kind==="type")type=val;renderExplorerFilters()};return b
 }
-function countriesForCurrent(){
- const list=currentKey?DISHES.filter(d=>d.main.includes(currentKey)):DISHES;
- return uniq(list.map(d=>d.country));
-}
+function countriesForCurrent(){return FEATURED_COUNTRIES}
 function renderCountryCards(){
  const host=$("countryCards"); if(!host)return; host.innerHTML="";
  const available=countriesForCurrent();
  available.forEach(c=>{
   const meta=COUNTRY_META[c]||["🌍",c]; const all=DISHES.filter(d=>d.country===c && (!currentKey||d.main.includes(currentKey)));
-  const regions=uniq(all.map(d=>d.region));
+  const regions=(REGION_META[c]||uniq(all.map(d=>d.region)).map(r=>[r,(all.find(x=>x.region===r)||{}).regionKo||r]));
   const card=document.createElement("article");card.className="country-card";
   const head=document.createElement("div");head.className="country-head";
   head.innerHTML='<span class="flag">'+meta[0]+'</span><div><h3>'+tr(c,meta[1])+'</h3><small>'+tr("See all dishes","전체 요리 보기")+'</small></div>';
   head.onclick=()=>openCountry(c,"All");card.appendChild(head);
   const links=document.createElement("div");links.className="region-links";
-  regions.slice(0,6).forEach(r=>{const d=all.find(x=>x.region===r);const b=document.createElement("button");b.textContent=tr(r,d.regionKo);b.onclick=()=>openCountry(c,r);links.appendChild(b)});card.appendChild(links);
+  regions.slice(0,6).forEach(pair=>{const r=Array.isArray(pair)?pair[0]:pair;const ko=Array.isArray(pair)?pair[1]:r;const b=document.createElement("button");b.textContent=tr(r,ko);b.onclick=()=>openCountry(c,r);links.appendChild(b)});card.appendChild(links);
   const allLink=document.createElement("span");allLink.className="country-all";allLink.textContent=tr("All "+c+" dishes →",meta[1]+" 전체 요리 →");allLink.onclick=()=>openCountry(c,"All");card.appendChild(allLink);
   host.appendChild(card);
  });
@@ -159,7 +173,7 @@ function renderExplorerFilters(){
  const rf=$("regionFilters"),tf=$("typeFilters");rf.innerHTML=tf.innerHTML="";
  const meta=COUNTRY_META[country]||["🌍",country];$("explorerFlag").textContent=meta[0];$("explorerTitle").textContent=tr(country,meta[1]);$("explorerSubtitle").textContent=tr("Choose a region or cooking style.","지역 또는 요리방식을 선택하세요.");
  let base=DISHES.filter(d=>d.country===country && (!currentKey||d.main.includes(currentKey)));
- rf.appendChild(filterButton(tr("All regions","전체 지역"),"All","region",region==="All"));uniq(base.map(d=>d.region)).forEach(r=>{const d=base.find(x=>x.region===r);rf.appendChild(filterButton(tr(r,d.regionKo),r,"region",region===r))});
+ rf.appendChild(filterButton(tr("All regions","전체 지역"),"All","region",region==="All"));(REGION_META[country]||uniq(base.map(d=>d.region)).map(r=>[r,(base.find(x=>x.region===r)||{}).regionKo||r])).forEach(pair=>{const r=pair[0],ko=pair[1];rf.appendChild(filterButton(tr(r,ko),r,"region",region===r))});
  const regionBase=region==="All"?base:base.filter(d=>d.region===region);
  tf.appendChild(filterButton(tr("All styles","전체 방식"),"All","type",type==="All"));uniq(regionBase.map(d=>d.type)).forEach(tp=>{const d=regionBase.find(x=>x.type===tp);tf.appendChild(filterButton(tr(tp,d.typeKo),tp,"type",type===tp))});
  let list=regionBase;if(type!=="All")list=list.filter(d=>d.type===type);renderDishCards(list,$("exploreGrid"));
@@ -176,6 +190,14 @@ document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredie
 $("amountInput").addEventListener("input",e=>{const v=Math.max(1,Math.min(5000,Number(e.target.value)||1));currentAmount=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{currentAmount=Number(b.dataset.grams);$("amountInput").value=currentAmount;updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
+function countrySearch(q){
+ const raw=normalize(q),host=$("countrySearchResults");host.innerHTML="";
+ if(!raw)return;
+ const matches=Object.entries(COUNTRY_META).filter(([en,m])=>normalize(en).includes(raw)||normalize(m[1]).includes(raw)).slice(0,8);
+ if(!matches.length){host.innerHTML='<div class="recipe-no-result">'+tr("Country not found yet. We are expanding worldwide coverage.","아직 등록되지 않은 나라입니다. 전 세계 국가로 계속 확장하고 있습니다.")+'</div>';return}
+ matches.forEach(([en,m])=>{const d=document.createElement("div");d.className="country-result";d.innerHTML='<span>'+m[0]+'</span><b>'+tr(en,m[1])+'</b><small>'+tr("Open →","보기 →")+'</small>';d.onclick=()=>openCountry(en,"All");host.appendChild(d)})
+}
+$("countrySearchForm").addEventListener("submit",e=>{e.preventDefault();countrySearch($("countrySearchInput").value)});
 function recipeSearch(q){
  const raw=normalize(q); const tokens=raw.split(" ").filter(Boolean);
  let list=DISHES.filter(d=>{const hay=normalize([d.name,d.nameKo,d.country,d.countryKo,d.region,d.regionKo,d.type,d.typeKo,d.desc,d.descKo].join(" "));return tokens.every(t=>hay.includes(t))});
