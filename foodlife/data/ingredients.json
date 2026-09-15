@@ -8824,7 +8824,7 @@
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Demand-led expansion: Korean seasoning and chili variants added; official nutrition verification remains separate."
+    "note": "Demand-led expansion: Korean chili variants and core seasonings added. Nutrition values remain pending official source verification."
   },
   "ingestion_plan": {
     "strategy": "official bulk/API first, manual verification for ambiguous foods",
