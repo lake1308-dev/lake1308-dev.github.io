@@ -1,6 +1,7 @@
 const $=id=>document.getElementById(id);
 let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
+let DB_INGREDIENTS=[],DB_ALIAS=new Map();
 
 const I={
  chicken:["Chicken","닭고기",165,31,0,3.6,["chicken","닭","닭고기","닭가슴살"]],
@@ -63,10 +64,30 @@ const DISHES=[
 
 function tr(en,ko){return lang==="ko"?ko:en}
 function normalize(s){return s.trim().toLowerCase().replace(/\s+/g," ")}
+function rebuildIngredientIndex(){
+ DB_ALIAS=new Map();
+ DB_INGREDIENTS.forEach(x=>{
+  const terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean);
+  terms.forEach(t=>DB_ALIAS.set(normalize(t),x.id));
+ });
+}
+async function loadIngredientDB(){
+ try{
+  const res=await fetch("data/ingredients.json?v=1.0.0",{cache:"no-store"});
+  const data=await res.json(); DB_INGREDIENTS=data.ingredients||[]; rebuildIngredientIndex();
+  const c=$("coverageCount"); if(c)c.textContent=DB_INGREDIENTS.length;
+ }catch(err){console.warn("Ingredient DB unavailable; using prototype fallback.",err)}
+}
 function findIngredient(raw){
  const q=normalize(raw);
+ const dbid=DB_ALIAS.get(q); if(dbid)return dbid;
  for(const [k,v] of Object.entries(I)) if(v[6].some(a=>normalize(a)===q)) return k;
  return null;
+}
+function getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||null}
+function nutritionFor(id){
+ if(I[id])return {kcal:I[id][2],protein_g:I[id][3],carbs_g:I[id][4],fat_g:I[id][5],legacy:true};
+ const x=getIngredient(id);return x?.nutrition_per_100g||{};
 }
 function applyLang(){
  document.documentElement.lang=lang;
@@ -81,18 +102,19 @@ function applyLang(){
 }
 function round1(n){return Math.round(n*10)/10}
 function updateNutrition(){
- if(!currentKey)return; const d=I[currentKey]; const factor=currentAmount/100;
- $("kcalValue").textContent=Math.round(d[2]*factor);
+ if(!currentKey)return; const n=nutritionFor(currentKey); const factor=currentAmount/100;
+ const val=(x,unit)=>x==null?"—":round1(x*factor)+unit;
+ $("kcalValue").textContent=n.kcal==null?"—":Math.round(n.kcal*factor);
  $("kcalBasis").textContent="kcal / "+currentAmount+"g";
- $("protein").textContent=round1(d[3]*factor)+"g";
- $("carbs").textContent=round1(d[4]*factor)+"g";
- $("fat").textContent=round1(d[5]*factor)+"g";
- $("nutritionCalories").textContent=Math.round(d[2]*factor)+" kcal";
- const x=EXTRA[currentKey]||{};
- $("satfat").textContent=x.sat==null?"—":round1(x.sat*factor)+"g";
- $("sugars").textContent=x.sugar==null?"—":round1(x.sugar*factor)+"g";
- $("sodium").textContent=x.sodium==null?"—":Math.round(x.sodium*factor)+"mg";
- $("cholesterol").textContent=x.chol==null?"—":Math.round(x.chol*factor)+"mg";
+ $("protein").textContent=val(n.protein_g,"g");
+ $("carbs").textContent=val(n.carbs_g,"g");
+ $("fat").textContent=val(n.fat_g,"g");
+ $("nutritionCalories").textContent=n.kcal==null?"—":Math.round(n.kcal*factor)+" kcal";
+ const x=EXTRA[currentKey]||{}, db=getIngredient(currentKey), dn=db?.nutrition_per_100g||{};
+ $("satfat").textContent=dn.sat_fat_g!=null?val(dn.sat_fat_g,"g"):(x.sat==null?"—":round1(x.sat*factor)+"g");
+ $("sugars").textContent=dn.sugars_g!=null?val(dn.sugars_g,"g"):(x.sugar==null?"—":round1(x.sugar*factor)+"g");
+ $("sodium").textContent=dn.sodium_mg!=null?Math.round(dn.sodium_mg*factor)+"mg":(x.sodium==null?"—":Math.round(x.sodium*factor)+"mg");
+ $("cholesterol").textContent=dn.cholesterol_mg!=null?Math.round(dn.cholesterol_mg*factor)+"mg":(x.chol==null?"—":Math.round(x.chol*factor)+"mg");
  document.querySelectorAll(".amount-presets button").forEach(b=>b.classList.toggle("active",Number(b.dataset.grams)===currentAmount));
 }
 function renderAllergy(key){
@@ -102,9 +124,8 @@ function renderAllergy(key){
  else host.innerHTML='<p class="allergy-status">✓ '+tr("No common major allergen identified","일반적인 주요 알레르겐 해당 없음")+'</p><p>'+tr(a[1],a[2])+'</p>';
 }
 function renderIngredient(key,scroll=true){
- currentKey=key; currentAmount=100; const d=I[key];
- $("ingredientName").textContent=tr(d[1],d[0])===d[0]?d[0]:d[1];
- $("ingredientName").textContent=lang==="ko"?d[1]:d[0];
+ currentKey=key; currentAmount=100; const d=I[key], db=getIngredient(key);
+ $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  $("ingredientNote").textContent=tr("Approximate nutrition per 100g. Choose a dish below or browse by country.","100g 기준 참고 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.");
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
@@ -210,4 +231,4 @@ $("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSea
 function showExplorer(){ $("explorer").classList.remove("hidden");renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth"})}
 $("exploreBtn").onclick=showExplorer;
 $("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget).scrollIntoView({behavior:"smooth"})};
-applyLang();
+loadIngredientDB().then(()=>applyLang());
