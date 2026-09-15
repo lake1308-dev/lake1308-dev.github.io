@@ -132,7 +132,7 @@ const COUNTRY_META={
  Korea:["🇰🇷","한국"],USA:["🇺🇸","미국"],China:["🇨🇳","중국"],Japan:["🇯🇵","일본"],India:["🇮🇳","인도"],Italy:["🇮🇹","이탈리아"],France:["🇫🇷","프랑스"],Mexico:["🇲🇽","멕시코"],Thailand:["🇹🇭","태국"],Spain:["🇪🇸","스페인"],
  Vietnam:["🇻🇳","베트남"],Turkey:["🇹🇷","튀르키예"],Greece:["🇬🇷","그리스"],Germany:["🇩🇪","독일"],Brazil:["🇧🇷","브라질"],Indonesia:["🇮🇩","인도네시아"],Malaysia:["🇲🇾","말레이시아"],Philippines:["🇵🇭","필리핀"],Portugal:["🇵🇹","포르투갈"],Morocco:["🇲🇦","모로코"]
 };
-const FEATURED_COUNTRIES=["Korea","USA","China","Japan","India","Italy","France","Mexico","Thailand","Spain"];
+const FEATURED_COUNTRIES=["Korea","USA","China","Japan","India","Italy","France","Mexico","Thailand","Spain","Vietnam","Greece"];
 const REGION_META={
  Korea:[["Seoul/Gyeonggi","서울·경기"],["Gangwon","강원"],["Chungcheong","충청"],["Gyeongsang","경상"],["Jeolla","전라"],["Jeju","제주"]],
  USA:[["Northeast","북동부"],["South","남부"],["Midwest","중서부"],["Southwest","남서부"],["West Coast","서부해안"],["Hawaii","하와이"]],
@@ -158,7 +158,7 @@ function renderCountryCards(){
   const regions=(REGION_META[c]||uniq(all.map(d=>d.region)).map(r=>[r,(all.find(x=>x.region===r)||{}).regionKo||r]));
   const card=document.createElement("article");card.className="country-card";
   const head=document.createElement("div");head.className="country-head";
-  head.innerHTML='<span class="flag">'+meta[0]+'</span><div><h3>'+tr(c,meta[1])+'</h3><small>'+tr("See all dishes","전체 요리 보기")+'</small></div>';
+  head.innerHTML='<span class="flag" role="img" aria-label="'+tr(c,meta[1])+'">'+meta[0]+'</span>'<div><h3>'+tr(c,meta[1])+'</h3><small>'+tr("See all dishes","전체 요리 보기")+'</small></div>';
   head.onclick=()=>openCountry(c,"All");card.appendChild(head);
   const links=document.createElement("div");links.className="region-links";
   regions.slice(0,6).forEach(pair=>{const r=Array.isArray(pair)?pair[0]:pair;const ko=Array.isArray(pair)?pair[1]:r;const b=document.createElement("button");b.textContent=tr(r,ko);b.onclick=()=>openCountry(c,r);links.appendChild(b)});card.appendChild(links);
