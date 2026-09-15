@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.2.0",
   "schema": {
     "ingredient": [
       "id",
@@ -225,15 +225,96 @@
     }
   ],
   "allergen_taxonomy": [
-    "milk",
-    "egg",
-    "fish",
-    "crustacean_shellfish",
-    "tree_nut",
-    "peanut",
-    "wheat",
-    "soy",
-    "sesame"
+    {
+      "id": "milk",
+      "names": [
+        "Milk",
+        "우유"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "egg",
+      "names": [
+        "Egg",
+        "달걀"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "fish",
+      "names": [
+        "Fish",
+        "생선"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "crustacean_shellfish",
+      "names": [
+        "Crustacean shellfish",
+        "갑각류"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "tree_nut",
+      "names": [
+        "Tree nuts",
+        "견과류"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "peanut",
+      "names": [
+        "Peanuts",
+        "땅콩"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "wheat",
+      "names": [
+        "Wheat",
+        "밀"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "soy",
+      "names": [
+        "Soybeans",
+        "대두"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    },
+    {
+      "id": "sesame",
+      "names": [
+        "Sesame",
+        "참깨"
+      ],
+      "jurisdictions": [
+        "US"
+      ]
+    }
   ],
   "roadmap": {
     "ingredient_target_phase1": 250,
@@ -242,6 +323,64 @@
       "ko",
       "en"
     ],
+    "batch_plan": [
+      50,
+      100,
+      250
+    ],
+    "next_categories": [
+      "poultry",
+      "meat",
+      "fish",
+      "shellfish",
+      "eggs",
+      "dairy",
+      "grains",
+      "legumes",
+      "vegetables",
+      "fruits",
+      "mushrooms",
+      "nuts_seeds",
+      "oils",
+      "seasonings"
+    ],
     "regions": "country-specific culinary regions"
+  },
+  "validation": {
+    "status_values": [
+      "verified",
+      "pending",
+      "conflict"
+    ],
+    "rules": [
+      "Never replace missing nutrition with zero.",
+      "Store preparation state separately (raw/cooked/dried).",
+      "Keep source URL, authority, dataset/item identifier, retrieval date and verification status.",
+      "Allergen rules are jurisdiction-aware; U.S. major-9 is one baseline, not a universal worldwide list.",
+      "Fish, crustacean shellfish and tree nuts retain species/type where available."
+    ]
+  },
+  "source_registry": {
+    "K_FIND": {
+      "authority": "Ministry of Food and Drug Safety (Korea)",
+      "name": "K-FIND 식품영양성분 데이터베이스",
+      "scope": "nutrition",
+      "url": "https://various.foodsafetykorea.go.kr/nutrient/",
+      "priority": 1
+    },
+    "USDA_FDC": {
+      "authority": "U.S. Department of Agriculture",
+      "name": "FoodData Central",
+      "scope": "nutrition",
+      "url": "https://fdc.nal.usda.gov/",
+      "priority": 2
+    },
+    "FDA_ALLERGEN": {
+      "authority": "U.S. Food and Drug Administration",
+      "name": "Food Allergies / Major Food Allergens",
+      "scope": "allergen_reference",
+      "url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies",
+      "priority": 1
+    }
   }
 }
