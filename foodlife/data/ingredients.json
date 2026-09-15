@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
+  "version": "1.2.0",
   "schema": {
     "ingredient": [
       "id",
@@ -8198,6 +8198,466 @@
       "allergens": [],
       "sources": [],
       "verification_status": "pending"
+    },
+    {
+      "id": "chili_powder_kr",
+      "names": {
+        "ko": "고춧가루",
+        "en": "Korean red pepper powder"
+      },
+      "aliases": {
+        "ko": [
+          "고추가루",
+          "태양초고춧가루",
+          "김치용고춧가루",
+          "고운고춧가루",
+          "굵은고춧가루"
+        ],
+        "en": [
+          "gochugaru",
+          "Korean chili powder",
+          "Korean red pepper flakes"
+        ]
+      },
+      "category": "spice",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "cheongyang_chili",
+      "names": {
+        "ko": "청양고추",
+        "en": "Cheongyang chili pepper"
+      },
+      "aliases": {
+        "ko": [
+          "청양고추 생것"
+        ],
+        "en": [
+          "Cheongyang chili"
+        ]
+      },
+      "category": "vegetable",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "green_chili",
+      "names": {
+        "ko": "풋고추",
+        "en": "Green chili pepper"
+      },
+      "aliases": {
+        "ko": [
+          "풋고추 생것"
+        ],
+        "en": [
+          "green chili"
+        ]
+      },
+      "category": "vegetable",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "red_chili_fresh",
+      "names": {
+        "ko": "홍고추",
+        "en": "Fresh red chili pepper"
+      },
+      "aliases": {
+        "ko": [
+          "붉은고추",
+          "홍고추 생것"
+        ],
+        "en": [
+          "fresh red chili"
+        ]
+      },
+      "category": "vegetable",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "minced_garlic",
+      "names": {
+        "ko": "다진마늘",
+        "en": "Minced garlic"
+      },
+      "aliases": {
+        "ko": [
+          "다진 마늘",
+          "간마늘"
+        ],
+        "en": [
+          "minced garlic"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "sesame_oil",
+      "names": {
+        "ko": "참기름",
+        "en": "Sesame oil"
+      },
+      "aliases": {
+        "ko": [
+          "참깨기름"
+        ],
+        "en": [
+          "sesame oil"
+        ]
+      },
+      "category": "oil",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "sesame"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "perilla_oil",
+      "names": {
+        "ko": "들기름",
+        "en": "Perilla oil"
+      },
+      "aliases": {
+        "ko": [
+          "들깨기름"
+        ],
+        "en": [
+          "perilla oil"
+        ]
+      },
+      "category": "oil",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "cooking_wine",
+      "names": {
+        "ko": "맛술",
+        "en": "Cooking wine"
+      },
+      "aliases": {
+        "ko": [
+          "미림",
+          "요리술"
+        ],
+        "en": [
+          "cooking wine"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "oligosaccharide_syrup",
+      "names": {
+        "ko": "올리고당",
+        "en": "Oligosaccharide syrup"
+      },
+      "aliases": {
+        "ko": [
+          "프락토올리고당"
+        ],
+        "en": [
+          "oligosaccharide syrup"
+        ]
+      },
+      "category": "sweetener",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "anchovy_fish_sauce",
+      "names": {
+        "ko": "멸치액젓",
+        "en": "Anchovy fish sauce"
+      },
+      "aliases": {
+        "ko": [
+          "멸치 액젓"
+        ],
+        "en": [
+          "anchovy fish sauce"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "fish"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "sand_lance_sauce",
+      "names": {
+        "ko": "까나리액젓",
+        "en": "Sand lance fish sauce"
+      },
+      "aliases": {
+        "ko": [
+          "까나리 액젓"
+        ],
+        "en": [
+          "sand lance fish sauce"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "fish"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "soy_sauce_kr",
+      "names": {
+        "ko": "간장",
+        "en": "Soy sauce"
+      },
+      "aliases": {
+        "ko": [
+          "양조간장",
+          "진간장",
+          "국간장"
+        ],
+        "en": [
+          "soy sauce",
+          "Korean soy sauce"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "soy"
+      ],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "table_salt",
+      "names": {
+        "ko": "소금",
+        "en": "Salt"
+      },
+      "aliases": {
+        "ko": [
+          "식염",
+          "꽃소금",
+          "천일염"
+        ],
+        "en": [
+          "salt",
+          "table salt"
+        ]
+      },
+      "category": "seasoning",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
+    },
+    {
+      "id": "white_sugar",
+      "names": {
+        "ko": "설탕",
+        "en": "White sugar"
+      },
+      "aliases": {
+        "ko": [
+          "백설탕",
+          "정백당"
+        ],
+        "en": [
+          "sugar",
+          "white sugar",
+          "granulated sugar"
+        ]
+      },
+      "category": "sweetener",
+      "preparation_state": "generic_unverified",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "verification_status": "pending"
     }
   ],
   "allergen_taxonomy": [
@@ -8360,11 +8820,11 @@
     }
   },
   "progress": {
-    "ingredient_records": 265,
+    "ingredient_records": 279,
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Phase-one complete; demand-led expansion started with Korean processed foods and rice-cake variants."
+    "note": "Demand-led expansion: Korean seasoning and chili variants added; official nutrition verification remains separate."
   },
   "ingestion_plan": {
     "strategy": "official bulk/API first, manual verification for ambiguous foods",
