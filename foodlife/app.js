@@ -38,6 +38,18 @@ const I={
  doenjang:["Doenjang","된장",198,12,27,6,["doenjang","된장"]]
 };
 
+const EXTRA={
+ chicken:{sat:1.0,sugar:0,sodium:74,chol:85,allergy:["none","Chicken is not one of the common major food allergens.","닭고기는 일반적인 주요 식품 알레르겐에 해당하지 않습니다."]},
+ egg:{sat:3.1,sugar:0.4,sodium:142,chol:372,allergy:["major","Egg","달걀","Egg is a major food allergen.","달걀은 주요 식품 알레르겐입니다."]},
+ tofu:{sat:0.7,sugar:0.6,sodium:7,chol:0,allergy:["major","Soy","대두","Tofu is made from soybeans.","두부는 대두로 만들어집니다."]},
+ rice:{sat:0.1,sugar:0.1,sodium:1,chol:0,allergy:["none","Rice is not one of the common major food allergens.","쌀은 일반적인 주요 식품 알레르겐에 해당하지 않습니다."]},
+ salmon:{sat:3.1,sugar:0,sodium:59,chol:55,allergy:["major","Fish","생선","Salmon is a fish allergen.","연어는 생선 알레르겐에 해당합니다."]},
+ milk:{sat:1.9,sugar:5.1,sodium:43,chol:10,allergy:["major","Milk","우유","Milk is a major food allergen.","우유는 주요 식품 알레르겐입니다."]},
+ cheese:{sat:21,sugar:0.5,sodium:621,chol:105,allergy:["major","Milk","우유","Cheese contains milk proteins.","치즈에는 우유 단백질이 포함됩니다."]},
+ shrimp:{sat:0.1,sugar:0,sodium:111,chol:189,allergy:["major","Shellfish","갑각류","Shrimp is a crustacean shellfish allergen.","새우는 갑각류 알레르겐입니다."]},
+ soy:{sat:0.1,sugar:0.4,sodium:5493,chol:0,allergy:["major","Soy","대두","Soy sauce contains soy and may also contain wheat depending on the product.","간장은 대두를 포함하며 제품에 따라 밀이 포함될 수 있습니다."]},
+ flour:{sat:0.2,sugar:0.3,sodium:2,chol:0,allergy:["major","Wheat","밀","Wheat flour is a wheat allergen.","밀가루는 밀 알레르겐입니다."]}
+};
 const DISHES=[
  {id:"dak",country:"Korea",countryKo:"한국",region:"Gangwon",regionKo:"강원",type:"Stew",typeKo:"국·탕·찌개",name:"Dakbokkeumtang",nameKo:"닭볶음탕",main:["chicken","potato","onion"],desc:"Spicy braised chicken with potato and vegetables.",descKo:"닭과 감자를 매콤하게 끓이는 한국식 닭요리.",time:"45 min",ing:["Chicken 500g","Potato 2","Onion 1","Carrot 1","Gochujang 2 tbsp","Soy sauce 2 tbsp","Garlic 1 tbsp"],ingKo:["닭 500g","감자 2개","양파 1개","당근 1개","고추장 2큰술","간장 2큰술","다진 마늘 1큰술"],steps:["Cut chicken and vegetables.","Mix seasoning with water.","Simmer chicken for 15 minutes.","Add vegetables and cook until tender."],stepsKo:["닭과 채소를 썰어요.","양념에 물을 섞어요.","닭을 약 15분 끓여요.","채소를 넣고 익을 때까지 끓여요."]},
  {id:"butter",country:"India",countryKo:"인도",region:"North India",regionKo:"북인도",type:"Curry",typeKo:"커리",name:"Butter Chicken",nameKo:"버터치킨",main:["chicken","butter","tomato"],desc:"Creamy tomato curry with aromatic spices.",descKo:"토마토와 향신료가 어우러진 부드러운 치킨커리.",time:"40 min",ing:["Chicken 500g","Tomato puree 300g","Butter 30g","Cream 100ml","Garam masala","Garlic","Ginger"],ingKo:["닭 500g","토마토 퓌레 300g","버터 30g","생크림 100ml","가람마살라","마늘","생강"],steps:["Brown chicken.","Cook aromatics and spices in butter.","Add tomato and simmer.","Add chicken and cream."],stepsKo:["닭을 노릇하게 구워요.","버터에 향신료를 볶아요.","토마토를 넣고 끓여요.","닭과 생크림을 넣어요."]},
@@ -61,6 +73,7 @@ function applyLang(){
  document.querySelectorAll("[data-en]").forEach(el=>el.textContent=el.dataset[lang]);
  $("langBtn").textContent=lang==="ko"?"English":"한국어";
  $("ingredientInput").placeholder=lang==="ko"?"닭, 계란, 토마토, 밥...":"Chicken, egg, tomato, rice...";
+ $("recipeSearchInput").placeholder=lang==="ko"?"닭볶음탕, 한국요리, 매운 요리...":"Chicken curry, Korean, spicy...";
  renderExplorerFilters();
  if(currentKey) renderIngredient(currentKey,false);
  if(currentDish && !$("recipe").classList.contains("hidden")) renderRecipe(currentDish,false);
@@ -73,16 +86,27 @@ function updateNutrition(){
  $("protein").textContent=round1(d[3]*factor)+"g";
  $("carbs").textContent=round1(d[4]*factor)+"g";
  $("fat").textContent=round1(d[5]*factor)+"g";
+ $("nutritionCalories").textContent=Math.round(d[2]*factor)+" kcal";
+ const x=EXTRA[currentKey]||{};
+ $("satfat").textContent=x.sat==null?"—":round1(x.sat*factor)+"g";
+ $("sugars").textContent=x.sugar==null?"—":round1(x.sugar*factor)+"g";
+ $("sodium").textContent=x.sodium==null?"—":Math.round(x.sodium*factor)+"mg";
+ $("cholesterol").textContent=x.chol==null?"—":Math.round(x.chol*factor)+"mg";
  document.querySelectorAll(".amount-presets button").forEach(b=>b.classList.toggle("active",Number(b.dataset.grams)===currentAmount));
+}
+function renderAllergy(key){
+ const host=$("allergyContent"),a=EXTRA[key]?.allergy;
+ if(!a){host.innerHTML='<p class="allergy-status">'+tr("Information being verified","정보 확인 중")+'</p><p>'+tr("Verified allergy information for this ingredient is being added.","이 재료의 검증된 알레르기 정보를 추가하고 있습니다.")+'</p>';return}
+ if(a[0]==="major")host.innerHTML='<p class="allergy-status">⚠ '+tr(a[1],a[2])+'</p><p>'+tr(a[3],a[4])+'</p>';
+ else host.innerHTML='<p class="allergy-status">✓ '+tr("No common major allergen identified","일반적인 주요 알레르겐 해당 없음")+'</p><p>'+tr(a[1],a[2])+'</p>';
 }
 function renderIngredient(key,scroll=true){
  currentKey=key; currentAmount=100; const d=I[key];
  $("ingredientName").textContent=tr(d[1],d[0])===d[0]?d[0]:d[1];
  $("ingredientName").textContent=lang==="ko"?d[1]:d[0];
  $("ingredientNote").textContent=tr("Approximate nutrition per 100g. Choose a dish below or browse by country.","100g 기준 참고 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.");
- $("amountInput").value=currentAmount; updateNutrition();
+ $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
- renderDishCards(DISHES.filter(x=>x.main.includes(key)),$("dishGrid"));
  renderCountryCards();
  if(scroll) $("result").scrollIntoView({behavior:"smooth",block:"start"});
 }
@@ -152,6 +176,15 @@ document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredie
 $("amountInput").addEventListener("input",e=>{const v=Math.max(1,Math.min(5000,Number(e.target.value)||1));currentAmount=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{currentAmount=Number(b.dataset.grams);$("amountInput").value=currentAmount;updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
+function recipeSearch(q){
+ const raw=normalize(q); const tokens=raw.split(" ").filter(Boolean);
+ let list=DISHES.filter(d=>{const hay=normalize([d.name,d.nameKo,d.country,d.countryKo,d.region,d.regionKo,d.type,d.typeKo,d.desc,d.descKo].join(" "));return tokens.every(t=>hay.includes(t))});
+ if(currentKey)list=list.sort((a,b)=>Number(b.main.includes(currentKey))-Number(a.main.includes(currentKey)));
+ const host=$("recipeSearchResults");host.innerHTML="";
+ if(!list.length){host.innerHTML='<div class="recipe-no-result">'+tr("No matching recipe in the prototype yet. We will keep expanding the recipe library.","아직 프로토타입에 일치하는 레시피가 없습니다. 레시피 데이터는 계속 확장할 예정입니다.")+'</div>';return}
+ renderDishCards(list,host);
+}
+$("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
 function showExplorer(){ $("explorer").classList.remove("hidden");renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth"})}
 $("exploreBtn").onclick=showExplorer;
 $("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget).scrollIntoView({behavior:"smooth"})};
