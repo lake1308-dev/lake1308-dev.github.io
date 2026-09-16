@@ -1752,10 +1752,13 @@
       },
       "aliases": {
         "ko": [
-          "현미"
+          "현미",
+          "현미밥"
         ],
         "en": [
-          "brown rice"
+          "brown rice",
+          "cooked brown rice",
+          "brown rice cooked"
         ]
       },
       "category": "grain",
@@ -6544,7 +6547,8 @@
       },
       "aliases": {
         "ko": [
-          "액젓"
+          "액젓",
+          "어간장"
         ],
         "en": [
           "fish sauce"
@@ -7452,11 +7456,14 @@
       },
       "aliases": {
         "ko": [
-          "고구마당면"
+          "고구마당면",
+          "당면",
+          "잡채당면"
         ],
         "en": [
           "glass noodles",
-          "cellophane noodles"
+          "cellophane noodles",
+          "sweet potato noodles"
         ]
       },
       "category": "starch",
@@ -8371,7 +8378,8 @@
       },
       "aliases": {
         "ko": [
-          "참깨기름"
+          "참깨기름",
+          "참기름"
         ],
         "en": [
           "sesame oil"
@@ -8759,10 +8767,12 @@
       "aliases": {
         "ko": [
           "삼겹살",
-          "오겹살"
+          "오겹살",
+          "돼지삼겹"
         ],
         "en": [
-          "pork belly"
+          "pork belly",
+          "samgyeopsal"
         ]
       },
       "category": "meat",
@@ -8789,7 +8799,8 @@
       "aliases": {
         "ko": [
           "목살",
-          "돼지목살"
+          "돼지목살",
+          "목심"
         ],
         "en": [
           "pork shoulder",
@@ -8878,7 +8889,8 @@
       "aliases": {
         "ko": [
           "소등심",
-          "한우등심"
+          "한우등심",
+          "등심"
         ],
         "en": [
           "beef sirloin",
@@ -8970,11 +8982,14 @@
       "aliases": {
         "ko": [
           "갈비",
-          "소갈비살"
+          "소갈비살",
+          "소갈비",
+          "갈비살"
         ],
         "en": [
           "beef short rib",
-          "short ribs"
+          "short ribs",
+          "beef ribs"
         ]
       },
       "category": "meat",
@@ -9331,11 +9346,13 @@
       "aliases": {
         "ko": [
           "호박",
-          "주키니"
+          "주키니",
+          "애호박"
         ],
         "en": [
           "korean zucchini",
-          "zucchini"
+          "zucchini",
+          "aehobak"
         ]
       },
       "category": "vegetable",
@@ -9362,11 +9379,13 @@
       "aliases": {
         "ko": [
           "무우",
-          "조선무"
+          "조선무",
+          "무"
         ],
         "en": [
           "korean radish",
-          "radish"
+          "radish",
+          "mu"
         ]
       },
       "category": "vegetable",
@@ -9393,7 +9412,8 @@
       "aliases": {
         "ko": [
           "통배추",
-          "김장배추"
+          "김장배추",
+          "배추"
         ],
         "en": [
           "napa cabbage",
@@ -9424,12 +9444,15 @@
       "aliases": {
         "ko": [
           "파",
-          "쪽파"
+          "쪽파",
+          "대파",
+          "파채"
         ],
         "en": [
           "green onion",
           "scallion",
-          "spring onion"
+          "spring onion",
+          "green onions"
         ]
       },
       "category": "vegetable",
@@ -9455,10 +9478,13 @@
       },
       "aliases": {
         "ko": [
-          "들깻잎"
+          "들깻잎",
+          "깻잎"
         ],
         "en": [
-          "perilla leaf"
+          "perilla leaf",
+          "perilla leaves",
+          "kkaennip"
         ]
       },
       "category": "vegetable",
@@ -9513,10 +9539,12 @@
       },
       "aliases": {
         "ko": [
-          "숙주"
+          "숙주",
+          "숙주나물"
         ],
         "en": [
-          "mung bean sprouts"
+          "mung bean sprouts",
+          "bean sprouts"
         ]
       },
       "category": "vegetable",
@@ -12336,10 +12364,12 @@
       },
       "aliases": {
         "ko": [
-          "표고버섯"
+          "표고버섯",
+          "표고"
         ],
         "en": [
-          "shiitake mushroom"
+          "shiitake mushroom",
+          "shiitake"
         ]
       },
       "category": "global_asian",
@@ -12365,10 +12395,12 @@
       },
       "aliases": {
         "ko": [
-          "팽이버섯"
+          "팽이버섯",
+          "팽이"
         ],
         "en": [
-          "enoki mushroom"
+          "enoki mushroom",
+          "enoki"
         ]
       },
       "category": "global_asian",
@@ -12423,10 +12455,12 @@
       },
       "aliases": {
         "ko": [
-          "새송이버섯"
+          "새송이버섯",
+          "새송이"
         ],
         "en": [
-          "king oyster mushroom"
+          "king oyster mushroom",
+          "king trumpet mushroom"
         ]
       },
       "category": "global_asian",
@@ -12597,10 +12631,12 @@
       },
       "aliases": {
         "ko": [
-          "떡볶이떡"
+          "떡볶이떡",
+          "떡볶이 떡"
         ],
         "en": [
-          "tteokbokki rice cake"
+          "tteokbokki rice cake",
+          "tteokbokki tteok"
         ]
       },
       "category": "global_asian",
@@ -16726,10 +16762,12 @@
       },
       "aliases": {
         "ko": [
-          "고춧가루"
+          "고춧가루",
+          "고추가루"
         ],
         "en": [
-          "korean chili flakes"
+          "korean chili flakes",
+          "gochugaru"
         ]
       },
       "category": "sauce",
@@ -22506,10 +22544,15 @@
       },
       "aliases": {
         "ko": [
-          "닭근위"
+          "닭근위",
+          "닭똥집",
+          "닭모래집",
+          "근위"
         ],
         "en": [
-          "chicken gizzard"
+          "chicken gizzard",
+          "gizzard",
+          "chicken gizzards"
         ]
       },
       "category": "meat",
@@ -29645,7 +29688,7 @@
     "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
     "current_catalog": 1003,
-    "next_priority": "Replace placeholder rows with curated foods, resolve duplicate-name candidates, then map official nutrient records.",
+    "next_priority": "Continue alias QA and classify exact-name duplicate candidates before official K-FIND nutrient matching.",
     "catalog_target_status": "reached",
     "verified_catalog_count": 853,
     "placeholder_count": 150
@@ -29717,6 +29760,11 @@
     "nutrient_source_priority": [
       "K-FIND / MFDS official food nutrient data",
       "USDA FoodData Central for global gaps"
-    ]
+    ],
+    "alias_qa_batch_1": {
+      "updated_records": 20,
+      "focus": "High-frequency Korean search synonyms and colloquial names",
+      "completed_on": "2026-09-17"
+    }
   }
 }
