@@ -337,3 +337,20 @@ function renderIngredientSuggestions(){
 $("ingredientInput").addEventListener("input",renderIngredientSuggestions);
 $("ingredientInput").addEventListener("focus",renderIngredientSuggestions);
 document.addEventListener("click",e=>{if(!e.target.closest(".hero"))$("ingredientSuggestions")?.classList.remove("show")});
+
+function scoreIngredient(raw,x){
+ const q=normalize(raw),terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean).map(normalize);
+ let best=0;terms.forEach(t=>{if(t===q)best=Math.max(best,100);else if(t.startsWith(q)||q.startsWith(t))best=Math.max(best,80);else if(t.includes(q)||q.includes(t))best=Math.max(best,60);else{const qa=new Set(q.split(" ")),ta=new Set(t.split(" "));let hit=0;qa.forEach(w=>{if(ta.has(w))hit++});best=Math.max(best,hit*20)}});return best
+}
+function closestIngredients(raw){
+ return DB_INGREDIENTS.map(x=>[scoreIngredient(raw,x),x]).filter(z=>z[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,6).map(z=>z[1])
+}
+function showIngredientFallback(raw){
+ const host=$("ingredientFallback");if(!host)return;const near=closestIngredients(raw);host.innerHTML="";
+ const title=document.createElement("h3");title.textContent=tr("We couldn't match it exactly — try one of these","정확히 일치하는 재료가 없어요. 비슷한 재료를 골라보세요");host.appendChild(title);
+ const p=document.createElement("p");p.textContent=tr("Your search was: “"+raw+"”. We avoid guessing nutrition values, so choose the closest ingredient below.","검색어: ‘"+raw+"’. 영양수치를 임의로 추정하지 않기 위해 아래에서 가장 가까운 재료를 선택해주세요.");host.appendChild(p);
+ if(near.length){const wrap=document.createElement("div");wrap.className="fallback-chips";near.forEach(x=>{const b=document.createElement("button");b.type="button";b.textContent=(lang==="ko"?x.names.ko:x.names.en);b.onclick=()=>{host.classList.add("hidden");$("ingredientInput").value=b.textContent;renderIngredient(x.id)};wrap.appendChild(b)});host.appendChild(wrap)}
+ const retry=document.createElement("button");retry.type="button";retry.className="fallback-retry";retry.textContent=tr("Edit search ↑","검색어 다시 입력 ↑");retry.onclick=()=>{$("ingredientInput").focus();$("ingredientInput").select()};host.appendChild(retry);host.classList.remove("hidden");host.scrollIntoView({behavior:"smooth",block:"center"})
+}
+const originalFind=findIngredient;
+$("searchForm").addEventListener("submit",e=>{setTimeout(()=>{const raw=$("ingredientInput").value;if(raw && !originalFind(raw)){const f=$("ingredientFallback");if(f)showIngredientFallback(raw)}else $("ingredientFallback")?.classList.add("hidden")},0)},true);
