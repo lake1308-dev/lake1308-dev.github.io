@@ -297,3 +297,17 @@ function recipeSearch(q){
  list.forEach(r=>renderDBRecipeCard(r,host));
 }
 ;
+function wireApp(){
+ const rs=$("recipeSearchForm");
+ if(rs)rs.addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
+ const eb=$("exploreBtn"); if(eb)eb.onclick=()=>{currentKey=null;renderCountryCards();openCountry("Korea","All")};
+ const back=$("exploreBack"); if(back)back.onclick=()=>{$("explorer").classList.add("hidden");$("result").classList.contains("hidden")?window.scrollTo({top:0,behavior:"smooth"}):$("result").scrollIntoView({behavior:"smooth"})};
+ const rb=$("recipeBack"); if(rb)rb.onclick=()=>{$("recipe").classList.add("hidden");const t=$(returnTarget);if(t)t.scrollIntoView({behavior:"smooth"})};
+}
+async function initFoodLife(){
+ wireApp();
+ await Promise.all([loadIngredientDB(),loadRecipeDB()]);
+ applyLang();
+ renderCountryCards();
+}
+initFoodLife();
