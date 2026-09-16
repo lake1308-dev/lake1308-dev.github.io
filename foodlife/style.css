@@ -9,3 +9,6 @@
 .ingredient-fallback h3{margin:0 0 7px;font-size:18px}.ingredient-fallback p{margin:0 0 15px;color:#6f705f;line-height:1.55}
 .fallback-chips{display:flex;flex-wrap:wrap;gap:8px}.fallback-chips button,.fallback-retry{border:1px solid #d8c993;background:#fff;border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:750}
 .fallback-chips button:hover{background:#315c2c;color:#fff;border-color:#315c2c}.fallback-retry{margin-top:14px;background:transparent}
+
+.ingredient-recipes{margin:52px 0 20px}.ingredient-recipe-head{text-align:left;margin-bottom:20px}.ingredient-recipe-head h2{font-size:32px;margin:6px 0}.ingredient-recipe-head p{margin:0;color:#6c7568}
+@media(max-width:760px){.ingredient-recipes{margin-top:36px}.ingredient-recipe-head h2{font-size:27px}}
