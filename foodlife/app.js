@@ -354,3 +354,22 @@ function showIngredientFallback(raw){
 }
 const originalFind=findIngredient;
 $("searchForm").addEventListener("submit",e=>{setTimeout(()=>{const raw=$("ingredientInput").value;if(raw && !originalFind(raw)){const f=$("ingredientFallback");if(f)showIngredientFallback(raw)}else $("ingredientFallback")?.classList.add("hidden")},0)},true);
+
+function recipesForIngredient(id){
+ return DB_RECIPES.filter(r=>r.ingredients?.some(x=>x.ingredient_id===id));
+}
+function renderIngredientRecipes(id){
+ const host=$("ingredientRecipeResults"),hint=$("ingredientRecipeHint");if(!host)return;host.innerHTML="";
+ const list=recipesForIngredient(id);
+ if(hint)hint.textContent=tr(list.length+" recipes currently connected to this ingredient.", "현재 이 재료와 연결된 레시피 "+list.length+"개");
+ if(!list.length){
+  host.innerHTML='<div class="recipe-no-result">'+tr("No full recipe is connected yet. Try recipe search below while we expand the database.","아직 완성 레시피가 연결되지 않았어요. 데이터베이스를 확장하는 동안 아래 레시피 검색을 이용해보세요.")+'</div>';return
+ }
+ list.slice(0,9).forEach(r=>renderDBRecipeCard(r,host));
+}
+const _renderIngredient=renderIngredient;
+renderIngredient=function(key){
+ _renderIngredient(key);
+ const x=getIngredient(key)||getIngredient(currentKey)||DB_INGREDIENTS.find(z=>z.id===key);
+ if(x)renderIngredientRecipes(x.id);
+};
