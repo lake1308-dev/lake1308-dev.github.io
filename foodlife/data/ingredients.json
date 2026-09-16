@@ -29645,8 +29645,10 @@
     "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
     "current_catalog": 1003,
-    "next_priority": "Build 1,000-item catalog by high-frequency everyday ingredients, cuts, seafood, vegetables, fruits, grains, dairy, sauces and spices; attach official nutrient records separately.",
-    "catalog_target_status": "reached"
+    "next_priority": "Replace placeholder rows with curated foods, resolve duplicate-name candidates, then map official nutrient records.",
+    "catalog_target_status": "reached",
+    "verified_catalog_count": 853,
+    "placeholder_count": 150
   },
   "ingestion_plan": {
     "strategy": "official bulk/API first, manual verification for ambiguous foods",
@@ -29699,5 +29701,22 @@
       "verified_on": "YYYY-MM-DD"
     }
   },
-  "nutrition_records": []
+  "nutrition_records": [],
+  "quality_control": {
+    "audited_on": "2026-09-17",
+    "catalog_rows": 1003,
+    "curated_rows": 853,
+    "placeholder_rows": 150,
+    "exact_name_duplicate_candidates": 276,
+    "production_rules": [
+      "Never expose placeholder_pending_curation rows in search or suggestions.",
+      "Do not invent nutrient values when an official source match is absent.",
+      "Keep preparation-specific foods as separate nutrient records.",
+      "Resolve duplicate names by canonical ingredient id and aliases before nutrient mapping."
+    ],
+    "nutrient_source_priority": [
+      "K-FIND / MFDS official food nutrient data",
+      "USDA FoodData Central for global gaps"
+    ]
+  }
 }
