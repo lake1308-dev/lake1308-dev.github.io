@@ -82,7 +82,7 @@ async function loadRecipeDB(){
 async function loadIngredientDB(){
  try{
   const res=await fetch("data/ingredients.json?v=1.0.0",{cache:"no-store"});
-  const data=await res.json(); DB_INGREDIENTS=data.ingredients||[]; rebuildIngredientIndex();
+  const data=await res.json(); DB_INGREDIENTS=(data.ingredients||[]).filter(x=>x.status!=="placeholder_pending_curation"); rebuildIngredientIndex();
   const c=$("coverageCount"); if(c)c.textContent=DB_INGREDIENTS.length;
  }catch(err){console.warn("Ingredient DB unavailable; using prototype fallback.",err)}
 }
