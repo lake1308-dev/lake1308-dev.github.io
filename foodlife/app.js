@@ -245,6 +245,31 @@ function renderDBRecipeCard(r,host){
  c.innerHTML='<span class="country">'+meta+'</span><h3>'+(lang==="ko"?r.names.ko:r.names.en)+'</h3><p>'+r.ingredients.slice(0,5).map(x=>dbIngredientName(x.ingredient_id)).join(" · ")+'</p><span class="open">'+tr("View editable recipe →","레시피·재료 보기 →")+'</span>';
  c.onclick=()=>renderDBRecipe(r);host.appendChild(c);
 }
+function calculateDBRecipeNutrition(r){
+ const totals={kcal:0,protein_g:0,carbs_g:0,fat_g:0,sat_fat_g:0,sugars_g:0,sodium_mg:0,cholesterol_mg:0};
+ let verified=0,missing=[];
+ r.ingredients.forEach((line,i)=>{
+  const input=document.querySelector('.recipe-amount[data-i="'+i+'"]');
+  const amount=input?Math.max(0,Number(input.value)||0):line.amount;
+  if(amount===0)return;
+  const ing=getIngredient(line.ingredient_id), n=ing?.nutrition_per_100g;
+  if(!ing || ing.verification_status!=="verified" || !n || n.kcal==null){missing.push(dbIngredientName(line.ingredient_id));return}
+  verified++; const f=amount/100;
+  Object.keys(totals).forEach(k=>{if(n[k]!=null)totals[k]+=n[k]*f});
+ });
+ return {totals,verified,missing,complete:missing.length===0};
+}
+function updateDBRecipeNutrition(){
+ const r=currentDish;if(!r||!r.ingredients)return;
+ const out=calculateDBRecipeNutrition(r), servings=Math.max(1,Number(r.servings)||1), t=out.totals;
+ const box=document.getElementById("recipeNutritionLive");if(!box)return;
+ const fmt=(v,u)=>Math.round(v*10)/10+u;
+ box.innerHTML='<strong>'+tr("Calculated nutrition","계산된 영양정보")+'</strong>'+
+ '<div>'+tr("Whole recipe","전체 레시피")+': '+(out.verified?Math.round(t.kcal)+" kcal":"—")+'</div>'+
+ '<div>'+tr("Per serving","1인분")+': '+(out.verified?Math.round(t.kcal/servings)+" kcal":"—")+'</div>'+
+ '<div>'+tr("Protein","단백질")+': '+(out.verified?fmt(t.protein_g/servings,"g"):"—")+' · '+tr("Carbs","탄수화물")+': '+(out.verified?fmt(t.carbs_g/servings,"g"):"—")+' · '+tr("Fat","지방")+': '+(out.verified?fmt(t.fat_g/servings,"g"):"—")+'</div>'+
+ (out.complete?'<small>'+tr("All included ingredients use verified nutrition data.","포함된 모든 재료가 검증된 영양정보를 사용합니다.")+'</small>':'<small>'+tr("Partial only. Missing verified data: ","일부 계산값입니다. 영양정보 검증 전 재료: ")+out.missing.join(", ")+'</small>');
+}
 function renderDBRecipe(r){
  currentDish=r;$("recipe").classList.remove("hidden");
  $("recipeName").textContent=lang==="ko"?r.names.ko:r.names.en;
@@ -254,7 +279,11 @@ function renderDBRecipe(r){
  let note=document.getElementById("recipeNutritionNotice");
  if(!note){note=document.createElement("p");note.id="recipeNutritionNotice";note.className="data-note";$("recipeMeta").after(note)}
  note.textContent=tr("Estimated nutrition will recalculate from verified ingredient data. Ingredients without verified nutrition are not guessed.","검증된 재료 영양정보를 기준으로 재계산합니다. 아직 검증되지 않은 재료의 수치는 임의로 추정하지 않습니다.");
- document.querySelectorAll(".recipe-remove").forEach(b=>b.onclick=()=>{const li=b.closest("li");li.querySelector(".recipe-amount").value=0;li.style.opacity=".45"});
+ let live=document.getElementById("recipeNutritionLive");
+ if(!live){live=document.createElement("div");live.id="recipeNutritionLive";live.className="nutrition-card";note.after(live)}
+ document.querySelectorAll(".recipe-amount").forEach(inp=>inp.addEventListener("input",updateDBRecipeNutrition));
+ document.querySelectorAll(".recipe-remove").forEach(b=>b.onclick=()=>{const li=b.closest("li");li.querySelector(".recipe-amount").value=0;li.style.opacity=".45";updateDBRecipeNutrition()});
+ updateDBRecipeNutrition();
  $("recipe").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function recipeSearch(q){
