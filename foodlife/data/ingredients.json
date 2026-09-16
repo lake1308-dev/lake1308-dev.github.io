@@ -12118,6 +12118,2395 @@
       },
       "allergens": [],
       "sources": []
+    },
+    {
+      "id": "rice_noodle_dry",
+      "names": {
+        "ko": "쌀국수면",
+        "en": "Rice noodles"
+      },
+      "aliases": {
+        "ko": [
+          "쌀국수면"
+        ],
+        "en": [
+          "rice noodles"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "udon_noodle",
+      "names": {
+        "ko": "우동면",
+        "en": "Udon noodles"
+      },
+      "aliases": {
+        "ko": [
+          "우동면"
+        ],
+        "en": [
+          "udon noodles"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "soba_noodle",
+      "names": {
+        "ko": "소바면",
+        "en": "Soba noodles"
+      },
+      "aliases": {
+        "ko": [
+          "소바면"
+        ],
+        "en": [
+          "soba noodles"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "rice_paper",
+      "names": {
+        "ko": "라이스페이퍼",
+        "en": "Rice paper"
+      },
+      "aliases": {
+        "ko": [
+          "라이스페이퍼"
+        ],
+        "en": [
+          "rice paper"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "nori_sheet",
+      "names": {
+        "ko": "김밥김",
+        "en": "Nori sheet"
+      },
+      "aliases": {
+        "ko": [
+          "김밥김"
+        ],
+        "en": [
+          "nori sheet"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "kimchi_cabbage",
+      "names": {
+        "ko": "배추김치",
+        "en": "Napa cabbage kimchi"
+      },
+      "aliases": {
+        "ko": [
+          "배추김치"
+        ],
+        "en": [
+          "napa cabbage kimchi"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "kimchi_radish",
+      "names": {
+        "ko": "깍두기",
+        "en": "Radish kimchi"
+      },
+      "aliases": {
+        "ko": [
+          "깍두기"
+        ],
+        "en": [
+          "radish kimchi"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "shiitake_raw",
+      "names": {
+        "ko": "표고버섯",
+        "en": "Shiitake mushroom"
+      },
+      "aliases": {
+        "ko": [
+          "표고버섯"
+        ],
+        "en": [
+          "shiitake mushroom"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "enoki_raw",
+      "names": {
+        "ko": "팽이버섯",
+        "en": "Enoki mushroom"
+      },
+      "aliases": {
+        "ko": [
+          "팽이버섯"
+        ],
+        "en": [
+          "enoki mushroom"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "oyster_mushroom_raw",
+      "names": {
+        "ko": "느타리버섯",
+        "en": "Oyster mushroom"
+      },
+      "aliases": {
+        "ko": [
+          "느타리버섯"
+        ],
+        "en": [
+          "oyster mushroom"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "king_oyster_mushroom_raw",
+      "names": {
+        "ko": "새송이버섯",
+        "en": "King oyster mushroom"
+      },
+      "aliases": {
+        "ko": [
+          "새송이버섯"
+        ],
+        "en": [
+          "king oyster mushroom"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "wood_ear_mushroom",
+      "names": {
+        "ko": "목이버섯",
+        "en": "Wood ear mushroom"
+      },
+      "aliases": {
+        "ko": [
+          "목이버섯"
+        ],
+        "en": [
+          "wood ear mushroom"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "galangal",
+      "names": {
+        "ko": "갈랑갈",
+        "en": "Galangal"
+      },
+      "aliases": {
+        "ko": [
+          "갈랑갈"
+        ],
+        "en": [
+          "galangal"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "kaffir_lime_leaf",
+      "names": {
+        "ko": "카피르라임잎",
+        "en": "Makrut lime leaf"
+      },
+      "aliases": {
+        "ko": [
+          "카피르라임잎"
+        ],
+        "en": [
+          "makrut lime leaf"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "coconut_cream",
+      "names": {
+        "ko": "코코넛크림",
+        "en": "Coconut cream"
+      },
+      "aliases": {
+        "ko": [
+          "코코넛크림"
+        ],
+        "en": [
+          "coconut cream"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "tamarind",
+      "names": {
+        "ko": "타마린드",
+        "en": "Tamarind"
+      },
+      "aliases": {
+        "ko": [
+          "타마린드"
+        ],
+        "en": [
+          "tamarind"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "rice_cake_tteokbokki",
+      "names": {
+        "ko": "떡볶이떡",
+        "en": "Tteokbokki rice cake"
+      },
+      "aliases": {
+        "ko": [
+          "떡볶이떡"
+        ],
+        "en": [
+          "tteokbokki rice cake"
+        ]
+      },
+      "category": "global_asian",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "spaghetti_dry",
+      "names": {
+        "ko": "스파게티면",
+        "en": "Spaghetti"
+      },
+      "aliases": {
+        "ko": [
+          "스파게티면"
+        ],
+        "en": [
+          "spaghetti"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "penne_dry",
+      "names": {
+        "ko": "펜네",
+        "en": "Penne"
+      },
+      "aliases": {
+        "ko": [
+          "펜네"
+        ],
+        "en": [
+          "penne"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "fettuccine_dry",
+      "names": {
+        "ko": "페투치네",
+        "en": "Fettuccine"
+      },
+      "aliases": {
+        "ko": [
+          "페투치네"
+        ],
+        "en": [
+          "fettuccine"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "lasagna_sheet",
+      "names": {
+        "ko": "라자냐면",
+        "en": "Lasagna sheets"
+      },
+      "aliases": {
+        "ko": [
+          "라자냐면"
+        ],
+        "en": [
+          "lasagna sheets"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "couscous_dry",
+      "names": {
+        "ko": "쿠스쿠스",
+        "en": "Couscous"
+      },
+      "aliases": {
+        "ko": [
+          "쿠스쿠스"
+        ],
+        "en": [
+          "couscous"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "bulgur_dry",
+      "names": {
+        "ko": "불구르",
+        "en": "Bulgur"
+      },
+      "aliases": {
+        "ko": [
+          "불구르"
+        ],
+        "en": [
+          "bulgur"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "polenta_cornmeal",
+      "names": {
+        "ko": "폴렌타",
+        "en": "Polenta"
+      },
+      "aliases": {
+        "ko": [
+          "폴렌타"
+        ],
+        "en": [
+          "polenta"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "baguette",
+      "names": {
+        "ko": "바게트",
+        "en": "Baguette"
+      },
+      "aliases": {
+        "ko": [
+          "바게트"
+        ],
+        "en": [
+          "baguette"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "sourdough_bread",
+      "names": {
+        "ko": "사워도우",
+        "en": "Sourdough bread"
+      },
+      "aliases": {
+        "ko": [
+          "사워도우"
+        ],
+        "en": [
+          "sourdough bread"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "pita_bread",
+      "names": {
+        "ko": "피타빵",
+        "en": "Pita bread"
+      },
+      "aliases": {
+        "ko": [
+          "피타빵"
+        ],
+        "en": [
+          "pita bread"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "prosciutto",
+      "names": {
+        "ko": "프로슈토",
+        "en": "Prosciutto"
+      },
+      "aliases": {
+        "ko": [
+          "프로슈토"
+        ],
+        "en": [
+          "prosciutto"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "salami",
+      "names": {
+        "ko": "살라미",
+        "en": "Salami"
+      },
+      "aliases": {
+        "ko": [
+          "살라미"
+        ],
+        "en": [
+          "salami"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "sausage_pork",
+      "names": {
+        "ko": "돼지고기 소시지",
+        "en": "Pork sausage"
+      },
+      "aliases": {
+        "ko": [
+          "돼지고기 소시지"
+        ],
+        "en": [
+          "pork sausage"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "ground_beef_raw",
+      "names": {
+        "ko": "다진 소고기",
+        "en": "Ground beef"
+      },
+      "aliases": {
+        "ko": [
+          "다진 소고기"
+        ],
+        "en": [
+          "ground beef"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "ground_pork_raw",
+      "names": {
+        "ko": "다진 돼지고기",
+        "en": "Ground pork"
+      },
+      "aliases": {
+        "ko": [
+          "다진 돼지고기"
+        ],
+        "en": [
+          "ground pork"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "turkey_breast_raw",
+      "names": {
+        "ko": "칠면조 가슴살",
+        "en": "Turkey breast"
+      },
+      "aliases": {
+        "ko": [
+          "칠면조 가슴살"
+        ],
+        "en": [
+          "turkey breast"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "arugula_raw",
+      "names": {
+        "ko": "루꼴라",
+        "en": "Arugula"
+      },
+      "aliases": {
+        "ko": [
+          "루꼴라"
+        ],
+        "en": [
+          "arugula"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "kale_raw",
+      "names": {
+        "ko": "케일",
+        "en": "Kale"
+      },
+      "aliases": {
+        "ko": [
+          "케일"
+        ],
+        "en": [
+          "kale"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "artichoke_raw",
+      "names": {
+        "ko": "아티초크",
+        "en": "Artichoke"
+      },
+      "aliases": {
+        "ko": [
+          "아티초크"
+        ],
+        "en": [
+          "artichoke"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "leek_raw",
+      "names": {
+        "ko": "리크",
+        "en": "Leek"
+      },
+      "aliases": {
+        "ko": [
+          "리크"
+        ],
+        "en": [
+          "leek"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "fennel_raw",
+      "names": {
+        "ko": "펜넬",
+        "en": "Fennel"
+      },
+      "aliases": {
+        "ko": [
+          "펜넬"
+        ],
+        "en": [
+          "fennel"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "brussels_sprouts_raw",
+      "names": {
+        "ko": "방울양배추",
+        "en": "Brussels sprouts"
+      },
+      "aliases": {
+        "ko": [
+          "방울양배추"
+        ],
+        "en": [
+          "brussels sprouts"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "capers",
+      "names": {
+        "ko": "케이퍼",
+        "en": "Capers"
+      },
+      "aliases": {
+        "ko": [
+          "케이퍼"
+        ],
+        "en": [
+          "capers"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "olive_green",
+      "names": {
+        "ko": "그린 올리브",
+        "en": "Green olives"
+      },
+      "aliases": {
+        "ko": [
+          "그린 올리브"
+        ],
+        "en": [
+          "green olives"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "sun_dried_tomato",
+      "names": {
+        "ko": "선드라이 토마토",
+        "en": "Sun-dried tomato"
+      },
+      "aliases": {
+        "ko": [
+          "선드라이 토마토"
+        ],
+        "en": [
+          "sun-dried tomato"
+        ]
+      },
+      "category": "western",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "basmati_rice_raw",
+      "names": {
+        "ko": "바스마티쌀",
+        "en": "Basmati rice"
+      },
+      "aliases": {
+        "ko": [
+          "바스마티쌀"
+        ],
+        "en": [
+          "basmati rice"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "jasmine_rice_raw",
+      "names": {
+        "ko": "재스민쌀",
+        "en": "Jasmine rice"
+      },
+      "aliases": {
+        "ko": [
+          "재스민쌀"
+        ],
+        "en": [
+          "jasmine rice"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "chana_dal",
+      "names": {
+        "ko": "차나달",
+        "en": "Chana dal"
+      },
+      "aliases": {
+        "ko": [
+          "차나달"
+        ],
+        "en": [
+          "chana dal"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "urad_dal",
+      "names": {
+        "ko": "우라드달",
+        "en": "Urad dal"
+      },
+      "aliases": {
+        "ko": [
+          "우라드달"
+        ],
+        "en": [
+          "urad dal"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "toor_dal",
+      "names": {
+        "ko": "투르달",
+        "en": "Toor dal"
+      },
+      "aliases": {
+        "ko": [
+          "투르달"
+        ],
+        "en": [
+          "toor dal"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "garam_masala",
+      "names": {
+        "ko": "가람마살라",
+        "en": "Garam masala"
+      },
+      "aliases": {
+        "ko": [
+          "가람마살라"
+        ],
+        "en": [
+          "garam masala"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "coriander_leaf",
+      "names": {
+        "ko": "고수",
+        "en": "Cilantro"
+      },
+      "aliases": {
+        "ko": [
+          "고수"
+        ],
+        "en": [
+          "cilantro"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "fenugreek_seed",
+      "names": {
+        "ko": "호로파씨",
+        "en": "Fenugreek seed"
+      },
+      "aliases": {
+        "ko": [
+          "호로파씨"
+        ],
+        "en": [
+          "fenugreek seed"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "tahini",
+      "names": {
+        "ko": "타히니",
+        "en": "Tahini"
+      },
+      "aliases": {
+        "ko": [
+          "타히니"
+        ],
+        "en": [
+          "tahini"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "sesame"
+      ],
+      "sources": []
+    },
+    {
+      "id": "hummus",
+      "names": {
+        "ko": "후무스",
+        "en": "Hummus"
+      },
+      "aliases": {
+        "ko": [
+          "후무스"
+        ],
+        "en": [
+          "hummus"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "sumac",
+      "names": {
+        "ko": "수마크",
+        "en": "Sumac"
+      },
+      "aliases": {
+        "ko": [
+          "수마크"
+        ],
+        "en": [
+          "sumac"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "zaatar",
+      "names": {
+        "ko": "자타르",
+        "en": "Za'atar"
+      },
+      "aliases": {
+        "ko": [
+          "자타르"
+        ],
+        "en": [
+          "za'atar"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "date_raw",
+      "names": {
+        "ko": "대추야자",
+        "en": "Date"
+      },
+      "aliases": {
+        "ko": [
+          "대추야자"
+        ],
+        "en": [
+          "date"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "fig_raw",
+      "names": {
+        "ko": "무화과",
+        "en": "Fig"
+      },
+      "aliases": {
+        "ko": [
+          "무화과"
+        ],
+        "en": [
+          "fig"
+        ]
+      },
+      "category": "indian_middle_eastern",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "black_bean_dry",
+      "names": {
+        "ko": "검정콩(블랙빈)",
+        "en": "Black bean"
+      },
+      "aliases": {
+        "ko": [
+          "검정콩(블랙빈)"
+        ],
+        "en": [
+          "black bean"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pinto_bean_dry",
+      "names": {
+        "ko": "핀토빈",
+        "en": "Pinto bean"
+      },
+      "aliases": {
+        "ko": [
+          "핀토빈"
+        ],
+        "en": [
+          "pinto bean"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "avocado_hass",
+      "names": {
+        "ko": "하스 아보카도",
+        "en": "Hass avocado"
+      },
+      "aliases": {
+        "ko": [
+          "하스 아보카도"
+        ],
+        "en": [
+          "hass avocado"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "jalapeno_raw",
+      "names": {
+        "ko": "할라피뇨",
+        "en": "Jalapeño"
+      },
+      "aliases": {
+        "ko": [
+          "할라피뇨"
+        ],
+        "en": [
+          "jalapeño"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "poblano_raw",
+      "names": {
+        "ko": "포블라노고추",
+        "en": "Poblano pepper"
+      },
+      "aliases": {
+        "ko": [
+          "포블라노고추"
+        ],
+        "en": [
+          "poblano pepper"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "chipotle",
+      "names": {
+        "ko": "치폴레",
+        "en": "Chipotle"
+      },
+      "aliases": {
+        "ko": [
+          "치폴레"
+        ],
+        "en": [
+          "chipotle"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "tomatillo_raw",
+      "names": {
+        "ko": "토마틸로",
+        "en": "Tomatillo"
+      },
+      "aliases": {
+        "ko": [
+          "토마틸로"
+        ],
+        "en": [
+          "tomatillo"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "plantain_raw",
+      "names": {
+        "ko": "플랜틴",
+        "en": "Plantain"
+      },
+      "aliases": {
+        "ko": [
+          "플랜틴"
+        ],
+        "en": [
+          "plantain"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "cassava_raw",
+      "names": {
+        "ko": "카사바",
+        "en": "Cassava"
+      },
+      "aliases": {
+        "ko": [
+          "카사바"
+        ],
+        "en": [
+          "cassava"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "masa_harina",
+      "names": {
+        "ko": "마사 아리나",
+        "en": "Masa harina"
+      },
+      "aliases": {
+        "ko": [
+          "마사 아리나"
+        ],
+        "en": [
+          "masa harina"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "queso_fresco",
+      "names": {
+        "ko": "케소 프레스코",
+        "en": "Queso fresco"
+      },
+      "aliases": {
+        "ko": [
+          "케소 프레스코"
+        ],
+        "en": [
+          "queso fresco"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "milk"
+      ],
+      "sources": []
+    },
+    {
+      "id": "cotija_cheese",
+      "names": {
+        "ko": "코티하 치즈",
+        "en": "Cotija cheese"
+      },
+      "aliases": {
+        "ko": [
+          "코티하 치즈"
+        ],
+        "en": [
+          "cotija cheese"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "milk"
+      ],
+      "sources": []
+    },
+    {
+      "id": "lime_juice",
+      "names": {
+        "ko": "라임주스",
+        "en": "Lime juice"
+      },
+      "aliases": {
+        "ko": [
+          "라임주스"
+        ],
+        "en": [
+          "lime juice"
+        ]
+      },
+      "category": "latin_american",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "bread_flour",
+      "names": {
+        "ko": "강력분",
+        "en": "Bread flour"
+      },
+      "aliases": {
+        "ko": [
+          "강력분"
+        ],
+        "en": [
+          "bread flour"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "cake_flour",
+      "names": {
+        "ko": "박력분",
+        "en": "Cake flour"
+      },
+      "aliases": {
+        "ko": [
+          "박력분"
+        ],
+        "en": [
+          "cake flour"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "whole_wheat_flour",
+      "names": {
+        "ko": "통밀가루",
+        "en": "Whole wheat flour"
+      },
+      "aliases": {
+        "ko": [
+          "통밀가루"
+        ],
+        "en": [
+          "whole wheat flour"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
+    },
+    {
+      "id": "cornstarch",
+      "names": {
+        "ko": "옥수수전분",
+        "en": "Cornstarch"
+      },
+      "aliases": {
+        "ko": [
+          "옥수수전분"
+        ],
+        "en": [
+          "cornstarch"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "potato_starch",
+      "names": {
+        "ko": "감자전분",
+        "en": "Potato starch"
+      },
+      "aliases": {
+        "ko": [
+          "감자전분"
+        ],
+        "en": [
+          "potato starch"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "baking_powder",
+      "names": {
+        "ko": "베이킹파우더",
+        "en": "Baking powder"
+      },
+      "aliases": {
+        "ko": [
+          "베이킹파우더"
+        ],
+        "en": [
+          "baking powder"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "baking_soda",
+      "names": {
+        "ko": "베이킹소다",
+        "en": "Baking soda"
+      },
+      "aliases": {
+        "ko": [
+          "베이킹소다"
+        ],
+        "en": [
+          "baking soda"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "milk_chocolate",
+      "names": {
+        "ko": "밀크초콜릿",
+        "en": "Milk chocolate"
+      },
+      "aliases": {
+        "ko": [
+          "밀크초콜릿"
+        ],
+        "en": [
+          "milk chocolate"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "milk"
+      ],
+      "sources": []
+    },
+    {
+      "id": "vanilla_extract",
+      "names": {
+        "ko": "바닐라익스트랙",
+        "en": "Vanilla extract"
+      },
+      "aliases": {
+        "ko": [
+          "바닐라익스트랙"
+        ],
+        "en": [
+          "vanilla extract"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "powdered_sugar",
+      "names": {
+        "ko": "슈가파우더",
+        "en": "Powdered sugar"
+      },
+      "aliases": {
+        "ko": [
+          "슈가파우더"
+        ],
+        "en": [
+          "powdered sugar"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "molasses",
+      "names": {
+        "ko": "당밀",
+        "en": "Molasses"
+      },
+      "aliases": {
+        "ko": [
+          "당밀"
+        ],
+        "en": [
+          "molasses"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "yeast_dry",
+      "names": {
+        "ko": "드라이이스트",
+        "en": "Dry yeast"
+      },
+      "aliases": {
+        "ko": [
+          "드라이이스트"
+        ],
+        "en": [
+          "dry yeast"
+        ]
+      },
+      "category": "baking",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [
+        "wheat"
+      ],
+      "sources": []
     }
   ],
   "allergen_taxonomy": [
@@ -12280,13 +14669,13 @@
     }
   },
   "progress": {
-    "ingredient_records": 396,
+    "ingredient_records": 477,
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Catalog expansion batch 2 added 67 high-frequency seafood, vegetables, fruits, grains, legumes, dairy, sauces and spices. Nutrient values remain source-gated.",
+    "note": "Catalog expansion batch 3 added 81 Asian, Western, Indian/Middle Eastern, Latin American and baking staples. Nutrition values remain source-gated.",
     "phase2_target": 1000,
-    "current_catalog": 396,
+    "current_catalog": 477,
     "next_priority": "Build 1,000-item catalog by high-frequency everyday ingredients, cuts, seafood, vegetables, fruits, grains, dairy, sauces and spices; attach official nutrient records separately."
   },
   "ingestion_plan": {
