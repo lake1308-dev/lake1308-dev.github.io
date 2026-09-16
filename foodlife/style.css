@@ -4,3 +4,8 @@
 .ingredient-suggestion{display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;border-bottom:1px solid #edf0eb;background:#fff;padding:13px 16px;cursor:pointer;text-align:left}
 .ingredient-suggestion:hover{background:#f4f8f0}.ingredient-suggestion strong{font-size:15px}.ingredient-suggestion small{color:#879083}
 @media(max-width:760px){.ingredient-suggestions.show{grid-template-columns:1fr}}
+
+.ingredient-fallback{max-width:760px;margin:18px auto 0;padding:22px;background:#fff8e8;border:1px solid #ead9a8;border-radius:18px;text-align:left}
+.ingredient-fallback h3{margin:0 0 7px;font-size:18px}.ingredient-fallback p{margin:0 0 15px;color:#6f705f;line-height:1.55}
+.fallback-chips{display:flex;flex-wrap:wrap;gap:8px}.fallback-chips button,.fallback-retry{border:1px solid #d8c993;background:#fff;border-radius:999px;padding:9px 13px;cursor:pointer;font-weight:750}
+.fallback-chips button:hover{background:#315c2c;color:#fff;border-color:#315c2c}.fallback-retry{margin-top:14px;background:transparent}
