@@ -8824,7 +8824,10 @@
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Demand-led expansion: Korean chili variants and core seasonings added. Nutrition values remain pending official source verification."
+    "note": "Demand-led expansion: Korean chili variants and core seasonings added. Nutrition values remain pending official source verification.",
+    "phase2_target": 1000,
+    "current_catalog": 279,
+    "next_priority": "Build 1,000-item catalog by high-frequency everyday ingredients, cuts, seafood, vegetables, fruits, grains, dairy, sauces and spices; attach official nutrient records separately."
   },
   "ingestion_plan": {
     "strategy": "official bulk/API first, manual verification for ambiguous foods",
@@ -8839,6 +8842,12 @@
         "saturated_fat": "A007",
         "cholesterol": "A008",
         "protein": "A009"
+      },
+      "verified_capabilities": {
+        "synonyms": true,
+        "bulk_excel_download": true,
+        "open_api": true,
+        "standardized_24_nutrient_integrated_db": true
       }
     },
     "usda_fdc": {
@@ -8846,8 +8855,30 @@
       "preferred_data_types": [
         "Foundation Foods",
         "SR Legacy"
-      ]
+      ],
+      "verified_capabilities": {
+        "foundation_foods": true,
+        "branded_foods": true,
+        "downloadable_data": true,
+        "update_notes": "Foundation Foods twice annually; Branded Foods monthly"
+      }
     },
-    "next_step": "Create source-record mapping layer so one ingredient can point to raw/cooked and country-specific nutrient records without overwriting values."
-  }
+    "next_step": "Populate nutrition_records from official K-FIND first for Korean/common foods, then USDA FoodData Central for global coverage; preserve preparation-specific records."
+  },
+  "schema_version": "1.2",
+  "nutrition_record_schema": {
+    "description": "Source-mapped nutrient records. Never overwrite one preparation/country record with another.",
+    "fields": {
+      "record_id": "stable local id",
+      "ingredient_id": "canonical ingredient id",
+      "preparation": "raw|boiled|grilled|fried|steamed|other",
+      "country": "ISO-like country label",
+      "basis_g": 100,
+      "nutrients": "energy_kcal, protein_g, carbohydrate_g, fat_g, sugars_g, sodium_mg, saturated_fat_g, cholesterol_mg",
+      "source_key": "K_FIND|USDA_FDC",
+      "source_record_id": "upstream identifier",
+      "verified_on": "YYYY-MM-DD"
+    }
+  },
+  "nutrition_records": []
 }
