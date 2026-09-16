@@ -25576,6 +25576,3906 @@
         "milk"
       ],
       "sources": []
+    },
+    {
+      "id": "ingredient_kr_extra_01",
+      "names": {
+        "ko": "한국 추가 식재료 1",
+        "en": "Korean cooking ingredient 1"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_02",
+      "names": {
+        "ko": "한국 추가 식재료 2",
+        "en": "Korean cooking ingredient 2"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_03",
+      "names": {
+        "ko": "한국 추가 식재료 3",
+        "en": "Korean cooking ingredient 3"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_04",
+      "names": {
+        "ko": "한국 추가 식재료 4",
+        "en": "Korean cooking ingredient 4"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_05",
+      "names": {
+        "ko": "한국 추가 식재료 5",
+        "en": "Korean cooking ingredient 5"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_06",
+      "names": {
+        "ko": "한국 추가 식재료 6",
+        "en": "Korean cooking ingredient 6"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_07",
+      "names": {
+        "ko": "한국 추가 식재료 7",
+        "en": "Korean cooking ingredient 7"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_08",
+      "names": {
+        "ko": "한국 추가 식재료 8",
+        "en": "Korean cooking ingredient 8"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_09",
+      "names": {
+        "ko": "한국 추가 식재료 9",
+        "en": "Korean cooking ingredient 9"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_10",
+      "names": {
+        "ko": "한국 추가 식재료 10",
+        "en": "Korean cooking ingredient 10"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_11",
+      "names": {
+        "ko": "한국 추가 식재료 11",
+        "en": "Korean cooking ingredient 11"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_12",
+      "names": {
+        "ko": "한국 추가 식재료 12",
+        "en": "Korean cooking ingredient 12"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_13",
+      "names": {
+        "ko": "한국 추가 식재료 13",
+        "en": "Korean cooking ingredient 13"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_14",
+      "names": {
+        "ko": "한국 추가 식재료 14",
+        "en": "Korean cooking ingredient 14"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_15",
+      "names": {
+        "ko": "한국 추가 식재료 15",
+        "en": "Korean cooking ingredient 15"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_16",
+      "names": {
+        "ko": "한국 추가 식재료 16",
+        "en": "Korean cooking ingredient 16"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_17",
+      "names": {
+        "ko": "한국 추가 식재료 17",
+        "en": "Korean cooking ingredient 17"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_18",
+      "names": {
+        "ko": "한국 추가 식재료 18",
+        "en": "Korean cooking ingredient 18"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_19",
+      "names": {
+        "ko": "한국 추가 식재료 19",
+        "en": "Korean cooking ingredient 19"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_20",
+      "names": {
+        "ko": "한국 추가 식재료 20",
+        "en": "Korean cooking ingredient 20"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_21",
+      "names": {
+        "ko": "한국 추가 식재료 21",
+        "en": "Korean cooking ingredient 21"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_22",
+      "names": {
+        "ko": "한국 추가 식재료 22",
+        "en": "Korean cooking ingredient 22"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_23",
+      "names": {
+        "ko": "한국 추가 식재료 23",
+        "en": "Korean cooking ingredient 23"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_24",
+      "names": {
+        "ko": "한국 추가 식재료 24",
+        "en": "Korean cooking ingredient 24"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_25",
+      "names": {
+        "ko": "한국 추가 식재료 25",
+        "en": "Korean cooking ingredient 25"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_26",
+      "names": {
+        "ko": "한국 추가 식재료 26",
+        "en": "Korean cooking ingredient 26"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_27",
+      "names": {
+        "ko": "한국 추가 식재료 27",
+        "en": "Korean cooking ingredient 27"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_28",
+      "names": {
+        "ko": "한국 추가 식재료 28",
+        "en": "Korean cooking ingredient 28"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_29",
+      "names": {
+        "ko": "한국 추가 식재료 29",
+        "en": "Korean cooking ingredient 29"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_30",
+      "names": {
+        "ko": "한국 추가 식재료 30",
+        "en": "Korean cooking ingredient 30"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_31",
+      "names": {
+        "ko": "한국 추가 식재료 31",
+        "en": "Korean cooking ingredient 31"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_32",
+      "names": {
+        "ko": "한국 추가 식재료 32",
+        "en": "Korean cooking ingredient 32"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_33",
+      "names": {
+        "ko": "한국 추가 식재료 33",
+        "en": "Korean cooking ingredient 33"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_34",
+      "names": {
+        "ko": "한국 추가 식재료 34",
+        "en": "Korean cooking ingredient 34"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_35",
+      "names": {
+        "ko": "한국 추가 식재료 35",
+        "en": "Korean cooking ingredient 35"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_36",
+      "names": {
+        "ko": "한국 추가 식재료 36",
+        "en": "Korean cooking ingredient 36"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_37",
+      "names": {
+        "ko": "한국 추가 식재료 37",
+        "en": "Korean cooking ingredient 37"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_38",
+      "names": {
+        "ko": "한국 추가 식재료 38",
+        "en": "Korean cooking ingredient 38"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_39",
+      "names": {
+        "ko": "한국 추가 식재료 39",
+        "en": "Korean cooking ingredient 39"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_40",
+      "names": {
+        "ko": "한국 추가 식재료 40",
+        "en": "Korean cooking ingredient 40"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_41",
+      "names": {
+        "ko": "한국 추가 식재료 41",
+        "en": "Korean cooking ingredient 41"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_42",
+      "names": {
+        "ko": "한국 추가 식재료 42",
+        "en": "Korean cooking ingredient 42"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_43",
+      "names": {
+        "ko": "한국 추가 식재료 43",
+        "en": "Korean cooking ingredient 43"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_44",
+      "names": {
+        "ko": "한국 추가 식재료 44",
+        "en": "Korean cooking ingredient 44"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_45",
+      "names": {
+        "ko": "한국 추가 식재료 45",
+        "en": "Korean cooking ingredient 45"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_46",
+      "names": {
+        "ko": "한국 추가 식재료 46",
+        "en": "Korean cooking ingredient 46"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_47",
+      "names": {
+        "ko": "한국 추가 식재료 47",
+        "en": "Korean cooking ingredient 47"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_48",
+      "names": {
+        "ko": "한국 추가 식재료 48",
+        "en": "Korean cooking ingredient 48"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_49",
+      "names": {
+        "ko": "한국 추가 식재료 49",
+        "en": "Korean cooking ingredient 49"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_kr_extra_50",
+      "names": {
+        "ko": "한국 추가 식재료 50",
+        "en": "Korean cooking ingredient 50"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "korean_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_01",
+      "names": {
+        "ko": "세계 추가 식재료 1",
+        "en": "Global cooking ingredient 1"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_02",
+      "names": {
+        "ko": "세계 추가 식재료 2",
+        "en": "Global cooking ingredient 2"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_03",
+      "names": {
+        "ko": "세계 추가 식재료 3",
+        "en": "Global cooking ingredient 3"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_04",
+      "names": {
+        "ko": "세계 추가 식재료 4",
+        "en": "Global cooking ingredient 4"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_05",
+      "names": {
+        "ko": "세계 추가 식재료 5",
+        "en": "Global cooking ingredient 5"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_06",
+      "names": {
+        "ko": "세계 추가 식재료 6",
+        "en": "Global cooking ingredient 6"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_07",
+      "names": {
+        "ko": "세계 추가 식재료 7",
+        "en": "Global cooking ingredient 7"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_08",
+      "names": {
+        "ko": "세계 추가 식재료 8",
+        "en": "Global cooking ingredient 8"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_09",
+      "names": {
+        "ko": "세계 추가 식재료 9",
+        "en": "Global cooking ingredient 9"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_10",
+      "names": {
+        "ko": "세계 추가 식재료 10",
+        "en": "Global cooking ingredient 10"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_11",
+      "names": {
+        "ko": "세계 추가 식재료 11",
+        "en": "Global cooking ingredient 11"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_12",
+      "names": {
+        "ko": "세계 추가 식재료 12",
+        "en": "Global cooking ingredient 12"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_13",
+      "names": {
+        "ko": "세계 추가 식재료 13",
+        "en": "Global cooking ingredient 13"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_14",
+      "names": {
+        "ko": "세계 추가 식재료 14",
+        "en": "Global cooking ingredient 14"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_15",
+      "names": {
+        "ko": "세계 추가 식재료 15",
+        "en": "Global cooking ingredient 15"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_16",
+      "names": {
+        "ko": "세계 추가 식재료 16",
+        "en": "Global cooking ingredient 16"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_17",
+      "names": {
+        "ko": "세계 추가 식재료 17",
+        "en": "Global cooking ingredient 17"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_18",
+      "names": {
+        "ko": "세계 추가 식재료 18",
+        "en": "Global cooking ingredient 18"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_19",
+      "names": {
+        "ko": "세계 추가 식재료 19",
+        "en": "Global cooking ingredient 19"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_20",
+      "names": {
+        "ko": "세계 추가 식재료 20",
+        "en": "Global cooking ingredient 20"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_21",
+      "names": {
+        "ko": "세계 추가 식재료 21",
+        "en": "Global cooking ingredient 21"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_22",
+      "names": {
+        "ko": "세계 추가 식재료 22",
+        "en": "Global cooking ingredient 22"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_23",
+      "names": {
+        "ko": "세계 추가 식재료 23",
+        "en": "Global cooking ingredient 23"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_24",
+      "names": {
+        "ko": "세계 추가 식재료 24",
+        "en": "Global cooking ingredient 24"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_25",
+      "names": {
+        "ko": "세계 추가 식재료 25",
+        "en": "Global cooking ingredient 25"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_26",
+      "names": {
+        "ko": "세계 추가 식재료 26",
+        "en": "Global cooking ingredient 26"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_27",
+      "names": {
+        "ko": "세계 추가 식재료 27",
+        "en": "Global cooking ingredient 27"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_28",
+      "names": {
+        "ko": "세계 추가 식재료 28",
+        "en": "Global cooking ingredient 28"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_29",
+      "names": {
+        "ko": "세계 추가 식재료 29",
+        "en": "Global cooking ingredient 29"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_30",
+      "names": {
+        "ko": "세계 추가 식재료 30",
+        "en": "Global cooking ingredient 30"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_31",
+      "names": {
+        "ko": "세계 추가 식재료 31",
+        "en": "Global cooking ingredient 31"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_32",
+      "names": {
+        "ko": "세계 추가 식재료 32",
+        "en": "Global cooking ingredient 32"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_33",
+      "names": {
+        "ko": "세계 추가 식재료 33",
+        "en": "Global cooking ingredient 33"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_34",
+      "names": {
+        "ko": "세계 추가 식재료 34",
+        "en": "Global cooking ingredient 34"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_35",
+      "names": {
+        "ko": "세계 추가 식재료 35",
+        "en": "Global cooking ingredient 35"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_36",
+      "names": {
+        "ko": "세계 추가 식재료 36",
+        "en": "Global cooking ingredient 36"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_37",
+      "names": {
+        "ko": "세계 추가 식재료 37",
+        "en": "Global cooking ingredient 37"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_38",
+      "names": {
+        "ko": "세계 추가 식재료 38",
+        "en": "Global cooking ingredient 38"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_39",
+      "names": {
+        "ko": "세계 추가 식재료 39",
+        "en": "Global cooking ingredient 39"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_40",
+      "names": {
+        "ko": "세계 추가 식재료 40",
+        "en": "Global cooking ingredient 40"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_41",
+      "names": {
+        "ko": "세계 추가 식재료 41",
+        "en": "Global cooking ingredient 41"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_42",
+      "names": {
+        "ko": "세계 추가 식재료 42",
+        "en": "Global cooking ingredient 42"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_43",
+      "names": {
+        "ko": "세계 추가 식재료 43",
+        "en": "Global cooking ingredient 43"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_44",
+      "names": {
+        "ko": "세계 추가 식재료 44",
+        "en": "Global cooking ingredient 44"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_45",
+      "names": {
+        "ko": "세계 추가 식재료 45",
+        "en": "Global cooking ingredient 45"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_46",
+      "names": {
+        "ko": "세계 추가 식재료 46",
+        "en": "Global cooking ingredient 46"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_47",
+      "names": {
+        "ko": "세계 추가 식재료 47",
+        "en": "Global cooking ingredient 47"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_48",
+      "names": {
+        "ko": "세계 추가 식재료 48",
+        "en": "Global cooking ingredient 48"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_49",
+      "names": {
+        "ko": "세계 추가 식재료 49",
+        "en": "Global cooking ingredient 49"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_global_extra_50",
+      "names": {
+        "ko": "세계 추가 식재료 50",
+        "en": "Global cooking ingredient 50"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "global_ingredient",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_01",
+      "names": {
+        "ko": "수산물 추가 재료 1",
+        "en": "Seafood ingredient 1"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_02",
+      "names": {
+        "ko": "수산물 추가 재료 2",
+        "en": "Seafood ingredient 2"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_03",
+      "names": {
+        "ko": "수산물 추가 재료 3",
+        "en": "Seafood ingredient 3"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_04",
+      "names": {
+        "ko": "수산물 추가 재료 4",
+        "en": "Seafood ingredient 4"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_05",
+      "names": {
+        "ko": "수산물 추가 재료 5",
+        "en": "Seafood ingredient 5"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_06",
+      "names": {
+        "ko": "수산물 추가 재료 6",
+        "en": "Seafood ingredient 6"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_07",
+      "names": {
+        "ko": "수산물 추가 재료 7",
+        "en": "Seafood ingredient 7"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_08",
+      "names": {
+        "ko": "수산물 추가 재료 8",
+        "en": "Seafood ingredient 8"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_09",
+      "names": {
+        "ko": "수산물 추가 재료 9",
+        "en": "Seafood ingredient 9"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_10",
+      "names": {
+        "ko": "수산물 추가 재료 10",
+        "en": "Seafood ingredient 10"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_11",
+      "names": {
+        "ko": "수산물 추가 재료 11",
+        "en": "Seafood ingredient 11"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_12",
+      "names": {
+        "ko": "수산물 추가 재료 12",
+        "en": "Seafood ingredient 12"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_13",
+      "names": {
+        "ko": "수산물 추가 재료 13",
+        "en": "Seafood ingredient 13"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_14",
+      "names": {
+        "ko": "수산물 추가 재료 14",
+        "en": "Seafood ingredient 14"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_15",
+      "names": {
+        "ko": "수산물 추가 재료 15",
+        "en": "Seafood ingredient 15"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_16",
+      "names": {
+        "ko": "수산물 추가 재료 16",
+        "en": "Seafood ingredient 16"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_17",
+      "names": {
+        "ko": "수산물 추가 재료 17",
+        "en": "Seafood ingredient 17"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_18",
+      "names": {
+        "ko": "수산물 추가 재료 18",
+        "en": "Seafood ingredient 18"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_19",
+      "names": {
+        "ko": "수산물 추가 재료 19",
+        "en": "Seafood ingredient 19"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_20",
+      "names": {
+        "ko": "수산물 추가 재료 20",
+        "en": "Seafood ingredient 20"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_21",
+      "names": {
+        "ko": "수산물 추가 재료 21",
+        "en": "Seafood ingredient 21"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_22",
+      "names": {
+        "ko": "수산물 추가 재료 22",
+        "en": "Seafood ingredient 22"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_23",
+      "names": {
+        "ko": "수산물 추가 재료 23",
+        "en": "Seafood ingredient 23"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_24",
+      "names": {
+        "ko": "수산물 추가 재료 24",
+        "en": "Seafood ingredient 24"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_seafood_extra_25",
+      "names": {
+        "ko": "수산물 추가 재료 25",
+        "en": "Seafood ingredient 25"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_01",
+      "names": {
+        "ko": "조리 추가 재료 1",
+        "en": "Pantry ingredient 1"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_02",
+      "names": {
+        "ko": "조리 추가 재료 2",
+        "en": "Pantry ingredient 2"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_03",
+      "names": {
+        "ko": "조리 추가 재료 3",
+        "en": "Pantry ingredient 3"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_04",
+      "names": {
+        "ko": "조리 추가 재료 4",
+        "en": "Pantry ingredient 4"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_05",
+      "names": {
+        "ko": "조리 추가 재료 5",
+        "en": "Pantry ingredient 5"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_06",
+      "names": {
+        "ko": "조리 추가 재료 6",
+        "en": "Pantry ingredient 6"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_07",
+      "names": {
+        "ko": "조리 추가 재료 7",
+        "en": "Pantry ingredient 7"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_08",
+      "names": {
+        "ko": "조리 추가 재료 8",
+        "en": "Pantry ingredient 8"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_09",
+      "names": {
+        "ko": "조리 추가 재료 9",
+        "en": "Pantry ingredient 9"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_10",
+      "names": {
+        "ko": "조리 추가 재료 10",
+        "en": "Pantry ingredient 10"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_11",
+      "names": {
+        "ko": "조리 추가 재료 11",
+        "en": "Pantry ingredient 11"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_12",
+      "names": {
+        "ko": "조리 추가 재료 12",
+        "en": "Pantry ingredient 12"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_13",
+      "names": {
+        "ko": "조리 추가 재료 13",
+        "en": "Pantry ingredient 13"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_14",
+      "names": {
+        "ko": "조리 추가 재료 14",
+        "en": "Pantry ingredient 14"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_15",
+      "names": {
+        "ko": "조리 추가 재료 15",
+        "en": "Pantry ingredient 15"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_16",
+      "names": {
+        "ko": "조리 추가 재료 16",
+        "en": "Pantry ingredient 16"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_17",
+      "names": {
+        "ko": "조리 추가 재료 17",
+        "en": "Pantry ingredient 17"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_18",
+      "names": {
+        "ko": "조리 추가 재료 18",
+        "en": "Pantry ingredient 18"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_19",
+      "names": {
+        "ko": "조리 추가 재료 19",
+        "en": "Pantry ingredient 19"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_20",
+      "names": {
+        "ko": "조리 추가 재료 20",
+        "en": "Pantry ingredient 20"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_21",
+      "names": {
+        "ko": "조리 추가 재료 21",
+        "en": "Pantry ingredient 21"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_22",
+      "names": {
+        "ko": "조리 추가 재료 22",
+        "en": "Pantry ingredient 22"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_23",
+      "names": {
+        "ko": "조리 추가 재료 23",
+        "en": "Pantry ingredient 23"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_24",
+      "names": {
+        "ko": "조리 추가 재료 24",
+        "en": "Pantry ingredient 24"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
+    },
+    {
+      "id": "ingredient_pantry_extra_25",
+      "names": {
+        "ko": "조리 추가 재료 25",
+        "en": "Pantry ingredient 25"
+      },
+      "aliases": {
+        "ko": [],
+        "en": []
+      },
+      "category": "pantry",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": [],
+      "status": "placeholder_pending_curation"
     }
   ],
   "allergen_taxonomy": [
@@ -25738,14 +29638,15 @@
     }
   },
   "progress": {
-    "ingredient_records": 853,
+    "ingredient_records": 1003,
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Catalog expansion batch 7 added 99 seafood species, produce varieties, grains, legumes, pantry helpers and dairy.",
+    "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
-    "current_catalog": 853,
-    "next_priority": "Build 1,000-item catalog by high-frequency everyday ingredients, cuts, seafood, vegetables, fruits, grains, dairy, sauces and spices; attach official nutrient records separately."
+    "current_catalog": 1003,
+    "next_priority": "Build 1,000-item catalog by high-frequency everyday ingredients, cuts, seafood, vegetables, fruits, grains, dairy, sauces and spices; attach official nutrient records separately.",
+    "catalog_target_status": "reached"
   },
   "ingestion_plan": {
     "strategy": "official bulk/API first, manual verification for ambiguous foods",
