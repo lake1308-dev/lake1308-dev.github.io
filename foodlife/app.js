@@ -2,6 +2,7 @@ const $=id=>document.getElementById(id);
 let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
 let DB_INGREDIENTS=[],DB_ALIAS=new Map();
+let DB_RECIPES=[];
 const SMALL_SERVING_CATEGORIES=new Set(["spice","seasoning","sweetener","oil"]);
 
 const I={
@@ -71,6 +72,12 @@ function rebuildIngredientIndex(){
   const terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean);
   terms.forEach(t=>DB_ALIAS.set(normalize(t),x.id));
  });
+}
+async function loadRecipeDB(){
+ try{
+  const res=await fetch("data/recipes.json?v=0.2.0",{cache:"no-store"});
+  const data=await res.json(); DB_RECIPES=data.recipes||[];
+ }catch(err){console.warn("Recipe DB unavailable; using prototype fallback.",err)}
 }
 async function loadIngredientDB(){
  try{
@@ -228,16 +235,36 @@ function countrySearch(q){
  matches.forEach(([en,m])=>{const d=document.createElement("div");d.className="country-result";d.innerHTML='<span>'+m[0]+'</span><b>'+tr(en,m[1])+'</b><small>'+tr("Open →","보기 →")+'</small>';d.onclick=()=>openCountry(en,"All");host.appendChild(d)})
 }
 $("countrySearchForm").addEventListener("submit",e=>{e.preventDefault();countrySearch($("countrySearchInput").value)});
-function recipeSearch(q){
- const raw=normalize(q); const tokens=raw.split(" ").filter(Boolean);
- let list=DISHES.filter(d=>{const hay=normalize([d.name,d.nameKo,d.country,d.countryKo,d.region,d.regionKo,d.type,d.typeKo,d.desc,d.descKo].join(" "));return tokens.every(t=>hay.includes(t))});
- if(currentKey)list=list.sort((a,b)=>Number(b.main.includes(currentKey))-Number(a.main.includes(currentKey)));
- const host=$("recipeSearchResults");host.innerHTML="";
- if(!list.length){host.innerHTML='<div class="recipe-no-result">'+tr("No matching recipe in the prototype yet. We will keep expanding the recipe library.","아직 프로토타입에 일치하는 레시피가 없습니다. 레시피 데이터는 계속 확장할 예정입니다.")+'</div>';return}
- renderDishCards(list,host);
+function dbIngredientName(id){
+ const x=getIngredient(id); if(x)return lang==="ko"?x.names.ko:x.names.en;
+ return id.replaceAll("_"," ");
 }
-$("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
-function showExplorer(){ $("explorer").classList.remove("hidden");renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth"})}
-$("exploreBtn").onclick=showExplorer;
-$("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget).scrollIntoView({behavior:"smooth"})};
-loadIngredientDB().then(()=>applyLang());
+function renderDBRecipeCard(r,host){
+ const c=document.createElement("article");c.className="dish-card";
+ const meta=[r.country,r.region].filter(Boolean).join(" · ");
+ c.innerHTML='<span class="country">'+meta+'</span><h3>'+(lang==="ko"?r.names.ko:r.names.en)+'</h3><p>'+r.ingredients.slice(0,5).map(x=>dbIngredientName(x.ingredient_id)).join(" · ")+'</p><span class="open">'+tr("View editable recipe →","레시피·재료 보기 →")+'</span>';
+ c.onclick=()=>renderDBRecipe(r);host.appendChild(c);
+}
+function renderDBRecipe(r){
+ currentDish=r;$("recipe").classList.remove("hidden");
+ $("recipeName").textContent=lang==="ko"?r.names.ko:r.names.en;
+ $("recipeMeta").textContent=tr(r.country+" · "+r.region+" · "+r.servings+" servings",r.country+" · "+r.region+" · "+r.servings+"인분 · 표준 레시피 기준");
+ $("recipeIngredients").innerHTML=r.ingredients.map((x,i)=>'<li data-ri="'+i+'"><span>'+dbIngredientName(x.ingredient_id)+'</span> <input class="recipe-amount" data-i="'+i+'" type="number" min="0" step="1" value="'+x.amount+'" style="width:78px"> '+x.unit+' <button type="button" class="recipe-remove" data-i="'+i+'">'+tr("Remove","빼기")+'</button></li>').join("");
+ $("recipeSteps").innerHTML=(lang==="ko"?r.steps.ko:r.steps.en).map(x=>"<li>"+x+"</li>").join("");
+ let note=document.getElementById("recipeNutritionNotice");
+ if(!note){note=document.createElement("p");note.id="recipeNutritionNotice";note.className="data-note";$("recipeMeta").after(note)}
+ note.textContent=tr("Estimated nutrition will recalculate from verified ingredient data. Ingredients without verified nutrition are not guessed.","검증된 재료 영양정보를 기준으로 재계산합니다. 아직 검증되지 않은 재료의 수치는 임의로 추정하지 않습니다.");
+ document.querySelectorAll(".recipe-remove").forEach(b=>b.onclick=()=>{const li=b.closest("li");li.querySelector(".recipe-amount").value=0;li.style.opacity=".45"});
+ $("recipe").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function recipeSearch(q){
+ const raw=normalize(q),tokens=raw.split(" ").filter(Boolean),host=$("recipeSearchResults");host.innerHTML="";
+ let list=DB_RECIPES.filter(r=>{
+  const ingredientNames=r.ingredients.flatMap(x=>{const z=getIngredient(x.ingredient_id);return z?[z.names.ko,z.names.en,...(z.aliases?.ko||[]),...(z.aliases?.en||[])]:[x.ingredient_id]});
+  const hay=normalize([r.names.ko,r.names.en,r.country,r.region,r.category,...(r.tags||[]),...ingredientNames].join(" "));
+  return tokens.every(t=>hay.includes(t));
+ });
+ if(!list.length){host.innerHTML='<div class="recipe-no-result">'+tr("No matching recipe yet. The recipe database is being expanded.","아직 일치하는 레시피가 없습니다. 레시피 데이터베이스를 계속 확장하고 있습니다.")+'</div>';return}
+ list.forEach(r=>renderDBRecipeCard(r,host));
+}
+;
