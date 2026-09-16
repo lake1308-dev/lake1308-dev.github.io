@@ -8658,6 +8658,1514 @@
       "allergens": [],
       "sources": [],
       "verification_status": "pending"
+    },
+    {
+      "id": "chicken_thigh_raw",
+      "names": {
+        "ko": "닭고기 넓적다리살",
+        "en": "Chicken thigh"
+      },
+      "aliases": {
+        "ko": [
+          "닭다리살",
+          "닭정육"
+        ],
+        "en": [
+          "chicken thigh"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "chicken_drumstick_raw",
+      "names": {
+        "ko": "닭고기 북채",
+        "en": "Chicken drumstick"
+      },
+      "aliases": {
+        "ko": [
+          "닭북채",
+          "닭다리"
+        ],
+        "en": [
+          "chicken drumstick"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "chicken_wing_raw",
+      "names": {
+        "ko": "닭고기 날개",
+        "en": "Chicken wing"
+      },
+      "aliases": {
+        "ko": [
+          "닭날개",
+          "윙"
+        ],
+        "en": [
+          "chicken wing"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pork_belly_raw",
+      "names": {
+        "ko": "돼지고기 삼겹살",
+        "en": "Pork belly"
+      },
+      "aliases": {
+        "ko": [
+          "삼겹살",
+          "오겹살"
+        ],
+        "en": [
+          "pork belly"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pork_shoulder_raw",
+      "names": {
+        "ko": "돼지고기 목살",
+        "en": "Pork shoulder"
+      },
+      "aliases": {
+        "ko": [
+          "목살",
+          "돼지목살"
+        ],
+        "en": [
+          "pork shoulder",
+          "pork neck"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pork_tenderloin_raw",
+      "names": {
+        "ko": "돼지고기 안심",
+        "en": "Pork tenderloin"
+      },
+      "aliases": {
+        "ko": [
+          "돼지안심"
+        ],
+        "en": [
+          "pork tenderloin"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pork_loin_raw",
+      "names": {
+        "ko": "돼지고기 등심",
+        "en": "Pork loin"
+      },
+      "aliases": {
+        "ko": [
+          "돼지등심"
+        ],
+        "en": [
+          "pork loin"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "beef_sirloin_raw",
+      "names": {
+        "ko": "소고기 등심",
+        "en": "Beef sirloin"
+      },
+      "aliases": {
+        "ko": [
+          "소등심",
+          "한우등심"
+        ],
+        "en": [
+          "beef sirloin",
+          "sirloin"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "beef_tenderloin_raw",
+      "names": {
+        "ko": "소고기 안심",
+        "en": "Beef tenderloin"
+      },
+      "aliases": {
+        "ko": [
+          "소안심"
+        ],
+        "en": [
+          "beef tenderloin",
+          "filet"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "beef_brisket_raw",
+      "names": {
+        "ko": "소고기 양지",
+        "en": "Beef brisket"
+      },
+      "aliases": {
+        "ko": [
+          "양지",
+          "차돌양지"
+        ],
+        "en": [
+          "beef brisket",
+          "brisket"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "beef_short_rib_raw",
+      "names": {
+        "ko": "소갈비",
+        "en": "Beef short rib"
+      },
+      "aliases": {
+        "ko": [
+          "갈비",
+          "소갈비살"
+        ],
+        "en": [
+          "beef short rib",
+          "short ribs"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "duck_meat_raw",
+      "names": {
+        "ko": "오리고기",
+        "en": "Duck"
+      },
+      "aliases": {
+        "ko": [
+          "오리"
+        ],
+        "en": [
+          "duck meat",
+          "duck"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "lamb_leg_raw",
+      "names": {
+        "ko": "양고기 다리살",
+        "en": "Lamb leg"
+      },
+      "aliases": {
+        "ko": [
+          "램",
+          "양고기"
+        ],
+        "en": [
+          "lamb leg",
+          "lamb"
+        ]
+      },
+      "category": "meat",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "mackerel_raw",
+      "names": {
+        "ko": "고등어",
+        "en": "Mackerel"
+      },
+      "aliases": {
+        "ko": [
+          "생고등어"
+        ],
+        "en": [
+          "mackerel"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "cod_raw",
+      "names": {
+        "ko": "대구",
+        "en": "Cod"
+      },
+      "aliases": {
+        "ko": [
+          "대구살"
+        ],
+        "en": [
+          "cod",
+          "codfish"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pollock_raw",
+      "names": {
+        "ko": "명태",
+        "en": "Pollock"
+      },
+      "aliases": {
+        "ko": [
+          "생태",
+          "동태"
+        ],
+        "en": [
+          "pollock"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "squid_raw",
+      "names": {
+        "ko": "오징어",
+        "en": "Squid"
+      },
+      "aliases": {
+        "ko": [
+          "생오징어"
+        ],
+        "en": [
+          "squid"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "octopus_raw",
+      "names": {
+        "ko": "문어",
+        "en": "Octopus"
+      },
+      "aliases": {
+        "ko": [
+          "참문어"
+        ],
+        "en": [
+          "octopus"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "clam_raw",
+      "names": {
+        "ko": "조개",
+        "en": "Clam"
+      },
+      "aliases": {
+        "ko": [
+          "바지락",
+          "조갯살"
+        ],
+        "en": [
+          "clam",
+          "clams"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "mussel_raw",
+      "names": {
+        "ko": "홍합",
+        "en": "Mussel"
+      },
+      "aliases": {
+        "ko": [
+          "홍합살"
+        ],
+        "en": [
+          "mussel",
+          "mussels"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "oyster_raw",
+      "names": {
+        "ko": "굴",
+        "en": "Oyster"
+      },
+      "aliases": {
+        "ko": [
+          "생굴"
+        ],
+        "en": [
+          "oyster",
+          "oysters"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "anchovy_dried",
+      "names": {
+        "ko": "멸치",
+        "en": "Dried anchovy"
+      },
+      "aliases": {
+        "ko": [
+          "국물멸치",
+          "볶음멸치"
+        ],
+        "en": [
+          "dried anchovy",
+          "anchovy"
+        ]
+      },
+      "category": "seafood",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "zucchini_raw",
+      "names": {
+        "ko": "애호박",
+        "en": "Korean zucchini"
+      },
+      "aliases": {
+        "ko": [
+          "호박",
+          "주키니"
+        ],
+        "en": [
+          "korean zucchini",
+          "zucchini"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "radish_korean_raw",
+      "names": {
+        "ko": "무",
+        "en": "Korean radish"
+      },
+      "aliases": {
+        "ko": [
+          "무우",
+          "조선무"
+        ],
+        "en": [
+          "korean radish",
+          "radish"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "napa_cabbage_raw",
+      "names": {
+        "ko": "배추",
+        "en": "Napa cabbage"
+      },
+      "aliases": {
+        "ko": [
+          "통배추",
+          "김장배추"
+        ],
+        "en": [
+          "napa cabbage",
+          "chinese cabbage"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "green_onion_raw",
+      "names": {
+        "ko": "대파",
+        "en": "Green onion"
+      },
+      "aliases": {
+        "ko": [
+          "파",
+          "쪽파"
+        ],
+        "en": [
+          "green onion",
+          "scallion",
+          "spring onion"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "perilla_leaf_raw",
+      "names": {
+        "ko": "깻잎",
+        "en": "Perilla leaf"
+      },
+      "aliases": {
+        "ko": [
+          "들깻잎"
+        ],
+        "en": [
+          "perilla leaf"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "bean_sprout_raw",
+      "names": {
+        "ko": "콩나물",
+        "en": "Soybean sprouts"
+      },
+      "aliases": {
+        "ko": [
+          "콩나물"
+        ],
+        "en": [
+          "soybean sprouts"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "mung_bean_sprout_raw",
+      "names": {
+        "ko": "숙주나물",
+        "en": "Mung bean sprouts"
+      },
+      "aliases": {
+        "ko": [
+          "숙주"
+        ],
+        "en": [
+          "mung bean sprouts"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "cucumber_raw",
+      "names": {
+        "ko": "오이",
+        "en": "Cucumber"
+      },
+      "aliases": {
+        "ko": [
+          "백오이",
+          "취청오이"
+        ],
+        "en": [
+          "cucumber"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "eggplant_raw",
+      "names": {
+        "ko": "가지",
+        "en": "Eggplant"
+      },
+      "aliases": {
+        "ko": [
+          "가지"
+        ],
+        "en": [
+          "eggplant",
+          "aubergine"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "bell_pepper_raw",
+      "names": {
+        "ko": "파프리카",
+        "en": "Bell pepper"
+      },
+      "aliases": {
+        "ko": [
+          "피망",
+          "파프리카"
+        ],
+        "en": [
+          "bell pepper",
+          "sweet pepper"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "chili_green_raw",
+      "names": {
+        "ko": "풋고추",
+        "en": "Green chili pepper"
+      },
+      "aliases": {
+        "ko": [
+          "청고추",
+          "풋고추"
+        ],
+        "en": [
+          "green chili",
+          "green chili pepper"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "chili_cheongyang_raw",
+      "names": {
+        "ko": "청양고추",
+        "en": "Cheongyang chili pepper"
+      },
+      "aliases": {
+        "ko": [
+          "청양"
+        ],
+        "en": [
+          "cheongyang chili",
+          "cheongyang pepper"
+        ]
+      },
+      "category": "vegetable",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "pear_korean_raw",
+      "names": {
+        "ko": "배",
+        "en": "Korean pear"
+      },
+      "aliases": {
+        "ko": [
+          "신고배",
+          "한국배"
+        ],
+        "en": [
+          "korean pear",
+          "asian pear"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "strawberry_raw",
+      "names": {
+        "ko": "딸기",
+        "en": "Strawberry"
+      },
+      "aliases": {
+        "ko": [
+          "딸기"
+        ],
+        "en": [
+          "strawberry"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "grape_raw",
+      "names": {
+        "ko": "포도",
+        "en": "Grape"
+      },
+      "aliases": {
+        "ko": [
+          "포도"
+        ],
+        "en": [
+          "grape",
+          "grapes"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "orange_raw",
+      "names": {
+        "ko": "오렌지",
+        "en": "Orange"
+      },
+      "aliases": {
+        "ko": [
+          "오렌지"
+        ],
+        "en": [
+          "orange"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "mandarin_raw",
+      "names": {
+        "ko": "귤",
+        "en": "Mandarin"
+      },
+      "aliases": {
+        "ko": [
+          "감귤",
+          "제주귤"
+        ],
+        "en": [
+          "mandarin",
+          "tangerine"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "watermelon_raw",
+      "names": {
+        "ko": "수박",
+        "en": "Watermelon"
+      },
+      "aliases": {
+        "ko": [
+          "수박"
+        ],
+        "en": [
+          "watermelon"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "peach_raw",
+      "names": {
+        "ko": "복숭아",
+        "en": "Peach"
+      },
+      "aliases": {
+        "ko": [
+          "복숭아"
+        ],
+        "en": [
+          "peach"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "avocado_raw",
+      "names": {
+        "ko": "아보카도",
+        "en": "Avocado"
+      },
+      "aliases": {
+        "ko": [
+          "아보카도"
+        ],
+        "en": [
+          "avocado"
+        ]
+      },
+      "category": "fruit",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "barley_cooked",
+      "names": {
+        "ko": "보리밥",
+        "en": "Barley, cooked"
+      },
+      "aliases": {
+        "ko": [
+          "보리",
+          "보리밥"
+        ],
+        "en": [
+          "barley",
+          "cooked barley"
+        ]
+      },
+      "category": "grain",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "corn_raw",
+      "names": {
+        "ko": "옥수수",
+        "en": "Corn"
+      },
+      "aliases": {
+        "ko": [
+          "찰옥수수",
+          "옥수수"
+        ],
+        "en": [
+          "corn",
+          "maize"
+        ]
+      },
+      "category": "grain",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "rice_cake_plain",
+      "names": {
+        "ko": "떡",
+        "en": "Rice cake"
+      },
+      "aliases": {
+        "ko": [
+          "가래떡",
+          "떡"
+        ],
+        "en": [
+          "rice cake",
+          "tteok"
+        ]
+      },
+      "category": "grain",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "cheddar",
+      "names": {
+        "ko": "체다 치즈",
+        "en": "Cheddar"
+      },
+      "aliases": {
+        "ko": [
+          "체다",
+          "체다치즈"
+        ],
+        "en": [
+          "cheddar",
+          "cheddar cheese"
+        ]
+      },
+      "category": "dairy",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "vinegar",
+      "names": {
+        "ko": "식초",
+        "en": "Vinegar"
+      },
+      "aliases": {
+        "ko": [
+          "양조식초",
+          "식초"
+        ],
+        "en": [
+          "vinegar"
+        ]
+      },
+      "category": "seasoning",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "doubanjiang",
+      "names": {
+        "ko": "두반장",
+        "en": "Doubanjiang"
+      },
+      "aliases": {
+        "ko": [
+          "두반장"
+        ],
+        "en": [
+          "doubanjiang",
+          "chili bean paste"
+        ]
+      },
+      "category": "seasoning",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "curry_powder",
+      "names": {
+        "ko": "카레가루",
+        "en": "Curry powder"
+      },
+      "aliases": {
+        "ko": [
+          "카레",
+          "카레분말"
+        ],
+        "en": [
+          "curry powder"
+        ]
+      },
+      "category": "spice",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
+    },
+    {
+      "id": "sugar_white",
+      "names": {
+        "ko": "설탕",
+        "en": "Sugar"
+      },
+      "aliases": {
+        "ko": [
+          "백설탕",
+          "설탕"
+        ],
+        "en": [
+          "sugar",
+          "white sugar"
+        ]
+      },
+      "category": "sweetener",
+      "nutrition_per_100g": {
+        "kcal": null,
+        "protein_g": null,
+        "carbs_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "sugars_g": null,
+        "fiber_g": null,
+        "sodium_mg": null,
+        "cholesterol_mg": null
+      },
+      "allergens": [],
+      "sources": []
     }
   ],
   "allergen_taxonomy": [
@@ -8820,13 +10328,13 @@
     }
   },
   "progress": {
-    "ingredient_records": 279,
+    "ingredient_records": 329,
     "verified_nutrition": 1,
     "phase1_target": 250,
     "phase1_catalog_complete": true,
-    "note": "Demand-led expansion: Korean chili variants and core seasonings added. Nutrition values remain pending official source verification.",
+    "note": "High-frequency expansion batch added: meat cuts, seafood, Korean vegetables, fruits, grains, dairy, oils, sauces, spices and nuts. Nutrient values remain null until official source records are mapped.",
     "phase2_target": 1000,
-    "current_catalog": 279,
+    "current_catalog": 329,
     "next_priority": "Build 1,000-item catalog by high-frequency everyday ingredients, cuts, seafood, vegetables, fruits, grains, dairy, sauces and spices; attach official nutrient records separately."
   },
   "ingestion_plan": {
