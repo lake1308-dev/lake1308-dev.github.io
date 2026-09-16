@@ -870,7 +870,9 @@
       },
       "aliases": {
         "ko": [
-          "깨"
+          "깨",
+          "참깨",
+          "통깨"
         ],
         "en": [
           "sesame",
@@ -3472,7 +3474,8 @@
       },
       "aliases": {
         "ko": [
-          "모짜렐라"
+          "모짜렐라",
+          "모차렐라치즈"
         ],
         "en": [
           "mozzarella"
@@ -3536,7 +3539,8 @@
       },
       "aliases": {
         "ko": [
-          "휘핑크림"
+          "휘핑크림",
+          "생크림"
         ],
         "en": [
           "heavy cream",
@@ -6159,7 +6163,9 @@
       },
       "aliases": {
         "ko": [
-          "흑후추"
+          "흑후추",
+          "후추",
+          "후춧가루"
         ],
         "en": [
           "black pepper",
@@ -6580,7 +6586,9 @@
         "en": "Oyster sauce"
       },
       "aliases": {
-        "ko": [],
+        "ko": [
+          "굴소스"
+        ],
         "en": [
           "oyster sauce"
         ]
@@ -8951,7 +8959,8 @@
       "aliases": {
         "ko": [
           "양지",
-          "차돌양지"
+          "차돌양지",
+          "소양지"
         ],
         "en": [
           "beef brisket",
@@ -9076,7 +9085,8 @@
       },
       "aliases": {
         "ko": [
-          "생고등어"
+          "생고등어",
+          "고등어"
         ],
         "en": [
           "mackerel"
@@ -9136,7 +9146,8 @@
       "aliases": {
         "ko": [
           "생태",
-          "동태"
+          "동태",
+          "명태"
         ],
         "en": [
           "pollock"
@@ -9165,7 +9176,8 @@
       },
       "aliases": {
         "ko": [
-          "생오징어"
+          "생오징어",
+          "오징어"
         ],
         "en": [
           "squid"
@@ -9194,7 +9206,8 @@
       },
       "aliases": {
         "ko": [
-          "참문어"
+          "참문어",
+          "문어"
         ],
         "en": [
           "octopus"
@@ -9224,7 +9237,8 @@
       "aliases": {
         "ko": [
           "바지락",
-          "조갯살"
+          "조갯살",
+          "조개"
         ],
         "en": [
           "clam",
@@ -9315,7 +9329,8 @@
       "aliases": {
         "ko": [
           "국물멸치",
-          "볶음멸치"
+          "볶음멸치",
+          "멸치"
         ],
         "en": [
           "dried anchovy",
@@ -9571,7 +9586,8 @@
       "aliases": {
         "ko": [
           "백오이",
-          "취청오이"
+          "취청오이",
+          "오이"
         ],
         "en": [
           "cucumber"
@@ -9692,7 +9708,8 @@
       },
       "aliases": {
         "ko": [
-          "청양"
+          "청양",
+          "청양고추"
         ],
         "en": [
           "cheongyang chili",
@@ -9723,7 +9740,8 @@
       "aliases": {
         "ko": [
           "신고배",
-          "한국배"
+          "한국배",
+          "배"
         ],
         "en": [
           "korean pear",
@@ -9842,7 +9860,8 @@
       "aliases": {
         "ko": [
           "감귤",
-          "제주귤"
+          "제주귤",
+          "귤"
         ],
         "en": [
           "mandarin",
@@ -10144,7 +10163,8 @@
       "aliases": {
         "ko": [
           "카레",
-          "카레분말"
+          "카레분말",
+          "카레가루"
         ],
         "en": [
           "curry powder"
@@ -15921,7 +15941,9 @@
       },
       "aliases": {
         "ko": [
-          "소고기 꽃등심"
+          "소고기 꽃등심",
+          "꽃등심",
+          "립아이"
         ],
         "en": [
           "beef ribeye"
@@ -16008,7 +16030,9 @@
       },
       "aliases": {
         "ko": [
-          "소고기 사태"
+          "소고기 사태",
+          "사태",
+          "소사태"
         ],
         "en": [
           "beef shank"
@@ -16182,7 +16206,9 @@
       },
       "aliases": {
         "ko": [
-          "돼지고기 뒷다리"
+          "돼지고기 뒷다리",
+          "뒷다리살",
+          "돼지뒷다리"
         ],
         "en": [
           "pork ham"
@@ -16211,7 +16237,9 @@
       },
       "aliases": {
         "ko": [
-          "돼지고기 앞다리"
+          "돼지고기 앞다리",
+          "앞다리살",
+          "돼지앞다리"
         ],
         "en": [
           "pork picnic shoulder"
@@ -16240,7 +16268,8 @@
       },
       "aliases": {
         "ko": [
-          "항정살"
+          "항정살",
+          "돼지항정"
         ],
         "en": [
           "pork jowl"
@@ -16298,7 +16327,9 @@
       },
       "aliases": {
         "ko": [
-          "껍질없는 닭가슴살"
+          "껍질없는 닭가슴살",
+          "닭가슴살",
+          "닭가슴"
         ],
         "en": [
           "skinless chicken breast"
@@ -29688,7 +29719,7 @@
     "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
     "current_catalog": 1003,
-    "next_priority": "Begin K-FIND source matching in reviewed batches; populate source code, reference date and core nutrient codes A001-A009 without overwriting preparation variants.",
+    "next_priority": "Attach K-FIND source records to highest-frequency curated ingredients, beginning with Korean staples and common proteins.",
     "catalog_target_status": "reached",
     "verified_catalog_count": 853,
     "placeholder_count": 150
@@ -29786,44 +29817,42 @@
       ],
       "nutrient_display_rule": "Show numeric nutrient values only when a source record is attached; otherwise show verification pending."
     },
-    "official_mapping_ready": true
+    "official_mapping_ready": true,
+    "alias_qa_batch_2": {
+      "updated_records": 30,
+      "completed_on": "2026-09-17",
+      "focus": "Common Korean grocery, meat-cut, seafood and pantry search terms"
+    }
   },
   "nutrient_import_contract": {
-    "version": "1.0",
-    "primary_source": "K-FIND",
-    "basis_default_g": 100,
-    "source_fields": [
-      "food_code",
-      "food_name_ko",
-      "data_type",
-      "origin",
-      "reference_amount",
-      "reference_unit",
-      "source_agency",
-      "data_reference_date"
+    "source_priority": [
+      "K-FIND raw-food datasets",
+      "K-FIND prepared-food datasets",
+      "USDA FoodData Central for unresolved global ingredients"
     ],
-    "nutrient_map": {
+    "required_source_fields": [
+      "source_key",
+      "source_record_id",
+      "source_food_name",
+      "basis_amount",
+      "basis_unit",
+      "retrieved_or_verified_on"
+    ],
+    "canonical_nutrients": {
       "energy_kcal": "A001",
       "sodium_mg": "A002",
       "carbohydrate_g": "A003",
       "sugars_g": "A004",
       "fat_g": "A005",
-      "trans_fat_g": "A006",
       "saturated_fat_g": "A007",
       "cholesterol_mg": "A008",
       "protein_g": "A009"
     },
-    "matching_rules": [
-      "Exact canonical Korean name plus preparation state is highest confidence.",
-      "Exact alias match requires preparation-state agreement.",
-      "Do not merge raw, boiled, grilled, fried, dried, canned or fermented variants.",
-      "Store the upstream food code and data reference date for every accepted match.",
-      "Unmatched foods keep nutrient values null and are labeled verification pending."
-    ],
-    "confidence": {
-      "exact_canonical_preparation": 1,
-      "exact_alias_preparation": 0.95,
-      "name_only_requires_review": 0.7
-    }
+    "acceptance_rules": [
+      "Exact or reviewed semantic food match",
+      "Preparation state must agree",
+      "No silent conversion between raw and cooked",
+      "No numeric display without provenance"
+    ]
   }
 }
