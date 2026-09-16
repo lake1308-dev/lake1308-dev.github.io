@@ -29688,7 +29688,7 @@
     "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
     "current_catalog": 1003,
-    "next_priority": "Review duplicate groups semantically and prepare source-linked nutrient import fields for K-FIND.",
+    "next_priority": "Begin K-FIND source matching in reviewed batches; populate source code, reference date and core nutrient codes A001-A009 without overwriting preparation variants.",
     "catalog_target_status": "reached",
     "verified_catalog_count": 853,
     "placeholder_count": 150
@@ -29785,6 +29785,45 @@
         "contains"
       ],
       "nutrient_display_rule": "Show numeric nutrient values only when a source record is attached; otherwise show verification pending."
+    },
+    "official_mapping_ready": true
+  },
+  "nutrient_import_contract": {
+    "version": "1.0",
+    "primary_source": "K-FIND",
+    "basis_default_g": 100,
+    "source_fields": [
+      "food_code",
+      "food_name_ko",
+      "data_type",
+      "origin",
+      "reference_amount",
+      "reference_unit",
+      "source_agency",
+      "data_reference_date"
+    ],
+    "nutrient_map": {
+      "energy_kcal": "A001",
+      "sodium_mg": "A002",
+      "carbohydrate_g": "A003",
+      "sugars_g": "A004",
+      "fat_g": "A005",
+      "trans_fat_g": "A006",
+      "saturated_fat_g": "A007",
+      "cholesterol_mg": "A008",
+      "protein_g": "A009"
+    },
+    "matching_rules": [
+      "Exact canonical Korean name plus preparation state is highest confidence.",
+      "Exact alias match requires preparation-state agreement.",
+      "Do not merge raw, boiled, grilled, fried, dried, canned or fermented variants.",
+      "Store the upstream food code and data reference date for every accepted match.",
+      "Unmatched foods keep nutrient values null and are labeled verification pending."
+    ],
+    "confidence": {
+      "exact_canonical_preparation": 1,
+      "exact_alias_preparation": 0.95,
+      "name_only_requires_review": 0.7
     }
   }
 }
