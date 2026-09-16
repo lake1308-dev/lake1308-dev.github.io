@@ -29688,7 +29688,7 @@
     "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
     "current_catalog": 1003,
-    "next_priority": "Continue alias QA and classify exact-name duplicate candidates before official K-FIND nutrient matching.",
+    "next_priority": "Review duplicate groups semantically and prepare source-linked nutrient import fields for K-FIND.",
     "catalog_target_status": "reached",
     "verified_catalog_count": 853,
     "placeholder_count": 150
@@ -29765,6 +29765,26 @@
       "updated_records": 20,
       "focus": "High-frequency Korean search synonyms and colloquial names",
       "completed_on": "2026-09-17"
+    },
+    "duplicate_audit": {
+      "completed_on": "2026-09-17",
+      "method": "Exact normalized Korean/English display-name grouping; no automatic deletion",
+      "duplicate_name_groups": 275,
+      "duplicate_row_references": 551,
+      "review_policy": "Preserve preparation, species, cut and country variants. Merge only true semantic duplicates; otherwise move shared terms to aliases."
+    },
+    "production_search_policy": {
+      "exclude_status": [
+        "placeholder_pending_curation"
+      ],
+      "preferred_match_order": [
+        "canonical exact",
+        "alias exact",
+        "canonical prefix",
+        "alias prefix",
+        "contains"
+      ],
+      "nutrient_display_rule": "Show numeric nutrient values only when a source record is attached; otherwise show verification pending."
     }
   }
 }
