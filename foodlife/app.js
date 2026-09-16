@@ -311,3 +311,29 @@ async function initFoodLife(){
  renderCountryCards();
 }
 initFoodLife();
+
+function ingredientMatches(raw){
+ const q=normalize(raw); if(!q)return [];
+ const seen=new Set(),out=[];
+ DB_INGREDIENTS.forEach(x=>{
+  const terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean);
+  if(terms.some(t=>normalize(t).includes(q))){
+   if(!seen.has(x.id)){seen.add(x.id);out.push(x)}
+  }
+ });
+ return out.slice(0,8);
+}
+function renderIngredientSuggestions(){
+ const host=$("ingredientSuggestions"),input=$("ingredientInput"); if(!host||!input)return;
+ const list=ingredientMatches(input.value);host.innerHTML="";
+ if(!input.value.trim()||!list.length){host.classList.remove("show");return}
+ list.forEach(x=>{
+  const b=document.createElement("button");b.type="button";b.className="ingredient-suggestion";
+  b.innerHTML="<strong>"+(lang==="ko"?x.names.ko:x.names.en)+"</strong><small>"+(lang==="ko"?x.names.en:x.names.ko)+"</small>";
+  b.onclick=()=>{input.value=lang==="ko"?x.names.ko:x.names.en;host.classList.remove("show");renderIngredient(x.id)};
+  host.appendChild(b);
+ });host.classList.add("show");
+}
+$("ingredientInput").addEventListener("input",renderIngredientSuggestions);
+$("ingredientInput").addEventListener("focus",renderIngredientSuggestions);
+document.addEventListener("click",e=>{if(!e.target.closest(".hero"))$("ingredientSuggestions")?.classList.remove("show")});
