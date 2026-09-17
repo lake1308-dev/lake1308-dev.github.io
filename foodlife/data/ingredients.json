@@ -29719,7 +29719,7 @@
     "note": "1,000-item catalog capacity milestone reached. Placeholder rows are explicitly marked pending curation and must not be shown as verified foods; next phase replaces them with curated names and official nutrient mappings.",
     "phase2_target": 1000,
     "current_catalog": 1003,
-    "next_priority": "Attach K-FIND source records to highest-frequency curated ingredients, beginning with Korean staples and common proteins.",
+    "next_priority": "Build reviewed K-FIND source-match queue for common proteins, rice/grains, vegetables, fruits and Korean pantry ingredients.",
     "catalog_target_status": "reached",
     "verified_catalog_count": 853,
     "placeholder_count": 150
@@ -29822,6 +29822,14 @@
       "updated_records": 30,
       "completed_on": "2026-09-17",
       "focus": "Common Korean grocery, meat-cut, seafood and pantry search terms"
+    },
+    "kfind_integration_readiness": {
+      "completed_on": "2026-09-17",
+      "status": "schema_ready",
+      "official_codes_verified": true,
+      "synonym_search_supported": true,
+      "downloadable_24_nutrient_lists_supported": true,
+      "next_action": "Create reviewed source-match queue for highest-frequency curated ingredients"
     }
   },
   "nutrient_import_contract": {
@@ -29853,6 +29861,32 @@
       "Preparation state must agree",
       "No silent conversion between raw and cooked",
       "No numeric display without provenance"
+    ],
+    "kfind_nutrient_codes": {
+      "energy_kcal": "A001",
+      "sodium_mg": "A002",
+      "carbohydrate_g": "A003",
+      "sugars_g": "A004",
+      "fat_g": "A005",
+      "trans_fat_g": "A006",
+      "saturated_fat_g": "A007",
+      "cholesterol_mg": "A008",
+      "protein_g": "A009"
+    },
+    "kfind_source_groups": {
+      "PFDB": "MFDS processed foods",
+      "KDDB": "MFDS prepared foods",
+      "KFCT": "RDA Korean Food Composition Table",
+      "KCTMP": "National Institute of Fisheries Science seafood composition",
+      "HFFDB": "MFDS health functional foods"
+    },
+    "matching_pipeline": [
+      "Search canonical Korean name plus aliases",
+      "Prefer raw-food source for raw ingredients",
+      "Require cut/species/preparation agreement",
+      "Store source food name and upstream record id",
+      "Normalize to per-100g only when source basis permits deterministic conversion",
+      "Flag ambiguous matches for manual review instead of selecting first result"
     ]
   }
 }
