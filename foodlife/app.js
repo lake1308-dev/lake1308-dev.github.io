@@ -81,7 +81,7 @@ async function loadRecipeDB(){
 }
 async function loadIngredientDB(){
  try{
-  const res=await fetch("data/ingredients.json?v=1.0.0",{cache:"no-store"});
+  const res=await fetch("data/ingredients.json?v=1.2.1",{cache:"no-store"});
   const data=await res.json(); DB_INGREDIENTS=(data.ingredients||[]).filter(x=>x.status!=="placeholder_pending_curation"); rebuildIngredientIndex();
   const c=$("coverageCount"); if(c)c.textContent=DB_INGREDIENTS.length;
  }catch(err){console.warn("Ingredient DB unavailable; using prototype fallback.",err)}
@@ -99,8 +99,10 @@ function servingPresets(id){
  return [50,100,150,200];
 }
 function nutritionFor(id){
+ const x=getIngredient(id);
+ if(x){const n=x.nutrition_per_100g||{};if(x.verification_status==="verified"&&n.kcal!=null)return n;return n}
  if(I[id])return {kcal:I[id][2],protein_g:I[id][3],carbs_g:I[id][4],fat_g:I[id][5],legacy:true};
- const x=getIngredient(id);return x?.nutrition_per_100g||{};
+ return {};
 }
 function applyLang(){
  document.documentElement.lang=lang;
@@ -142,7 +144,8 @@ function renderIngredient(key,scroll=true){
  document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.g=presets[i];b.textContent=presets[i]+"g";b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
  $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
- $("ingredientNote").textContent=tr("Approximate nutrition per 100g. Choose a dish below or browse by country.","100g 기준 참고 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.");
+ const verified=db?.verification_status==="verified"&&db?.nutrition_per_100g?.kcal!=null;
+ $("ingredientNote").textContent=verified?tr("Verified nutrition per 100g. Choose a dish below or browse by country.","검증된 100g 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요."):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
  renderCountryCards();
@@ -278,82 +281,23 @@ function renderDBRecipe(r){
  $("recipeSteps").innerHTML=(lang==="ko"?r.steps.ko:r.steps.en).map(x=>"<li>"+x+"</li>").join("");
  let note=document.getElementById("recipeNutritionNotice");
  if(!note){note=document.createElement("p");note.id="recipeNutritionNotice";note.className="data-note";$("recipeMeta").after(note)}
- note.textContent=tr("Estimated nutrition will recalculate from verified ingredient data. Ingredients without verified nutrition are not guessed.","검증된 재료 영양정보를 기준으로 재계산합니다. 아직 검증되지 않은 재료의 수치는 임의로 추정하지 않습니다.");
- let live=document.getElementById("recipeNutritionLive");
- if(!live){live=document.createElement("div");live.id="recipeNutritionLive";live.className="nutrition-card";note.after(live)}
- document.querySelectorAll(".recipe-amount").forEach(inp=>inp.addEventListener("input",updateDBRecipeNutrition));
- document.querySelectorAll(".recipe-remove").forEach(b=>b.onclick=()=>{const li=b.closest("li");li.querySelector(".recipe-amount").value=0;li.style.opacity=".45";updateDBRecipeNutrition()});
- updateDBRecipeNutrition();
- $("recipe").scrollIntoView({behavior:"smooth",block:"start"});
+ note.textContent=tr("Estimated nutrition will recalculate from the ingredient amounts below. Only verified ingredient data is included.","아래 재료 양을 바꾸면 예상 영양정보가 다시 계산됩니다. 검증된 재료 데이터만 계산에 포함합니다.");
+ let live=document.getElementById("recipeNutritionLive");if(!live){live=document.createElement("div");live.id="recipeNutritionLive";live.className="recipe-nutrition-live";$("recipeIngredients").after(live)}
+ document.querySelectorAll(".recipe-amount").forEach(el=>el.addEventListener("input",updateDBRecipeNutrition));
+ document.querySelectorAll(".recipe-remove").forEach(btn=>btn.onclick=()=>{const input=document.querySelector('.recipe-amount[data-i="'+btn.dataset.i+'"]');if(input){input.value=0;btn.closest("li").classList.add("removed");updateDBRecipeNutrition()}});
+ updateDBRecipeNutrition();$("recipe").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function recipeSearch(q){
- const raw=normalize(q),tokens=raw.split(" ").filter(Boolean),host=$("recipeSearchResults");host.innerHTML="";
- let list=DB_RECIPES.filter(r=>{
-  const ingredientNames=r.ingredients.flatMap(x=>{const z=getIngredient(x.ingredient_id);return z?[z.names.ko,z.names.en,...(z.aliases?.ko||[]),...(z.aliases?.en||[])]:[x.ingredient_id]});
-  const hay=normalize([r.names.ko,r.names.en,r.country,r.region,r.category,...(r.tags||[]),...ingredientNames].join(" "));
-  return tokens.every(t=>hay.includes(t));
- });
- if(!list.length){host.innerHTML='<div class="recipe-no-result">'+tr("No matching recipe yet. The recipe database is being expanded.","아직 일치하는 레시피가 없습니다. 레시피 데이터베이스를 계속 확장하고 있습니다.")+'</div>';return}
- list.forEach(r=>renderDBRecipeCard(r,host));
+ const raw=normalize(q),host=$("recipeSearchResults");host.innerHTML="";if(!raw)return;
+ const db=DB_RECIPES.filter(r=>[r.names.en,r.names.ko,r.country,r.region,r.category,r.category_ko,...(r.tags||[]),...(r.tags_ko||[])].some(x=>normalize(String(x||"")).includes(raw))).slice(0,18);
+ if(db.length){db.forEach(r=>renderDBRecipeCard(r,host));return}
+ const matches=DISHES.filter(d=>[d.name,d.nameKo,d.country,d.countryKo,d.region,d.regionKo,d.type,d.typeKo,d.desc,d.descKo].some(x=>normalize(x).includes(raw))).slice(0,12);
+ if(!matches.length){host.innerHTML='<div class="recipe-no-result">'+tr("No matching recipe yet. We are expanding the recipe database.","아직 일치하는 레시피가 없습니다. 레시피 데이터베이스를 계속 확장하고 있습니다.")+'</div>';return}
+ renderDishCards(matches,host);
 }
-;
-function wireApp(){
- const rs=$("recipeSearchForm");
- if(rs)rs.addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
- const eb=$("exploreBtn"); if(eb)eb.onclick=()=>{currentKey=null;renderCountryCards();openCountry("Korea","All")};
- const back=$("exploreBack"); if(back)back.onclick=()=>{$("explorer").classList.add("hidden");$("result").classList.contains("hidden")?window.scrollTo({top:0,behavior:"smooth"}):$("result").scrollIntoView({behavior:"smooth"})};
- const rb=$("recipeBack"); if(rb)rb.onclick=()=>{$("recipe").classList.add("hidden");const t=$(returnTarget);if(t)t.scrollIntoView({behavior:"smooth"})};
-}
-async function initFoodLife(){
- wireApp();
- await Promise.all([loadIngredientDB(),loadRecipeDB()]);
- applyLang();
- renderCountryCards();
-}
-initFoodLife();
-
-function ingredientMatches(raw){
- const q=normalize(raw); if(!q)return [];
- const seen=new Set(),out=[];
- DB_INGREDIENTS.forEach(x=>{
-  const terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean);
-  if(terms.some(t=>normalize(t).includes(q))){
-   if(!seen.has(x.id)){seen.add(x.id);out.push(x)}
-  }
- });
- return out.slice(0,8);
-}
-function renderIngredientSuggestions(){
- const host=$("ingredientSuggestions"),input=$("ingredientInput"); if(!host||!input)return;
- const list=ingredientMatches(input.value);host.innerHTML="";
- if(!input.value.trim()||!list.length){host.classList.remove("show");return}
- list.forEach(x=>{
-  const b=document.createElement("button");b.type="button";b.className="ingredient-suggestion";
-  b.innerHTML="<strong>"+(lang==="ko"?x.names.ko:x.names.en)+"</strong><small>"+(lang==="ko"?x.names.en:x.names.ko)+"</small>";
-  b.onclick=()=>{input.value=lang==="ko"?x.names.ko:x.names.en;host.classList.remove("show");renderIngredient(x.id)};
-  host.appendChild(b);
- });host.classList.add("show");
-}
-$("ingredientInput").addEventListener("input",renderIngredientSuggestions);
-$("ingredientInput").addEventListener("focus",renderIngredientSuggestions);
-document.addEventListener("click",e=>{if(!e.target.closest(".hero"))$("ingredientSuggestions")?.classList.remove("show")});
-
-function scoreIngredient(raw,x){
- const q=normalize(raw),terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean).map(normalize);
- let best=0;terms.forEach(t=>{if(t===q)best=Math.max(best,100);else if(t.startsWith(q)||q.startsWith(t))best=Math.max(best,80);else if(t.includes(q)||q.includes(t))best=Math.max(best,60);else{const qa=new Set(q.split(" ")),ta=new Set(t.split(" "));let hit=0;qa.forEach(w=>{if(ta.has(w))hit++});best=Math.max(best,hit*20)}});return best
-}
-function closestIngredients(raw){
- return DB_INGREDIENTS.map(x=>[scoreIngredient(raw,x),x]).filter(z=>z[0]>0).sort((a,b)=>b[0]-a[0]).slice(0,6).map(z=>z[1])
-}
-function showIngredientFallback(raw){
- const host=$("ingredientFallback");if(!host)return;const near=closestIngredients(raw);host.innerHTML="";
- const title=document.createElement("h3");title.textContent=tr("We couldn't match it exactly — try one of these","정확히 일치하는 재료가 없어요. 비슷한 재료를 골라보세요");host.appendChild(title);
- const p=document.createElement("p");p.textContent=tr("Your search was: “"+raw+"”. We avoid guessing nutrition values, so choose the closest ingredient below.","검색어: ‘"+raw+"’. 영양수치를 임의로 추정하지 않기 위해 아래에서 가장 가까운 재료를 선택해주세요.");host.appendChild(p);
- if(near.length){const wrap=document.createElement("div");wrap.className="fallback-chips";near.forEach(x=>{const b=document.createElement("button");b.type="button";b.textContent=(lang==="ko"?x.names.ko:x.names.en);b.onclick=()=>{host.classList.add("hidden");$("ingredientInput").value=b.textContent;renderIngredient(x.id)};wrap.appendChild(b)});host.appendChild(wrap)}
- const retry=document.createElement("button");retry.type="button";retry.className="fallback-retry";retry.textContent=tr("Edit search ↑","검색어 다시 입력 ↑");retry.onclick=()=>{$("ingredientInput").focus();$("ingredientInput").select()};host.appendChild(retry);host.classList.remove("hidden");host.scrollIntoView({behavior:"smooth",block:"center"})
-}
-const originalFind=findIngredient;
-$("searchForm").addEventListener("submit",e=>{setTimeout(()=>{const raw=$("ingredientInput").value;if(raw && !originalFind(raw)){const f=$("ingredientFallback");if(f)showIngredientFallback(raw)}else $("ingredientFallback")?.classList.add("hidden")},0)},true);
+$("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
+$("closeRecipe").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget)?.scrollIntoView({behavior:"smooth",block:"start"})};
+Promise.all([loadIngredientDB(),loadRecipeDB()]).then(()=>{renderCountryCards();applyLang()});
 
 function recipesForIngredient(id){
  return DB_RECIPES.filter(r=>r.ingredients?.some(x=>x.ingredient_id===id));
