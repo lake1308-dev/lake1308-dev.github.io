@@ -1,0 +1,49 @@
+{
+  "version": "0.1.0",
+  "source": {
+    "name": "K-FIND 식품영양성분 데이터베이스",
+    "publisher": "식품의약품안전처",
+    "basis": "100g",
+    "verified_on": "2026-09-17"
+  },
+  "records": [
+    {
+      "ingredient_id": "eggplant_raw",
+      "source_food_code": "R106-003000001-0000",
+      "source_food_name": "가지, 생것",
+      "preparation": "raw",
+      "nutrition_per_100g": {
+        "kcal": 19,
+        "protein_g": 1.13,
+        "carbs_g": 4.36,
+        "fat_g": 0.03,
+        "sat_fat_g": null,
+        "sugars_g": 2.32,
+        "fiber_g": 2.70,
+        "sodium_mg": 0,
+        "cholesterol_mg": null
+      },
+      "verification_status": "verified",
+      "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-003000001-0000"
+    },
+    {
+      "ingredient_id": "broccoli_raw",
+      "source_food_code": "R106-092000001-0000",
+      "source_food_name": "브로콜리, 생것",
+      "preparation": "raw",
+      "nutrition_per_100g": {
+        "kcal": 28,
+        "protein_g": 3.56,
+        "carbs_g": 4.72,
+        "fat_g": 0.29,
+        "sat_fat_g": 0.08,
+        "sugars_g": 1.47,
+        "fiber_g": 2.80,
+        "sodium_mg": 4,
+        "cholesterol_mg": 0
+      },
+      "verification_status": "verified",
+      "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-092000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
+    }
+  ]
+}
