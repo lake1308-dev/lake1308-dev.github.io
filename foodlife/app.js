@@ -317,3 +317,6 @@ renderIngredient=function(key){
  const x=getIngredient(key)||getIngredient(currentKey)||DB_INGREDIENTS.find(z=>z.id===key);
  if(x)renderIngredientRecipes(x.id);
 };
+
+function nutritionVerified(x){const n=x?.nutrition_per_100g||{};return Number.isFinite(n.kcal)&&Array.isArray(x?.sources)&&x.sources.length>0;}
+function nutritionStatusText(x){return nutritionVerified(x)?tr("Official nutrition data connected","공식 영양정보 연결됨"):tr("Nutrition data verification pending","영양정보 검증 중");}
