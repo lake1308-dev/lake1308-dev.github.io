@@ -199,7 +199,7 @@
   ],
   "nutrition_records_note": "This file is now the verified starter set for source-linked nutrition. The previous large catalog should be restored/merged before production expansion; do not treat this starter set as the full catalog.",
   "progress": {
-    "next_priority": "Execute nutrient_match_queue tier 1 against official K-FIND records; keep unmatched values null."
+    "next_priority": "Begin source-linked K-FIND matching on high-frequency ingredients using A/B/C/X review tiers."
   },
   "nutrient_source_manifest": {
     "updated_on": "2026-09-18",
@@ -265,5 +265,42 @@
       "basis stored",
       "verification date stored"
     ]
+  },
+  "quality_control": {
+    "nutrient_match_workflow": {
+      "version": "1.0",
+      "source": "K-FIND",
+      "match_tiers": [
+        {
+          "tier": "A",
+          "rule": "canonical name and preparation exact match",
+          "action": "auto_accept"
+        },
+        {
+          "tier": "B",
+          "rule": "official synonym and preparation match",
+          "action": "review_then_accept"
+        },
+        {
+          "tier": "C",
+          "rule": "generic name or multiple candidates",
+          "action": "manual_review"
+        },
+        {
+          "tier": "X",
+          "rule": "preparation mismatch or ambiguous species/cut",
+          "action": "reject"
+        }
+      ],
+      "required_provenance": [
+        "source_key",
+        "source_record_id",
+        "source_food_name",
+        "basis_amount",
+        "basis_unit",
+        "verified_on"
+      ],
+      "display_rule": "Do not present unverified nutrient numbers as official."
+    }
   }
 }
