@@ -1,5 +1,5 @@
 {
-  "version": "0.1.7",
+  "version": "0.1.8",
   "source": {
     "name": "K-FIND 식품영양성분 데이터베이스",
     "publisher": "식품의약품안전처",
@@ -20,6 +20,7 @@
     {"ingredient_id":"onion_raw","source_food_code":"R106-132000001-0000","source_food_name":"양파, 생것","preparation":"raw","nutrition_per_100g":{"kcal":29,"protein_g":0.96,"carbs_g":6.52,"fat_g":0.17,"sat_fat_g":0.01,"sugars_g":4.71,"fiber_g":1.60,"sodium_mg":2,"cholesterol_mg":0},"verification_status":"verified","source_url":"https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-132000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"},
     {"ingredient_id":"apple_raw","source_food_code":"R108-050000001-0000","source_food_name":"사과, 생것","preparation":"raw","nutrition_per_100g":{"kcal":52,"protein_g":0.26,"carbs_g":13.96,"fat_g":0.07,"sat_fat_g":0.01,"sugars_g":10.62,"fiber_g":1.80,"sodium_mg":0,"cholesterol_mg":0},"verification_status":"verified","source_url":"https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R108-050000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"},
     {"ingredient_id":"carrot_root_raw","source_food_code":"R106-041007601-0000","source_food_name":"당근, 뿌리, 생것","preparation":"raw","nutrition_per_100g":{"kcal":33,"protein_g":0.78,"carbs_g":7.65,"fat_g":0.18,"sat_fat_g":0.03,"sugars_g":4.49,"fiber_g":2.90,"sodium_mg":25,"cholesterol_mg":0},"verification_status":"verified","source_url":"https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-041007601-0000&searchMonthCd=AVG&searchRegionCd=ZZ"},
-    {"ingredient_id":"garlic_raw","source_food_code":"R106-053002201-0000","source_food_name":"마늘, 생것","preparation":"raw","nutrition_per_100g":{"kcal":128,"protein_g":7.45,"carbs_g":26.42,"fat_g":0.16,"sat_fat_g":0.06,"sugars_g":0.23,"fiber_g":3.80,"sodium_mg":3,"cholesterol_mg":0},"verification_status":"verified","source_url":"https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-053002201-0000&searchMonthCd=AVG&searchRegionCd=ZZ"}
+    {"ingredient_id":"garlic_raw","source_food_code":"R106-053002201-0000","source_food_name":"마늘, 생것","preparation":"raw","nutrition_per_100g":{"kcal":128,"protein_g":7.45,"carbs_g":26.42,"fat_g":0.16,"sat_fat_g":0.06,"sugars_g":0.23,"fiber_g":3.80,"sodium_mg":3,"cholesterol_mg":0},"verification_status":"verified","source_url":"https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-053002201-0000&searchMonthCd=AVG&searchRegionCd=ZZ"},
+    {"ingredient_id":"pork_shoulder_raw","source_food_code":"R109-014009301-0000","source_food_name":"돼지고기, 앞다리(앞다리살), 생것","preparation":"raw","nutrition_per_100g":{"kcal":161,"protein_g":20.56,"carbs_g":0.00,"fat_g":7.92,"sat_fat_g":2.86,"sugars_g":0.00,"fiber_g":0.00,"sodium_mg":50,"cholesterol_mg":60.85},"verification_status":"verified","source_url":"https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R109-014009301-0000&searchMonthCd=AVG&searchRegionCd=ZZ"}
   ]
 }
