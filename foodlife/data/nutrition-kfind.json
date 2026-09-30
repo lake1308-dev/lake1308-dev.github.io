@@ -1,10 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "source": {
     "name": "K-FIND 식품영양성분 데이터베이스",
     "publisher": "식품의약품안전처",
     "basis": "100g",
-    "verified_on": "2026-09-17"
+    "verified_on": "2026-09-30"
   },
   "records": [
     {
@@ -44,6 +44,25 @@
       },
       "verification_status": "verified",
       "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-092000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
+    },
+    {
+      "ingredient_id": "chicken_breast_raw",
+      "source_food_code": "R109-008000401-0000",
+      "source_food_name": "닭고기, 가슴, 생것",
+      "preparation": "raw",
+      "nutrition_per_100g": {
+        "kcal": 106,
+        "protein_g": 22.97,
+        "carbs_g": 0.00,
+        "fat_g": 0.97,
+        "sat_fat_g": 0.37,
+        "sugars_g": 0.00,
+        "fiber_g": 0.00,
+        "sodium_mg": 45,
+        "cholesterol_mg": 56.11
+      },
+      "verification_status": "verified",
+      "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R109-008000401-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
     }
   ]
 }
