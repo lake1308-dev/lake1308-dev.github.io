@@ -1,5 +1,5 @@
 {
-  "version": "0.1.14",
+  "version": "0.1.15",
   "source": {
     "name": "K-FIND 식품영양성분 데이터베이스",
     "publisher": "식품의약품안전처",
@@ -500,6 +500,25 @@
       },
       "verification_status": "verified",
       "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R102-006000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
+    },
+    {
+      "ingredient_id": "green_onion_raw",
+      "source_food_code": "R106-191040001-0000",
+      "source_food_name": "파, 대파, 생것",
+      "preparation": "raw",
+      "nutrition_per_100g": {
+        "kcal": 23,
+        "protein_g": 1.78,
+        "carbs_g": 4.8,
+        "fat_g": 0.15,
+        "sat_fat_g": 0.07,
+        "sugars_g": 2.63,
+        "fiber_g": 1.6,
+        "sodium_mg": 0,
+        "cholesterol_mg": 0
+      },
+      "verification_status": "verified",
+      "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R106-191040001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
     }
   ]
 }
