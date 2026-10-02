@@ -1,5 +1,5 @@
 {
-  "version": "0.1.13",
+  "version": "0.1.14",
   "source": {
     "name": "K-FIND 식품영양성분 데이터베이스",
     "publisher": "식품의약품안전처",
@@ -481,6 +481,25 @@
       },
       "verification_status": "verified",
       "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R108-092000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
+    },
+    {
+      "ingredient_id": "sweet_potato_raw",
+      "source_food_code": "R102-006000001-0000",
+      "source_food_name": "고구마, 생것",
+      "preparation": "raw",
+      "nutrition_per_100g": {
+        "kcal": 147,
+        "protein_g": 1.09,
+        "carbs_g": 35.52,
+        "fat_g": 0.15,
+        "sat_fat_g": 0.06,
+        "sugars_g": 9.83,
+        "fiber_g": 2.4,
+        "sodium_mg": 8,
+        "cholesterol_mg": 0
+      },
+      "verification_status": "verified",
+      "source_url": "https://various.foodsafetykorea.go.kr/nutrient/general/food/detail.do?searchFoodCd=R102-006000001-0000&searchMonthCd=AVG&searchRegionCd=ZZ"
     }
   ]
 }
