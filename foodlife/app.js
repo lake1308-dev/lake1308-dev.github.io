@@ -88,19 +88,23 @@ function bulkToIngredient(row,cols){
 }
 async function loadBulkNutritionDB(){
  try{
-  const res=await fetch("data/nutrition-bulk-1000.json.gz?v=20261004",{cache:"no-store"});
-  if(!res.ok)throw new Error("bulk DB "+res.status);
-  const buf=await res.arrayBuffer(),u8=new Uint8Array(buf);
-  let txt;
-  if(u8[0]===0x1f&&u8[1]===0x8b){
-   if(typeof DecompressionStream==="undefined")throw new Error("gzip decompression unsupported");
-   txt=await new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
-  }else txt=new TextDecoder().decode(u8);
-  const data=JSON.parse(txt),cols=data.columns||[];
-  DB_BULK=(data.rows||[]).map(r=>bulkToIngredient(r,cols));
+  const urls=["data/nutrition-bulk-1000.json.gz?v=20261004",
+   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-1001-2000-p${i+1}.json.gz?v=20261004`)];
+  const loadGzipJson=async url=>{
+   const res=await fetch(url,{cache:"no-store"});if(!res.ok)throw new Error("bulk DB "+res.status+" "+url);
+   const buf=await res.arrayBuffer(),u8=new Uint8Array(buf);let txt;
+   if(u8[0]===0x1f&&u8[1]===0x8b){
+    if(typeof DecompressionStream==="undefined")throw new Error("gzip decompression unsupported");
+    txt=await new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+   }else txt=new TextDecoder().decode(u8);
+   return JSON.parse(txt);
+  };
+  const sets=await Promise.all(urls.map(loadGzipJson));
+  DB_BULK=[];
+  sets.forEach(data=>{const cols=data.columns||[];DB_BULK.push(...(data.rows||[]).map(r=>bulkToIngredient(r,cols)))});
   DB_BULK_BY_NAME=new Map();DB_BULK_BY_ID=new Map();
   DB_BULK.forEach(x=>{DB_BULK_BY_ID.set(x.id,x);DB_BULK_BY_NAME.set(normalize(x.names.ko),x.id)});
-  const c=$("coverageCount");if(c)c.textContent=DB_INGREDIENTS.length+DB_BULK.length;
+  const c=$("coverageCount");if(c)c.textContent=DB_BULK.length;
  }catch(err){console.warn("Bulk nutrition DB unavailable; keeping verified starter DB.",err)}
 }
 async function loadIngredientDB(){
