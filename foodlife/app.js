@@ -89,7 +89,7 @@ function bulkToIngredient(row,cols){
 async function loadBulkNutritionDB(){
  try{
   const urls=["data/nutrition-bulk-1000.json.gz?v=20261004",
-   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-1001-2000-p${i+1}.json.gz?v=20261004`)];
+   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-1001-2000-p${i+1}.json.gz?v=20261004`),\n   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-2001-3000-p${i+1}.json.gz?v=20261004`)];
   const loadGzipJson=async url=>{
    const res=await fetch(url,{cache:"no-store"});if(!res.ok)throw new Error("bulk DB "+res.status+" "+url);
    const buf=await res.arrayBuffer(),u8=new Uint8Array(buf);let txt;
