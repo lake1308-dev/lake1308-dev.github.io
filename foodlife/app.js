@@ -88,9 +88,15 @@ function bulkToIngredient(row,cols){
 }
 async function loadBulkNutritionDB(){
  try{
-  const res=await fetch("data/nutrition-bulk-1000.json?v=20261004",{cache:"no-store"});
+  const res=await fetch("data/nutrition-bulk-1000.json.gz?v=20261004",{cache:"no-store"});
   if(!res.ok)throw new Error("bulk DB "+res.status);
-  const data=await res.json(),cols=data.columns||[];
+  const buf=await res.arrayBuffer(),u8=new Uint8Array(buf);
+  let txt;
+  if(u8[0]===0x1f&&u8[1]===0x8b){
+   if(typeof DecompressionStream==="undefined")throw new Error("gzip decompression unsupported");
+   txt=await new Response(new Blob([u8]).stream().pipeThrough(new DecompressionStream("gzip"))).text();
+  }else txt=new TextDecoder().decode(u8);
+  const data=JSON.parse(txt),cols=data.columns||[];
   DB_BULK=(data.rows||[]).map(r=>bulkToIngredient(r,cols));
   DB_BULK_BY_NAME=new Map();DB_BULK_BY_ID=new Map();
   DB_BULK.forEach(x=>{DB_BULK_BY_ID.set(x.id,x);DB_BULK_BY_NAME.set(normalize(x.names.ko),x.id)});
