@@ -1,7 +1,7 @@
 const $=id=>document.getElementById(id);
 let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
-let DB_INGREDIENTS=[],DB_ALIAS=new Map();
+let DB_INGREDIENTS=[],DB_ALIAS=new Map(),DB_BULK=[],DB_BULK_BY_NAME=new Map(),DB_BULK_BY_ID=new Map();
 let DB_RECIPES=[];
 const SMALL_SERVING_CATEGORIES=new Set(["spice","seasoning","sweetener","oil"]);
 
@@ -79,6 +79,24 @@ async function loadRecipeDB(){
   const data=await res.json(); DB_RECIPES=data.recipes||[];
  }catch(err){console.warn("Recipe DB unavailable; using prototype fallback.",err)}
 }
+function bulkToIngredient(row,cols){
+ const x=Object.fromEntries(cols.map((k,i)=>[k,row[i]]));
+ const id="bulk:"+x.code;
+ return {id,names:{ko:x.name,en:x.name},aliases:{ko:[],en:[]},category:"official_food",verification_status:"official_bulk",
+  nutrition_per_100g:{kcal:x.kcal,protein_g:x.protein_g,fat_g:x.fat_g,carbs_g:x.carbs_g,sugars_g:x.sugars_g,fiber_g:x.fiber_g,sodium_mg:x.sodium_mg,cholesterol_mg:x.cholesterol_mg,sat_fat_g:x.sat_fat_g},
+  sources:[{food_code:x.code,food_name:x.name,source:x.source,reference_date:x.reference_date,basis:x.basis,data_type:x.type}]};
+}
+async function loadBulkNutritionDB(){
+ try{
+  const res=await fetch("data/nutrition-bulk-1000.json?v=20261004",{cache:"no-store"});
+  if(!res.ok)throw new Error("bulk DB "+res.status);
+  const data=await res.json(),cols=data.columns||[];
+  DB_BULK=(data.rows||[]).map(r=>bulkToIngredient(r,cols));
+  DB_BULK_BY_NAME=new Map();DB_BULK_BY_ID=new Map();
+  DB_BULK.forEach(x=>{DB_BULK_BY_ID.set(x.id,x);DB_BULK_BY_NAME.set(normalize(x.names.ko),x.id)});
+  const c=$("coverageCount");if(c)c.textContent=DB_INGREDIENTS.length+DB_BULK.length;
+ }catch(err){console.warn("Bulk nutrition DB unavailable; keeping verified starter DB.",err)}
+}
 async function loadIngredientDB(){
  try{
   const res=await fetch("data/ingredients.json?v=1.2.1",{cache:"no-store"});
@@ -89,10 +107,11 @@ async function loadIngredientDB(){
 function findIngredient(raw){
  const q=normalize(raw);
  const dbid=DB_ALIAS.get(q); if(dbid)return dbid;
+ const bulkid=DB_BULK_BY_NAME.get(q); if(bulkid)return bulkid;
  for(const [k,v] of Object.entries(I)) if(v[6].some(a=>normalize(a)===q)) return k;
  return null;
 }
-function getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||null}
+function getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||DB_BULK_BY_ID.get(id)||null}
 function servingPresets(id){
  const x=getIngredient(id);
  if(x && SMALL_SERVING_CATEGORIES.has(x.category)) return [1,5,10,15,30];
@@ -144,7 +163,7 @@ function renderIngredient(key,scroll=true){
  document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.g=presets[i];b.textContent=presets[i]+"g";b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
  $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
- const verified=db?.verification_status==="verified"&&db?.nutrition_per_100g?.kcal!=null;
+ const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
  $("ingredientNote").textContent=verified?tr("Verified nutrition per 100g. Choose a dish below or browse by country.","검증된 100g 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요."):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
@@ -297,7 +316,7 @@ function recipeSearch(q){
 }
 $("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
 $("closeRecipe").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget)?.scrollIntoView({behavior:"smooth",block:"start"})};
-Promise.all([loadIngredientDB(),loadRecipeDB()]).then(()=>{renderCountryCards();applyLang()});
+loadIngredientDB().then(()=>Promise.all([loadBulkNutritionDB(),loadRecipeDB()])).then(()=>{renderCountryCards();applyLang()});
 
 function recipesForIngredient(id){
  return DB_RECIPES.filter(r=>r.ingredients?.some(x=>x.ingredient_id===id));
