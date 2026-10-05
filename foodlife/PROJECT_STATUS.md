@@ -279,3 +279,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Stored retailer source URLs and original 250ml basis; converted to 100ml without density assumptions.
 - Regular: 110kcal, carbs28g, sugars27g, sodium6mg per250ml; undisclosed nutrients null. Zero:0kcal, carbs4g,sugars0g,sodium6mg,protein/fat/saturated fat/cholesterol0 per250ml.
 - Kept 50,000 official records separate from curated product records.
+
+### Simple basic ingredient selection
+- Common basic ingredients have short Korean display names and top-ranked exact aliases.
+- Canonical nutrient record and original source names remain unchanged and visible in source details.
+- Peanut basic entry added as nutrition-pending; no raw peanut verified data exists in current loaded set, so no nutrient values guessed.
