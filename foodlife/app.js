@@ -297,11 +297,11 @@ function renderExplorerFilters(){
 let searchTimer=null;$("ingredientInput").addEventListener("input",e=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderIngredientSuggestions(e.target.value),120)});\n$("ingredientInput").addEventListener("keydown",e=>{const host=$("ingredientSuggestions");if(e.key==="Escape"){host.classList.remove("show");suggestionIndex=-1}else if(host.classList.contains("show")&&e.key==="ArrowDown"){e.preventDefault();moveSuggestion(1)}else if(host.classList.contains("show")&&e.key==="ArrowUp"){e.preventDefault();moveSuggestion(-1)}else if(host.classList.contains("show")&&e.key==="Enter"&&suggestionIndex>=0){e.preventDefault();chooseSuggestion()}});
 $("searchForm").addEventListener("submit",e=>{
  e.preventDefault();const raw=$("ingredientInput").value,list=searchIngredients(raw,20),k=findIngredientExact(raw);
- if(k){$("ingredientSuggestions").classList.remove("show");renderIngredient(k);return}
- if(list.length===1){$("ingredientSuggestions").classList.remove("show");renderIngredient(list[0].id);return}
+ if(k){$("ingredientSuggestions").classList.remove("show");$("ingredientFallback")?.classList.add("hidden");renderIngredient(k);return}
+ if(list.length===1){$("ingredientSuggestions").classList.remove("show");$("ingredientFallback")?.classList.add("hidden");renderIngredient(list[0].id);return}
  if(list.length>1){renderIngredientSuggestions(raw);$("result").classList.add("hidden");return}
  $("ingredientSuggestions").classList.remove("show");$("result").classList.add("hidden");
- alert(tr("No matching food was found. Try a shorter or more common food name.","일치하는 식품을 찾지 못했습니다. 더 짧거나 일반적인 식품명으로 검색해 보세요."));
+ const fallback=$("ingredientFallback");if(fallback){fallback.classList.remove("hidden");fallback.textContent=tr(`No match for “${raw}”. Try a shorter name or another common spelling.`,`“${raw}” 검색 결과가 없습니다. 더 짧은 이름이나 다른 흔한 표기로 검색해 보세요.`)}
 });
 document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredientInput").value=b.dataset.query;renderIngredient(findIngredient(b.dataset.query))});
 $("amountInput").addEventListener("input",e=>{const v=Math.max(1,Math.min(5000,Number(e.target.value)||1));currentAmount=v;updateNutrition()});
