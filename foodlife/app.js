@@ -123,7 +123,7 @@ const SEARCH_GROUPS=[
  ["아메리카노","아메리카노커피"],["커피","커피음료"],["콜라","탄산음료"],["사이다","탄산음료"],["라면","라멘"],
  ["김치찌개","김치 찌개"],["된장찌개","된장 찌개"],["순두부찌개","순두부 찌개"],["볶음밥","볶음 밥"],
  ["삼겹살","돼지고기 삼겹살"],["곱창","소곱창","돼지곱창"],["막창","돼지막창","소막창"],["대창","소대창"],
- ["우유","밀크"],["요거트","요구르트"],["돈까스","돈가스"],["짜장면","자장면"],["햄버거","버거"],["치킨","닭고기"],["고구마","sweet potato"],["감자","potato"]
+ ["우유","밀크"],["요거트","요구르트"],["돈까스","돈가스"],["짜장면","자장면"],["햄버거","버거"],["치킨","닭고기"],["카레","커리"],["초밥","스시"],["쥬스","주스"],["제육","제육볶음","돼지고기볶음"],["순대국","순댓국"],["닭도리탕","닭볶음탕"],["고구마","sweet potato"],["감자","potato"]
 ];
 const SEARCH_SYNONYMS=new Map();
 SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));
@@ -160,8 +160,8 @@ function findIngredientExact(raw){
 function findIngredient(raw){return findIngredientExact(raw)||searchIngredients(raw,1)[0]?.id||null}
 function renderIngredientSuggestions(raw){
  const host=$("ingredientSuggestions");if(!host)return;const q=normalize(raw);if(!q){host.innerHTML="";host.classList.remove("show");return}
- const list=searchIngredients(raw,12);host.innerHTML="";
- list.forEach(x=>{const item=getIngredient(x.id),src=item?.sources?.[0],b=document.createElement("button");b.type="button";b.className="ingredient-suggestion";b.innerHTML="<strong>"+x.name+"</strong><small>"+(src?.basis||"100g")+"</small>";b.onclick=()=>{$("ingredientInput").value=x.name;host.classList.remove("show");renderIngredient(x.id)};host.appendChild(b)});
+ const list=searchIngredients(raw,12);host.innerHTML="";host.setAttribute("role","listbox");
+ list.forEach(x=>{const item=getIngredient(x.id),src=item?.sources?.[0],b=document.createElement("button");b.type="button";b.className="ingredient-suggestion";b.setAttribute("role","option");b.innerHTML="<strong>"+x.name+"</strong><small>"+(src?.basis||"100g")+"</small>";b.onclick=()=>{$("ingredientInput").value=x.name;host.classList.remove("show");renderIngredient(x.id)};host.appendChild(b)});
  host.classList.toggle("show",list.length>0);
 }
 function getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||DB_BULK_BY_ID.get(id)||null}
@@ -293,7 +293,7 @@ function renderExplorerFilters(){
  tf.appendChild(filterButton(tr("All styles","전체 방식"),"All","type",type==="All"));uniq(regionBase.map(d=>d.type)).forEach(tp=>{const d=regionBase.find(x=>x.type===tp);tf.appendChild(filterButton(tr(tp,d.typeKo),tp,"type",type===tp))});
  let list=regionBase;if(type!=="All")list=list.filter(d=>d.type===type);renderDishCards(list,$("exploreGrid"));
 }
-$("ingredientInput").addEventListener("input",e=>renderIngredientSuggestions(e.target.value));
+let searchTimer=null;$("ingredientInput").addEventListener("input",e=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderIngredientSuggestions(e.target.value),120)});\n$("ingredientInput").addEventListener("keydown",e=>{if(e.key==="Escape")$("ingredientSuggestions").classList.remove("show")});
 $("searchForm").addEventListener("submit",e=>{
  e.preventDefault();const raw=$("ingredientInput").value,list=searchIngredients(raw,20),k=findIngredientExact(raw);
  if(k){$("ingredientSuggestions").classList.remove("show");renderIngredient(k);return}
