@@ -289,3 +289,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Replaced pending raw placeholder with explicit dried peanut representative R105-007000002-0000, verified in live K-FIND (National Institute of Crop Science), 100g:520kcal, protein25.74g, carbs18.36g, fat42.57g, saturated8.04g, sugars4.4g, fiber13.4g,sodium5mg,cholesterol0mg.
 - Basic display remains 땅콩; provenance and preparation disclosed. No raw/roasted equivalence assumed.
 - Source-backed peanut allergen information shown independently from package shared-facility notices.
+
+### Source-backed basic ingredient allergen expansion
+- Explicit curated ingredient mapping for peanut,tomato,peach,egg,soybean,chicken,pork,beef,shrimp with MFDS source link. No inference from processed-product names.
+- Removed unverified legacy no-common-allergen claims; unknown now explicitly does not mean allergy-free.
+- Bilingual allergen names and ingredient/product cross-contact distinction retained.

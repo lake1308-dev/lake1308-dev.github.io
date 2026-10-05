@@ -268,16 +268,25 @@ function updateNutrition(){
  $("cholesterol").textContent=dn.cholesterol_mg!=null?Math.round(dn.cholesterol_mg*factor)+"mg":(x.chol==null?"—":Math.round(x.chol*factor)+"mg");
  document.querySelectorAll(".amount-presets button").forEach(b=>b.classList.toggle("active",Number(b.dataset.grams)===currentAmount));
 }
+const ALLERGEN_SOURCE_URL="https://www.foodsafetykorea.go.kr/portal/board/boardDetail.do?bbs_no=bbs001&menu_no=3120&ntctxt_no=1091412";
+const INGREDIENT_ALLERGENS={peanut_dried:"땅콩",tomato_raw:"토마토",peach_white_raw:"복숭아",chicken_breast_raw:"닭고기",pork_belly_raw:"돼지고기",pork_tenderloin_raw:"돼지고기",pork_shoulder_raw:"돼지고기",beef_hanwoo_round_grade1_raw:"쇠고기",beef_hanwoo_brisket_grade1_raw:"쇠고기",chicken:"닭고기",egg:"알류",tofu:"대두",beef:"쇠고기",pork:"돼지고기",shrimp:"새우"};
+const ALLERGEN_NAMES_EN={땅콩:"Peanut",토마토:"Tomato",복숭아:"Peach",닭고기:"Chicken",돼지고기:"Pork",쇠고기:"Beef",알류:"Egg",대두:"Soybean",새우:"Shrimp"};
+function ingredientAllergenInfo(key){const db=getIngredient(key),label=INGREDIENT_ALLERGENS[db?.id||canonicalIngredientId(key)];return db?.allergen_info||(label?{contains:[label],source_url:ALLERGEN_SOURCE_URL}:null)}
 function renderAllergy(key){
- const host=$("allergyContent"),a=EXTRA[key]?.allergy,db=getIngredient(key),src=db?.sources?.[0];
- if(db?.allergen_info){
-  host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p"),link=document.createElement("a");status.className="allergy-status";status.textContent=tr("⚠ Contains peanut allergen","⚠ 땅콩 알레르기 유발 식품");note.textContent=tr("Peanut is a food allergen listed by MFDS. This describes the ingredient itself; other allergens and shared-facility notices depend on the packaged product.","땅콩은 식약처가 안내하는 알레르기 유발 식품입니다. 재료 자체의 정보이며, 다른 알레르기 원료와 같은 제조시설 안내는 개별 제품 표시를 확인하세요.");link.href=db.allergen_info.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=tr("MFDS allergen information ↗","식약처 알레르기 정보 출처 ↗");host.append(status,note,link);return;
+ const host=$("allergyContent"),db=getIngredient(key),info=ingredientAllergenInfo(key);
+ if(info){
+  host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p"),link=document.createElement("a");
+  const names=info.contains.map(x=>lang==="ko"?x:(ALLERGEN_NAMES_EN[x]||x)).join(" · ");
+  status.className="allergy-status";status.textContent=tr("⚠ Food allergen: ","⚠ 알레르기 유발 성분: ")+names;
+  note.textContent=tr("This ingredient contains an allergen listed by MFDS. Other allergens and shared-facility notices depend on the packaged product; check its label.","이 재료는 식약처가 안내하는 알레르기 유발 성분에 해당하거나 이를 포함합니다. 다른 알레르기 원료와 같은 제조시설 안내는 개별 제품 표시를 확인하세요.");
+  link.href=info.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=tr("MFDS allergen information ↗","식약처 알레르기 정보 출처 ↗");host.append(status,note,link);return;
  }
- if(!a&&db?.verification_status==="official_bulk"){host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p");status.className="allergy-status";status.textContent=tr("Allergen data not included in this nutrition dataset","이 영양성분 데이터에는 알레르기 정보가 포함되어 있지 않습니다");note.textContent=tr("For packaged foods, check the product label. For prepared dishes, ingredients can vary by recipe and restaurant.","가공식품은 제품 표시사항을, 조리음식은 조리법·업소별 원재료를 확인하세요.");host.append(status,note);return}
- if(!a){host.innerHTML='<p class="allergy-status">'+tr("Information being verified","정보 확인 중")+'</p><p>'+tr("Verified allergy information for this ingredient is being added.","이 재료의 검증된 알레르기 정보를 추가하고 있습니다.")+'</p>';return}
- if(a[0]==="major")host.innerHTML='<p class="allergy-status">⚠ '+tr(a[1],a[2])+'</p><p>'+tr(a[3],a[4])+'</p>';
- else host.innerHTML='<p class="allergy-status">✓ '+tr("No common major allergen identified","일반적인 주요 알레르겐 해당 없음")+'</p><p>'+tr(a[1],a[2])+'</p>';
+ if(db?.verification_status==="official_bulk"){
+  host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p");status.className="allergy-status";status.textContent=tr("Allergen data not included in this nutrition dataset","이 영양성분 데이터에는 알레르기 정보가 포함되어 있지 않습니다");note.textContent=tr("For packaged foods, check the product label. For prepared dishes, ingredients can vary by recipe and restaurant.","가공식품은 제품 표시사항을, 조리음식은 조리법·업소별 원재료를 확인하세요.");host.append(status,note);return;
+ }
+ host.innerHTML='<p class="allergy-status">'+tr("Information being verified","정보 확인 중")+'</p><p>'+tr("No verified allergen information is connected yet. This does not mean allergy-free.","아직 확인된 알레르기 정보가 연결되지 않았습니다. 알레르기가 없다는 뜻은 아닙니다.")+'</p>';
 }
+
 function renderIngredient(key,scroll=true,preserveAmount=false){
  if(scroll){$("ingredientFallback").classList.add("hidden");$("recipe").classList.add("hidden");$("explorer").classList.add("hidden");currentDish=null;lastRecipeTrigger=null}
  currentKey=key; const d=I[key], db=getIngredient(key);
