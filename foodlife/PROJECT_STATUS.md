@@ -312,3 +312,13 @@ Scope: domestic-data beta; expanded products and monetization follow launch. Fiv
 - Round 3: expand bilingual data guide for source scope, generic versus branded foods, missing versus zero, amount and units, allergens and partial recipe totals. Rename source card label to avoid implying retail labels are official government data. Complete pending-search no-match guidance after loading.
 
 - Round 4: add bilingual service and input/privacy notices based on actual code behavior, including GitHub Pages IP logging and external links. Existing public repository has Issues enabled; connect user-initiated report draft with template, login/public visibility notice. No report is automatically submitted. Actual mobile viewport and final release checks remain for round 5.
+
+
+## Five-round beta release verification — 2026-10-06
+- All five preparation rounds completed for the domestic-data beta. Product expansion and monetization remain separate follow-up work.
+- Round 5: Korean page title/description, canonical and Open Graph metadata, theme color, and main sitemap entry.
+- Node regression passed: 50,000 records, 31 verified ingredients, 13 recipes; aliases, amount scaling, missing values, g/ml separation, and world-filter recovery. Local asset references and sitemap XML passed.
+- Deployed Chrome iframe viewports: 320/375/768px frames (305/360/753px content widths after scrollbars), no horizontal overflow on home pages. 320px peanut results: 30g = 156 kcal and peanut allergen notice; no horizontal overflow. 375px Chilsung 250ml = 110 kcal; no horizontal overflow. Invalid amount 0 displayed validation guidance.
+- Actual phone hardware/browser, virtual keyboard and touch behavior remain unverified. Iframe checks establish narrow browser layout, not device certification.
+- Metadata and public live page verified after successful GitHub Pages deployment 709fe8229edad830c545c5cc3e5e7f8ef6aaae46.
+- QA responsive page is not linked in product navigation and has noindex,nofollow. No automatic reports or new analytics were introduced.
