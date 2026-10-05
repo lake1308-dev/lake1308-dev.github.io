@@ -89,7 +89,7 @@ function bulkToIngredient(row,cols){
 async function loadBulkNutritionDB(){
  try{
   const urls=["data/nutrition-bulk-1000.json.gz?v=20261004",
-   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-1001-2000-p${i+1}.json.gz?v=20261004`),\n   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-2001-3000-p${i+1}.json.gz?v=20261004`)];
+   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-1001-2000-p${i+1}.json.gz?v=20261004`),\n   ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-2001-3000-p${i+1}.json.gz?v=20261004`),\n   ...Array.from({length:17},(_,i)=>{const start=3001+i*1000,end=4000+i*1000;return `data/nutrition-bulk-${start}-${end}.json.gz?v=20261004`;})];
   const loadGzipJson=async url=>{
    const res=await fetch(url,{cache:"no-store"});if(!res.ok)throw new Error("bulk DB "+res.status+" "+url);
    const buf=await res.arrayBuffer(),u8=new Uint8Array(buf);let txt;
@@ -135,7 +135,7 @@ function nutritionFor(id){
 }
 function applyLang(){
  document.documentElement.lang=lang;
- document.querySelectorAll("[data-en]").forEach(el=>el.textContent=el.dataset[lang]);
+ document.querySelectorAll("[data-en]").forEach(el=>{if(!el.classList.contains("coverage"))el.textContent=el.dataset[lang]});\n const cov=$("coverageCount");if(cov){const p=cov.closest(".coverage");if(p)p.innerHTML=lang==="ko"?`공식 식품 데이터: <span id="coverageCount">${DB_BULK.length||20000}</span>건 · 검증 재료 데이터 순차 확대`:`Official food database: <span id="coverageCount">${DB_BULK.length||20000}</span> records · verified ingredient data expanding`;}
  $("langBtn").textContent=lang==="ko"?"English":"한국어";
  $("ingredientInput").placeholder=lang==="ko"?"닭, 계란, 토마토, 밥...":"Chicken, egg, tomato, rice...";
  $("recipeSearchInput").placeholder=lang==="ko"?"닭볶음탕, 한국요리, 매운 요리...":"Chicken curry, Korean, spicy...";
