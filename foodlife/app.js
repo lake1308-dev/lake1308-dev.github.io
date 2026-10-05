@@ -318,6 +318,8 @@ document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredie
 $("amountInput").addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<=0)return;const v=Math.max(1,Math.min(5000,raw));currentAmount=v;if(v!==raw)e.target.value=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.grams);if(!Number.isFinite(v)||v<=0)return;currentAmount=v;$("amountInput").value=currentAmount;updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
+$("exploreBtn").onclick=()=>{currentKey=null;country="Korea";region="All";type="All";$("explorer").classList.remove("hidden");renderCountryCards();renderExplorerFilters();$("countrySection")?.scrollIntoView({behavior:"smooth",block:"start"})};
+$("exploreBack").onclick=()=>{$("explorer").classList.add("hidden");$("countrySection")?.scrollIntoView({behavior:"smooth",block:"start"})};
 function countrySearch(q){
  const raw=normalize(q),host=$("countrySearchResults");host.innerHTML="";
  if(!raw)return;
