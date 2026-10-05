@@ -140,6 +140,7 @@ function scoreFoodName(name,terms){
  const n=normalize(name),nc=compactSearch(n);let score=Infinity;
  for(const q of terms){const qc=compactSearch(q);if(n===q||nc===qc)score=Math.min(score,0);else if(n.startsWith(q)||nc.startsWith(qc))score=Math.min(score,1);else if(n.includes(q)||nc.includes(qc))score=Math.min(score,2)}
  const primary=terms[0],bad=SEARCH_FALSE_POSITIVES[primary]||[];if(bad.some(x=>n.includes(normalize(x))))score+=20;
+ const pc=compactSearch(primary);if(score<Infinity){if(n===primary||nc===pc)score-=6;else if(n.startsWith(primary+"_")||n.startsWith(primary+" ")||nc.startsWith(pc))score-=3;else if(n.includes("_"+primary)||n.includes(" "+primary))score-=1}
  return score;
 }
 function searchIngredients(raw,limit=20){
