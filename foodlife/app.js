@@ -184,7 +184,7 @@ function nutritionFor(id){
 function applyLang(){
  document.documentElement.lang=lang;
  document.querySelectorAll("[data-en]").forEach(el=>{if(!el.classList.contains("coverage"))el.textContent=el.dataset[lang]});
- const cov=$("coverageCount");if(cov){const p=cov.closest(".coverage");if(p)p.innerHTML=lang==="ko"?`공식 식품 데이터: <span id="coverageCount">${DB_BULK.length||50000}</span>건 · 검증 재료 데이터 순차 확대`:`Official food database: <span id="coverageCount">${DB_BULK.length||50000}</span> records · verified ingredient data expanding`;}
+ const cov=$("coverageCount");if(cov){const p=cov.closest(".coverage"),count=DB_BULK.length,status=bulkLoadState==="loading"?tr("loading","불러오는 중"):bulkLoadState==="partial"?tr("partially loaded","일부 로드"):bulkLoadState==="failed"?tr("load failed","로드 실패"):tr("loaded","로드 완료");if(p)p.innerHTML=lang==="ko"?`공식 식품 데이터: <span id="coverageCount">${count.toLocaleString("ko-KR")}</span>건 · ${status} · 검증 재료 데이터 순차 확대`:`Official food database: <span id="coverageCount">${count.toLocaleString("en-US")}</span> records · ${status} · verified ingredient data expanding`;}
  $("langBtn").textContent=lang==="ko"?"English":"한국어";
  $("ingredientInput").placeholder=lang==="ko"?"닭, 계란, 토마토, 밥...":"Chicken, egg, tomato, rice...";
  $("recipeSearchInput").placeholder=lang==="ko"?"닭볶음탕, 한국요리, 매운 요리...":"Chicken curry, Korean, spicy...";
