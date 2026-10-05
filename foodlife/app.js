@@ -163,9 +163,9 @@ function renderIngredientSuggestions(raw){
  const host=$("ingredientSuggestions");if(!host)return;const q=normalize(raw);if(!q){host.innerHTML="";host.classList.remove("show");return}
  const list=searchIngredients(raw,12);host.innerHTML="";host.setAttribute("role","listbox");
  list.forEach(x=>{const item=getIngredient(x.id),src=item?.sources?.[0],b=document.createElement("button");b.type="button";b.className="ingredient-suggestion";b.setAttribute("role","option");b.innerHTML="<strong>"+x.name+"</strong><small>"+(src?.basis||"100g")+"</small>";b.onclick=()=>{$("ingredientInput").value=x.name;host.classList.remove("show");renderIngredient(x.id)};host.appendChild(b)});
- host.classList.toggle("show",list.length>0);
+ suggestionIndex=-1;host.classList.toggle("show",list.length>0);
 }
-function getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||DB_BULK_BY_ID.get(id)||null}
+function moveSuggestion(delta){const host=$("ingredientSuggestions"),items=[...host.querySelectorAll(".ingredient-suggestion")];if(!items.length)return;suggestionIndex=(suggestionIndex+delta+items.length)%items.length;items.forEach((x,i)=>x.classList.toggle("active",i===suggestionIndex));items[suggestionIndex].scrollIntoView({block:"nearest"})}\nfunction chooseSuggestion(){const items=[...$("ingredientSuggestions").querySelectorAll(".ingredient-suggestion")];if(suggestionIndex>=0&&items[suggestionIndex]){items[suggestionIndex].click();return true}return false}\nfunction getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||DB_BULK_BY_ID.get(id)||null}
 function servingPresets(id){
  const x=getIngredient(id);
  if(x && SMALL_SERVING_CATEGORIES.has(x.category)) return [1,5,10,15,30];
