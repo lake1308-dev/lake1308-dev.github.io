@@ -3,6 +3,7 @@ let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";\nl
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
 let DB_INGREDIENTS=[],DB_ALIAS=new Map(),DB_BULK=[],DB_BULK_BY_NAME=new Map(),DB_BULK_BY_ID=new Map();
 let DB_RECIPES=[];
+let bulkLoadState="loading";
 const SMALL_SERVING_CATEGORIES=new Set(["spice","seasoning","sweetener","oil"]);
 
 const I={
@@ -109,9 +110,10 @@ async function loadBulkNutritionDB(){
   DB_BULK_BY_NAME=new Map();DB_BULK_BY_ID=new Map();
   DB_BULK.forEach(x=>{DB_BULK_BY_ID.set(x.id,x);DB_BULK_BY_NAME.set(normalize(x.names.ko),x.id)});
   const c=$("coverageCount");if(c)c.textContent=DB_BULK.length;
+  bulkLoadState=failed.length?"partial":"ready";
   if(failed.length)console.warn("Some bulk nutrition chunks failed; keeping loaded records.",failed.length,failed.map(x=>x.reason?.message||String(x.reason)));
   if(!sets.length)throw new Error("all bulk nutrition chunks failed");
- }catch(err){console.warn("Bulk nutrition DB unavailable; keeping verified starter DB.",err)}
+ }catch(err){bulkLoadState="failed";console.warn("Bulk nutrition DB unavailable; keeping verified starter DB.",err)}
 }
 async function loadIngredientDB(){
  try{
@@ -314,7 +316,7 @@ $("searchForm").addEventListener("submit",e=>{
  if(list.length===1){$("ingredientSuggestions").classList.remove("show");$("ingredientFallback")?.classList.add("hidden");renderIngredient(list[0].id);return}
  if(list.length>1){renderIngredientSuggestions(raw);$("result").classList.add("hidden");return}
  $("ingredientSuggestions").classList.remove("show");$("result").classList.add("hidden");
- const fallback=$("ingredientFallback");if(fallback){fallback.classList.remove("hidden");fallback.textContent=tr(`No match for “${raw}”. Try a shorter name or another common spelling.`,`“${raw}” 검색 결과가 없습니다. 더 짧은 이름이나 다른 흔한 표기로 검색해 보세요.`)}
+ const fallback=$("ingredientFallback");if(fallback){fallback.classList.remove("hidden");fallback.textContent=bulkLoadState==="loading"?tr("Official food data is still loading. Please try the search again in a moment.","공식 식품 데이터를 불러오는 중입니다. 잠시 후 다시 검색해 주세요."):bulkLoadState==="failed"?tr("The official food database could not be loaded. Verified starter ingredients are still available.","공식 식품 데이터베이스를 불러오지 못했습니다. 검증된 기본 재료 검색은 사용할 수 있습니다."):tr(`No match for “${raw}”. Try a shorter name or another common spelling.`,`“${raw}” 검색 결과가 없습니다. 더 짧은 이름이나 다른 흔한 표기로 검색해 보세요.`)}
 });
 document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{const q=b.dataset.query;$("ingredientInput").value=q;const exact=findIngredientExact(q),list=searchIngredients(q,20);if(exact){renderIngredient(exact);return}if(list.length){renderIngredient(list[0].id);return}const fallback=$("ingredientFallback");$("result").classList.add("hidden");if(fallback){fallback.classList.remove("hidden");fallback.textContent=tr("No matching food found.","일치하는 식품을 찾지 못했습니다.")}});
 $("amountInput").addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<=0)return;const v=Math.max(1,Math.min(5000,raw));currentAmount=v;if(v!==raw)e.target.value=v;updateNutrition()});
