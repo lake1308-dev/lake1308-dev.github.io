@@ -1,5 +1,5 @@
 const $=id=>document.getElementById(id);
-let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
+let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";\nlet suggestionIndex=-1;
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
 let DB_INGREDIENTS=[],DB_ALIAS=new Map(),DB_BULK=[],DB_BULK_BY_NAME=new Map(),DB_BULK_BY_ID=new Map();
 let DB_RECIPES=[];
@@ -294,7 +294,7 @@ function renderExplorerFilters(){
  tf.appendChild(filterButton(tr("All styles","전체 방식"),"All","type",type==="All"));uniq(regionBase.map(d=>d.type)).forEach(tp=>{const d=regionBase.find(x=>x.type===tp);tf.appendChild(filterButton(tr(tp,d.typeKo),tp,"type",type===tp))});
  let list=regionBase;if(type!=="All")list=list.filter(d=>d.type===type);renderDishCards(list,$("exploreGrid"));
 }
-let searchTimer=null;$("ingredientInput").addEventListener("input",e=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderIngredientSuggestions(e.target.value),120)});\n$("ingredientInput").addEventListener("keydown",e=>{if(e.key==="Escape")$("ingredientSuggestions").classList.remove("show")});
+let searchTimer=null;$("ingredientInput").addEventListener("input",e=>{clearTimeout(searchTimer);searchTimer=setTimeout(()=>renderIngredientSuggestions(e.target.value),120)});\n$("ingredientInput").addEventListener("keydown",e=>{const host=$("ingredientSuggestions");if(e.key==="Escape"){host.classList.remove("show");suggestionIndex=-1}else if(host.classList.contains("show")&&e.key==="ArrowDown"){e.preventDefault();moveSuggestion(1)}else if(host.classList.contains("show")&&e.key==="ArrowUp"){e.preventDefault();moveSuggestion(-1)}else if(host.classList.contains("show")&&e.key==="Enter"&&suggestionIndex>=0){e.preventDefault();chooseSuggestion()}});
 $("searchForm").addEventListener("submit",e=>{
  e.preventDefault();const raw=$("ingredientInput").value,list=searchIngredients(raw,20),k=findIngredientExact(raw);
  if(k){$("ingredientSuggestions").classList.remove("show");renderIngredient(k);return}
