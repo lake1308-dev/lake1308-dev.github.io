@@ -244,3 +244,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - ArrowUp from an unselected list correctly selects the last candidate.
 - Combobox exposes expanded state and active candidate to assistive technology.
 - World explorer back navigation returns to visible search when no ingredient is open.
+
+### Homepage quality 6
+- Selecting a new food closes the prior recipe and explorer. Language updates preserve open recipe edits.
+- Opening world food or a country closes stale recipe views.
+- Recipe back restores keyboard focus to its originating card, with a section fallback after language rerender.

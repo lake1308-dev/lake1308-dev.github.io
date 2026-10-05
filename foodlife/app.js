@@ -1,7 +1,7 @@
 const $=id=>document.getElementById(id);
 let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
 let suggestionIndex=-1;
-let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
+let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100,lastRecipeTrigger=null;
 let DB_INGREDIENTS=[],DB_ALIAS=new Map(),DB_BULK=[],DB_BULK_BY_NAME=new Map(),DB_BULK_BY_ID=new Map();
 let DB_RECIPES=[];
 let bulkLoadState="loading";
@@ -256,6 +256,7 @@ function renderAllergy(key){
  else host.innerHTML='<p class="allergy-status">✓ '+tr("No common major allergen identified","일반적인 주요 알레르겐 해당 없음")+'</p><p>'+tr(a[1],a[2])+'</p>';
 }
 function renderIngredient(key,scroll=true,preserveAmount=false){
+ if(scroll){$("recipe").classList.add("hidden");$("explorer").classList.add("hidden");currentDish=null;lastRecipeTrigger=null}
  currentKey=key; const d=I[key], db=getIngredient(key);
  const presets=servingPresets(key); if(!preserveAmount)currentAmount=presets.includes(100)?100:(presets.includes(5)?5:presets[0]);
  document.querySelectorAll(".amount-presets button").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.grams=presets[i];b.textContent=presets[i]+(db?.sources?.[0]?.basis==="100ml"?"ml":"g");b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
@@ -286,7 +287,7 @@ function renderDishCards(list,target){
  list.forEach(d=>{
   const c=document.createElement("article"); c.className="dish-card";c.tabIndex=0;c.setAttribute("role","button");c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();c.click()}});
   c.innerHTML='<span class="country">'+tr(d.country,d.countryKo)+" · "+tr(d.region,d.regionKo)+'</span><h3>'+tr(d.name,d.nameKo)+'</h3><p>'+tr(d.desc,d.descKo)+'</p><span class="open">'+tr("View recipe →","레시피 보기 →")+"</span>";
-  c.onclick=()=>{returnTarget=target.id==="exploreGrid"?"explorer":"result";renderRecipe(d)};
+  c.onclick=()=>{lastRecipeTrigger=c;returnTarget=target.id==="exploreGrid"?"explorer":"result";renderRecipe(d)};
   target.appendChild(c);
  });
 }
@@ -337,7 +338,7 @@ function renderCountryCards(){
  });
 }
 function openCountry(c,r="All"){
- country=c;region=r;type="All";$("explorer").classList.remove("hidden");
+ $("recipe").classList.add("hidden");country=c;region=r;type="All";$("explorer").classList.remove("hidden");
  const filtered=DISHES.filter(d=>d.country===c&&(!currentKey||dishUsesIngredient(d,currentKey)));
  if(currentKey&&!filtered.length){const x=getIngredient(currentKey),isBulk=x?.verification_status==="official_bulk";if(isBulk)currentKey=null}
  renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"});
@@ -368,7 +369,7 @@ document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{const q=b.d
 $("amountInput").addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<=0){e.target.setAttribute("aria-invalid","true");$("amountError").textContent=tr("Enter an amount between 1 and 5,000.","섭취량을 1~5,000 사이로 입력해 주세요.");return}e.target.removeAttribute("aria-invalid");$("amountError").textContent="";const v=Math.max(1,Math.min(5000,raw));currentAmount=v;if(v!==raw)e.target.value=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.grams);if(!Number.isFinite(v)||v<=0)return;currentAmount=v;$("amountInput").value=currentAmount;$("amountInput").removeAttribute("aria-invalid");$("amountError").textContent="";updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
-$("exploreBtn").onclick=()=>{currentKey=null;country="Korea";region="All";type="All";$("explorer").classList.remove("hidden");renderCountryCards();renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"})};
+$("exploreBtn").onclick=()=>{$("recipe").classList.add("hidden");currentKey=null;country="Korea";region="All";type="All";$("explorer").classList.remove("hidden");renderCountryCards();renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"})};
 $("exploreBack").onclick=()=>{$("explorer").classList.add("hidden");($("result").classList.contains("hidden")?$("searchForm"):$("countryCards"))?.scrollIntoView({behavior:"smooth",block:"start"})};
 function countrySearch(q){
  const raw=normalize(q),host=$("countrySearchResults");host.innerHTML="";
@@ -387,7 +388,7 @@ function renderDBRecipeCard(r,host){
  const c=document.createElement("article");c.className="dish-card";c.tabIndex=0;c.setAttribute("role","button");c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();c.click()}});
  const meta=[r.country,r.region].filter(Boolean).join(" · ");
  c.innerHTML='<span class="country">'+meta+'</span><h3>'+(lang==="ko"?r.names.ko:r.names.en)+'</h3><p>'+r.ingredients.slice(0,5).map(x=>dbIngredientName(x.ingredient_id)).join(" · ")+'</p><span class="open">'+tr("View editable recipe →","레시피·재료 보기 →")+'</span>';
- c.onclick=()=>{returnTarget=host.id==="ingredientRecipeResults"?"result":host.id==="exploreGrid"?"explorer":"recipeSearchResults";renderDBRecipe(r)};host.appendChild(c);
+ c.onclick=()=>{lastRecipeTrigger=c;returnTarget=host.id==="ingredientRecipeResults"?"result":host.id==="exploreGrid"?"explorer":"recipeSearchResults";renderDBRecipe(r)};host.appendChild(c);
 }
 function calculateDBRecipeNutrition(r){
  const totals={kcal:0,protein_g:0,carbs_g:0,fat_g:0,sat_fat_g:0,sugars_g:0,sodium_mg:0,cholesterol_mg:0};
@@ -447,7 +448,7 @@ function recipeSearch(q){
  renderDishCards(matches,host);
 }
 $("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
-$("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");const target=$(returnTarget)||$("recipeSearchForm")||$("result");target?.scrollIntoView({behavior:"smooth",block:"start"})};
+$("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");const target=$(returnTarget)||$("recipeSearchForm")||$("result");target?.scrollIntoView({behavior:"smooth",block:"start"});if(lastRecipeTrigger?.isConnected)lastRecipeTrigger.focus({preventScroll:true});else{target?.setAttribute("tabindex","-1");target?.focus({preventScroll:true})}};
 applyLang();
 loadIngredientDB().then(()=>Promise.all([loadBulkNutritionDB(),loadRecipeDB(),loadFoodDetails()])).then(()=>{renderCountryCards();applyLang()});
 
