@@ -92,7 +92,8 @@ async function loadBulkNutritionDB(){
    ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-1001-2000-p${i+1}.json.gz?v=20261004`),
    ...Array.from({length:5},(_,i)=>`data/nutrition-bulk-2001-3000-p${i+1}.json.gz?v=20261004`),
    ...Array.from({length:17},(_,i)=>{const start=3001+i*1000,end=4000+i*1000;return `data/nutrition-bulk-${start}-${end}.json.gz?v=20261004`;}),
-   ...Array.from({length:10},(_,i)=>{const start=20001+i*1000,end=21000+i*1000;return `data/nutrition-bulk-${start}-${end}.json.gz?v=20261004`;})];
+   ...Array.from({length:10},(_,i)=>{const start=20001+i*1000,end=21000+i*1000;return `data/nutrition-bulk-${start}-${end}.json.gz?v=20261004`;}),
+   ...Array.from({length:20},(_,i)=>{const start=30001+i*1000,end=31000+i*1000;return `data/nutrition-bulk-${start}-${end}.json.gz?v=20261004`;})];
   const loadGzipJson=async url=>{
    const res=await fetch(url,{cache:"no-store"});if(!res.ok)throw new Error("bulk DB "+res.status+" "+url);
    const buf=await res.arrayBuffer(),u8=new Uint8Array(buf);let txt;
@@ -139,7 +140,7 @@ function nutritionFor(id){
 function applyLang(){
  document.documentElement.lang=lang;
  document.querySelectorAll("[data-en]").forEach(el=>{if(!el.classList.contains("coverage"))el.textContent=el.dataset[lang]});
- const cov=$("coverageCount");if(cov){const p=cov.closest(".coverage");if(p)p.innerHTML=lang==="ko"?`공식 식품 데이터: <span id="coverageCount">${DB_BULK.length||30000}</span>건 · 검증 재료 데이터 순차 확대`:`Official food database: <span id="coverageCount">${DB_BULK.length||30000}</span> records · verified ingredient data expanding`;}
+ const cov=$("coverageCount");if(cov){const p=cov.closest(".coverage");if(p)p.innerHTML=lang==="ko"?`공식 식품 데이터: <span id="coverageCount">${DB_BULK.length||50000}</span>건 · 검증 재료 데이터 순차 확대`:`Official food database: <span id="coverageCount">${DB_BULK.length||50000}</span> records · verified ingredient data expanding`;}
  $("langBtn").textContent=lang==="ko"?"English":"한국어";
  $("ingredientInput").placeholder=lang==="ko"?"닭, 계란, 토마토, 밥...":"Chicken, egg, tomato, rice...";
  $("recipeSearchInput").placeholder=lang==="ko"?"닭볶음탕, 한국요리, 매운 요리...":"Chicken curry, Korean, spicy...";
@@ -151,9 +152,10 @@ function applyLang(){
 function round1(n){return Math.round(n*10)/10}
 function updateNutrition(){
  if(!currentKey)return; const n=nutritionFor(currentKey); const factor=currentAmount/100;
+ const basis=getIngredient(currentKey)?.sources?.[0]?.basis||"100g", amountUnit=basis==="100ml"?"ml":"g";
  const val=(x,unit)=>x==null?"—":round1(x*factor)+unit;
  $("kcalValue").textContent=n.kcal==null?"—":Math.round(n.kcal*factor);
- $("kcalBasis").textContent="kcal / "+currentAmount+"g";
+ $("kcalBasis").textContent="kcal / "+currentAmount+amountUnit;
  $("protein").textContent=val(n.protein_g,"g");
  $("carbs").textContent=val(n.carbs_g,"g");
  $("fat").textContent=val(n.fat_g,"g");
@@ -174,11 +176,12 @@ function renderAllergy(key){
 function renderIngredient(key,scroll=true){
  currentKey=key; const d=I[key], db=getIngredient(key);
  const presets=servingPresets(key); currentAmount=presets.includes(100)?100:(presets.includes(5)?5:presets[0]);
- document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.g=presets[i];b.textContent=presets[i]+"g";b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
+ document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.g=presets[i];b.textContent=presets[i]+(db?.sources?.[0]?.basis==="100ml"?"ml":"g");b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
  $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
- $("ingredientNote").textContent=verified?tr("Verified nutrition per 100g. Choose a dish below or browse by country.","검증된 100g 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요."):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
+ const officialBasis=db?.sources?.[0]?.basis||"100g";
+ $("ingredientNote").textContent=verified?tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
  renderCountryCards();
