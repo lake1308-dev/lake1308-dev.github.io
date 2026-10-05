@@ -298,3 +298,11 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - 2026-10-06: distinguish ingredient nutrition-source links from retail product-label links; show K-FIND source links using the existing source field. Recipe ingredient names already use basic display names.
 
 - 2026-10-06: search suggestions display source status and explicit calorie basis to clarify ingredient, dish, and retail label records before selection.
+
+## Five-round beta launch plan (agreed 2026-10-06)
+1. Mobile layout and core search/calculation flows: in progress. Harden narrow-screen wrapping, touch controls, and input text size. Desktop live checks required; actual phone viewport inspection remains pending because the current browser interface has no viewport resize API.
+2. Representative food, product, and ingredient search/calculation regression and loading/error states.
+3. Final data guidance and missing-data/allergen clarity review.
+4. Operating information, actionable error reporting route, service and privacy notices grounded in actual behavior.
+5. Final public release checklist, metadata, and deployed-site verification.
+Scope: domestic-data beta; expanded products and monetization follow launch. Five rounds is a target, not a guarantee if a blocker is found.

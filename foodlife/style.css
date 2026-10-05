@@ -35,3 +35,8 @@ button,input{font:inherit}button:focus-visible,[role="button"]:focus-visible,a:f
 @media(max-width:420px){.recipe li[data-ri]>span{flex-basis:100%}.ingredient-card{flex-wrap:wrap;gap:16px}.kcal{text-align:left;min-width:0}.recipe h2{overflow-wrap:anywhere}}
 
 .data-guide{max-width:760px;margin:20px auto;text-align:left;border:1px solid #dce3d8;border-radius:16px;background:#fff;padding:0 18px}.data-guide summary{min-height:44px;padding:14px 0;cursor:pointer;font-weight:700;color:#315c2c}.data-guide summary:focus-visible{outline:3px solid #315c2c;outline-offset:2px}.data-guide p{font-size:14px;line-height:1.7;color:#64705f}.amount-basis-note{grid-column:1/-1;margin:0;line-height:1.6}
+
+/* Beta launch round 1: narrow screens and touch input */
+.ingredient-suggestions.show{grid-template-columns:repeat(2,minmax(0,1fr))}.ingredient-suggestion{min-width:0}.ingredient-suggestion-meta{overflow-wrap:anywhere}.info-grid>*{min-width:0}.food-source a,.allergy-content a{overflow-wrap:anywhere}
+@media(max-width:760px){.ingredient-suggestions.show{grid-template-columns:minmax(0,1fr)}.country-search input,.recipe-search input,.recipe-amount{font-size:16px}.result,.recipe,.explorer{min-width:0}.recipe-layout>*{min-width:0}.search-box button,.recipe-search button,.country-search button{min-height:48px}.sub{line-height:1.65}.topbar nav{flex-direction:row;flex-wrap:wrap;justify-content:flex-end}.nav-btn{font-size:14px;padding:10px 12px}}
+@media(max-width:360px){.topbar{padding-left:12px;padding-right:12px}.brand{font-size:18px}.nav-btn{padding:9px}.hero{padding:0 14px}.result{padding:0 14px}.info-card{padding:16px}}
