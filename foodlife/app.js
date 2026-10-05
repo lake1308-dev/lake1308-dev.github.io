@@ -120,25 +120,25 @@ async function loadIngredientDB(){
 }
 const SEARCH_GROUPS=[
  ["계란","달걀"],["소고기","쇠고기","우육"],["돼지고기","돈육"],["닭고기","계육"],["후라이","프라이"],["후라이드","프라이드"],
- ["아메리카노","아메리카노커피"],["커피","커피음료"],["콜라","탄산음료"],["사이다","탄산음료"],["라면","라멘"],
+ ["아메리카노","아메리카노커피"],["커피","커피음료"],["라면","라멘"],
  ["김치찌개","김치 찌개"],["된장찌개","된장 찌개"],["순두부찌개","순두부 찌개"],["볶음밥","볶음 밥"],
  ["삼겹살","돼지고기 삼겹살"],["곱창","소곱창","돼지곱창"],["막창","돼지막창","소막창"],["대창","소대창"],
- ["우유","밀크"],["요거트","요구르트"],["돈까스","돈가스"],["짜장면","자장면"],["햄버거","버거"],["치킨","닭고기"],["카레","커리"],["초밥","스시"],["쥬스","주스"],["제육","제육볶음","돼지고기볶음"],["순대국","순댓국"],["닭도리탕","닭볶음탕"],["고구마","sweet potato"],["감자","potato"]
+ ["우유","밀크"],["요거트","요구르트"],["돈까스","돈가스"],["짜장면","자장면"],["햄버거","버거"],["카레","커리"],["초밥","스시"],["쥬스","주스"],["제육","제육볶음","돼지고기볶음"],["순대국","순댓국"],["닭도리탕","닭볶음탕"],["고구마","sweet potato"],["감자","potato"]
 ];
 const SEARCH_SYNONYMS=new Map();
-SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));
+SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));\nconst SEARCH_RELATED={"콜라":["탄산음료"],"사이다":["탄산음료"],"치킨":["닭고기"],"제육":["돼지고기볶음"]};
 function compactSearch(s){return normalize(s).replace(/[\s_\-()\[\],.·]/g,"")}
 function editDistance(a,b,max=2){
  if(Math.abs(a.length-b.length)>max)return max+1;let prev=Array.from({length:b.length+1},(_,i)=>i);
  for(let i=1;i<=a.length;i++){const cur=[i];let rowMin=i;for(let j=1;j<=b.length;j++){cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));rowMin=Math.min(rowMin,cur[j])}if(rowMin>max)return max+1;prev=cur}return prev[b.length];
 }
 function searchTerms(raw){
- const q=normalize(raw),terms=[q,...(SEARCH_SYNONYMS.get(q)||[])];return [...new Set(terms.filter(Boolean))];
+ const q=normalize(raw),terms=[q,...(SEARCH_SYNONYMS.get(q)||[]),...(SEARCH_RELATED[q]||[])];return [...new Set(terms.filter(Boolean))];
 }
 const SEARCH_FALSE_POSITIVES={"곱창":["곱창김"],"콜라":["콜라겐"],"사이다":["사이다비니거","사이다 비니거"]};
 function scoreFoodName(name,terms){
  const n=normalize(name),nc=compactSearch(n);let score=Infinity;
- for(const q of terms){const qc=compactSearch(q);if(n===q||nc===qc)score=Math.min(score,0);else if(n.startsWith(q)||nc.startsWith(qc))score=Math.min(score,1);else if(n.includes(q)||nc.includes(qc))score=Math.min(score,2)}
+ for(let ti=0;ti<terms.length;ti++){const q=terms[ti],qc=compactSearch(q),penalty=ti===0?0:(SEARCH_RELATED[terms[0]]||[]).includes(q)?6:2;if(n===q||nc===qc)score=Math.min(score,penalty);else if(n.startsWith(q)||nc.startsWith(qc))score=Math.min(score,1+penalty);else if(n.includes(q)||nc.includes(qc))score=Math.min(score,2+penalty)}
  const primary=terms[0],bad=SEARCH_FALSE_POSITIVES[primary]||[];if(bad.some(x=>n.includes(normalize(x))))score+=20;
  const pc=compactSearch(primary);if(score<Infinity){if(n===primary||nc===pc)score-=6;else if(n.startsWith(primary+"_")||n.startsWith(primary+" ")||nc.startsWith(pc))score-=3;else if(n.includes("_"+primary)||n.includes(" "+primary))score-=1}
  return score;
