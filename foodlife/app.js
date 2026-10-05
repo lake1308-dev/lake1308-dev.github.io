@@ -208,7 +208,8 @@ function updateNutrition(){
  document.querySelectorAll(".amount-presets button").forEach(b=>b.classList.toggle("active",Number(b.dataset.grams)===currentAmount));
 }
 function renderAllergy(key){
- const host=$("allergyContent"),a=EXTRA[key]?.allergy;
+ const host=$("allergyContent"),a=EXTRA[key]?.allergy,db=getIngredient(key),src=db?.sources?.[0];
+ if(!a&&db?.verification_status==="official_bulk"){host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p");status.className="allergy-status";status.textContent=tr("Allergen data not included in this nutrition dataset","이 영양성분 데이터에는 알레르기 정보가 포함되어 있지 않습니다");note.textContent=tr("For packaged foods, check the product label. For prepared dishes, ingredients can vary by recipe and restaurant.","가공식품은 제품 표시사항을, 조리음식은 조리법·업소별 원재료를 확인하세요.");host.append(status,note);return}
  if(!a){host.innerHTML='<p class="allergy-status">'+tr("Information being verified","정보 확인 중")+'</p><p>'+tr("Verified allergy information for this ingredient is being added.","이 재료의 검증된 알레르기 정보를 추가하고 있습니다.")+'</p>';return}
  if(a[0]==="major")host.innerHTML='<p class="allergy-status">⚠ '+tr(a[1],a[2])+'</p><p>'+tr(a[3],a[4])+'</p>';
  else host.innerHTML='<p class="allergy-status">✓ '+tr("No common major allergen identified","일반적인 주요 알레르겐 해당 없음")+'</p><p>'+tr(a[1],a[2])+'</p>';
@@ -221,11 +222,17 @@ function renderIngredient(key,scroll=true){
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
  const officialBasis=db?.sources?.[0]?.basis||"100g";\n const amountUnit=officialBasis==="100ml"?"ml":"g";if($("amountUnit"))$("amountUnit").textContent=amountUnit;$("amountInput").setAttribute("aria-label",lang==="ko"?`섭취량 (${amountUnit})`:`Amount (${amountUnit})`);
- $("ingredientNote").textContent=verified?tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
+ $("ingredientNote").textContent=verified?tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");\n renderFoodSource(key);
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
  renderCountryCards();
  if(scroll) $("result").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function renderFoodSource(key){
+ const host=$("foodSource");if(!host)return;const db=getIngredient(key),src=db?.sources?.[0];host.innerHTML="";
+ if(!src){host.classList.add("hidden");return}host.classList.remove("hidden");
+ const rows=[[tr("Data type","식품 유형"),src.data_type],[tr("Official basis","공식 기준"),src.basis],[tr("Reference date","기준일"),src.reference_date],[tr("Food code","식품코드"),src.food_code],[tr("Source","출처"),src.source]].filter(x=>x[1]);
+ rows.forEach(([label,value])=>{const row=document.createElement("div"),l=document.createElement("span"),v=document.createElement("strong");l.textContent=label;v.textContent=value;row.append(l,v);host.appendChild(row)});
 }
 function renderDishCards(list,target){
  target.innerHTML="";
