@@ -283,7 +283,7 @@ function renderAllergy(key){
   link.href=info.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=tr("MFDS allergen information ↗","식약처 알레르기 정보 출처 ↗");host.append(status,note,link);return;
  }
  if(db?.verification_status==="official_bulk"){
-  host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p");status.className="allergy-status";status.textContent=tr("Allergen data not included in this nutrition dataset","이 영양성분 데이터에는 알레르기 정보가 포함되어 있지 않습니다");note.textContent=tr("For packaged foods, check the product label. For prepared dishes, ingredients can vary by recipe and restaurant.","가공식품은 제품 표시사항을, 조리음식은 조리법·업소별 원재료를 확인하세요.");host.append(status,note);return;
+  host.innerHTML="";const status=document.createElement("p"),note=document.createElement("p");status.className="allergy-status";status.textContent=tr("Allergen data not included in this nutrition dataset","이 영양성분 데이터에는 알레르기 정보가 포함되어 있지 않습니다");note.textContent=tr("This does not mean allergy-free. For packaged foods, check the label; dish ingredients vary by recipe and restaurant.","알레르기가 없다는 뜻은 아닙니다. 가공식품은 제품 표시사항을, 조리음식은 조리법·업소별 원재료를 확인하세요.");host.append(status,note);return;
  }
  host.innerHTML='<p class="allergy-status">'+tr("Information being verified","정보 확인 중")+'</p><p>'+tr("No verified allergen information is connected yet. This does not mean allergy-free.","아직 확인된 알레르기 정보가 연결되지 않았습니다. 알레르기가 없다는 뜻은 아닙니다.")+'</p>';
 }
@@ -496,7 +496,9 @@ function refreshPendingSearch(){
  if(!suggestionsRequested)return;
  const raw=$("ingredientInput").value;if(!raw.trim())return;
  renderIngredientSuggestions(raw);
- if(searchIngredients(raw,1).length)$("ingredientFallback")?.classList.add("hidden");
+ const hint=$("ingredientFallback");
+ if(searchIngredients(raw,1).length)hint?.classList.add("hidden");
+ else if(bulkLoadState!=="loading"&&hint&&!hint.classList.contains("hidden"))hint.textContent=bulkLoadState==="failed"?tr("The official database could not load. Verified starter ingredients remain available.","공식 식품 자료를 불러오지 못했습니다. 검증된 기본 재료는 검색할 수 있습니다."):tr(`No match for “${raw}”. Try a shorter food name.`,`“${raw}” 검색 결과가 없습니다. 음식 이름을 더 짧게 입력해 보세요.`);
 }
 loadIngredientDB().then(()=>{
  refreshPendingSearch();

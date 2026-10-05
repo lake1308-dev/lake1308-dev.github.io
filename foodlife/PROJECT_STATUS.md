@@ -308,3 +308,5 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 Scope: domestic-data beta; expanded products and monetization follow launch. Five rounds is a target, not a guarantee if a blocker is found.
 
 - Round 2: refresh pending typed/submitted searches after ingredient, bulk, and manufacturer data finish loading. Preserve Escape/selection dismissal; no automatic record selection. Representative calculation and alias checks passed. Actual mobile viewport remains pending.
+
+- Round 3: expand bilingual data guide for source scope, generic versus branded foods, missing versus zero, amount and units, allergens and partial recipe totals. Rename source card label to avoid implying retail labels are official government data. Complete pending-search no-match guidance after loading.
