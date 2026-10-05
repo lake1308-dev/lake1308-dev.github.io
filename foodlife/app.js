@@ -118,23 +118,42 @@ async function loadIngredientDB(){
   const c=$("coverageCount"); if(c)c.textContent=DB_INGREDIENTS.length;
  }catch(err){console.warn("Ingredient DB unavailable; using prototype fallback.",err)}
 }
-const SEARCH_SYNONYMS={"계란":"달걀","달걀":"계란","쇠고기":"소고기","소고기":"쇠고기","돈육":"돼지고기","돼지고기":"돈육","후라이":"프라이","후라이드":"프라이드"};
+const SEARCH_GROUPS=[
+ ["계란","달걀"],["소고기","쇠고기","우육"],["돼지고기","돈육"],["닭고기","계육"],["후라이","프라이"],["후라이드","프라이드"],
+ ["아메리카노","아메리카노커피"],["커피","커피음료"],["콜라","탄산음료"],["사이다","탄산음료"],["라면","라멘"],
+ ["김치찌개","김치 찌개"],["된장찌개","된장 찌개"],["순두부찌개","순두부 찌개"],["볶음밥","볶음 밥"],
+ ["삼겹살","돼지고기 삼겹살"],["곱창","소곱창","돼지곱창"],["막창","돼지막창","소막창"],["대창","소대창"],
+ ["우유","밀크"],["요거트","요구르트","요구르트"],["고구마","sweet potato"],["감자","potato"]
+];
+const SEARCH_SYNONYMS=new Map();
+SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));
+function compactSearch(s){return normalize(s).replace(/[\s_\-()\[\],.·]/g,"")}
+function editDistance(a,b,max=2){
+ if(Math.abs(a.length-b.length)>max)return max+1;let prev=Array.from({length:b.length+1},(_,i)=>i);
+ for(let i=1;i<=a.length;i++){const cur=[i];let rowMin=i;for(let j=1;j<=b.length;j++){cur[j]=Math.min(cur[j-1]+1,prev[j]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));rowMin=Math.min(rowMin,cur[j])}if(rowMin>max)return max+1;prev=cur}return prev[b.length];
+}
 function searchTerms(raw){
- const q=normalize(raw),terms=[q]; if(SEARCH_SYNONYMS[q])terms.push(normalize(SEARCH_SYNONYMS[q])); return [...new Set(terms)];
+ const q=normalize(raw),terms=[q,...(SEARCH_SYNONYMS.get(q)||[])];return [...new Set(terms.filter(Boolean))];
+}
+function scoreFoodName(name,terms){
+ const n=normalize(name),nc=compactSearch(n);let score=Infinity;
+ for(const q of terms){const qc=compactSearch(q);if(n===q||nc===qc)score=Math.min(score,0);else if(n.startsWith(q)||nc.startsWith(qc))score=Math.min(score,1);else if(n.includes(q)||nc.includes(qc))score=Math.min(score,2)}
+ return score;
 }
 function searchIngredients(raw,limit=20){
- const terms=searchTerms(raw);if(!terms[0])return [];
- const exact=findIngredientExact(raw);const scored=[];
- DB_BULK.forEach(x=>{const n=normalize(x.names.ko);let score=Infinity;for(const q of terms){if(n===q)score=Math.min(score,0);else if(n.startsWith(q))score=Math.min(score,1);else if(n.includes(q))score=Math.min(score,2)}if(score<Infinity)scored.push({id:x.id,name:x.names.ko,score})});
- DB_INGREDIENTS.forEach(x=>{const names=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean).map(normalize);let score=Infinity;for(const q of terms){if(names.includes(q))score=Math.min(score,0);else if(names.some(n=>n.startsWith(q)))score=Math.min(score,1);else if(names.some(n=>n.includes(q)))score=Math.min(score,2)}if(score<Infinity)scored.push({id:x.id,name:lang==="ko"?x.names.ko:x.names.en,score})});
+ const terms=searchTerms(raw);if(!terms[0])return [];const scored=[];
+ DB_BULK.forEach(x=>{const score=scoreFoodName(x.names.ko,terms);if(score<Infinity)scored.push({id:x.id,name:x.names.ko,score})});
+ DB_INGREDIENTS.forEach(x=>{const names=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean);let score=Math.min(...names.map(n=>scoreFoodName(n,terms)));if(score<Infinity)scored.push({id:x.id,name:lang==="ko"?x.names.ko:x.names.en,score})});
+ if(!scored.length&&compactSearch(terms[0]).length>=3){
+  const q=compactSearch(terms[0]),max=q.length<=4?1:2;
+  DB_BULK.forEach(x=>{const n=compactSearch(x.names.ko);if(n.length>=q.length-2&&n.length<=q.length+4){const head=n.slice(0,Math.min(n.length,q.length+1)),d=editDistance(q,head,max);if(d<=max)scored.push({id:x.id,name:x.names.ko,score:10+d})}});
+ }
  const seen=new Set();return scored.sort((a,b)=>a.score-b.score||a.name.length-b.name.length||a.name.localeCompare(b.name,"ko")).filter(x=>!seen.has(x.id)&&seen.add(x.id)).slice(0,limit);
 }
 function findIngredientExact(raw){
- const q=normalize(raw);
- const dbid=DB_ALIAS.get(q); if(dbid)return dbid;
- const bulkid=DB_BULK_BY_NAME.get(q); if(bulkid)return bulkid;
- for(const [k,v] of Object.entries(I)) if(v[6].some(a=>normalize(a)===q)) return k;
- return null;
+ const q=normalize(raw);const dbid=DB_ALIAS.get(q);if(dbid)return dbid;const bulkid=DB_BULK_BY_NAME.get(q);if(bulkid)return bulkid;
+ for(const alt of SEARCH_SYNONYMS.get(q)||[]){const a=DB_ALIAS.get(alt)||DB_BULK_BY_NAME.get(alt);if(a)return a}
+ for(const [k,v] of Object.entries(I))if(v[6].some(a=>normalize(a)===q))return k;return null;
 }
 function findIngredient(raw){return findIngredientExact(raw)||searchIngredients(raw,1)[0]?.id||null}
 function renderIngredientSuggestions(raw){
