@@ -294,3 +294,5 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Explicit curated ingredient mapping for peanut,tomato,peach,egg,soybean,chicken,pork,beef,shrimp with MFDS source link. No inference from processed-product names.
 - Removed unverified legacy no-common-allergen claims; unknown now explicitly does not mean allergy-free.
 - Bilingual allergen names and ingredient/product cross-contact distinction retained.
+
+- 2026-10-06: distinguish ingredient nutrition-source links from retail product-label links; show K-FIND source links using the existing source field. Recipe ingredient names already use basic display names.

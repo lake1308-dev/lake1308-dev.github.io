@@ -315,7 +315,8 @@ function renderFoodSource(key){
  const detail=FOOD_DETAILS[src.food_code]||src;
  const rows=[[tr("Original food name","원본 식품명"),src.source_food_name||src.food_name],[tr("Manufacturer","제조·판매업체"),detail.manufacturer],[tr("Declared product weight","원본 식품중량"),detail.declared_weight],[tr("Data type","식품 유형"),src.data_type],[tr("Calculation basis","계산 기준"),src.basis],[tr("Label basis","원본 표시 기준"),src.label_basis],[tr("Checked date","확인·기준일"),src.reference_date],[tr("Food code","식품코드"),src.food_code||src.source_record_id],[tr("Source","출처"),src.source_key||src.source]].filter(x=>x[1]);
  rows.forEach(([label,value])=>{const row=document.createElement("div"),l=document.createElement("span"),v=document.createElement("strong");l.textContent=label;v.textContent=value;row.append(l,v);host.appendChild(row)});
- if(src.source_url){const link=document.createElement("a");link.href=src.source_url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=tr("View source product information ↗","제품 표시정보 출처 보기 ↗");host.appendChild(link)}
+ const sourceUrl=src.source_url||(/^https?:\/\//.test(src.source||"")?src.source:null);
+ if(sourceUrl){const link=document.createElement("a");link.href=sourceUrl;link.target="_blank";link.rel="noopener noreferrer";link.textContent=db.verification_status==="product_label"?tr("View source product information ↗","제품 표시정보 출처 보기 ↗"):tr("View nutrition data source ↗","영양정보 출처 보기 ↗");host.appendChild(link)}
 }
 function renderDishCards(list,target){
  target.innerHTML="";
