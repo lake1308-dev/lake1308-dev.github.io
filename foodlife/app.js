@@ -274,7 +274,7 @@ const REGION_META={
 };
 function uniq(arr){return [...new Set(arr)]}
 function filterButton(text,val,kind,active){
- const b=document.createElement("button");b.textContent=text;b.className=active?"active":"";b.onclick=()=>{if(kind==="region")region=val;if(kind==="type")type=val;renderExplorerFilters()};return b
+ const b=document.createElement("button");b.type="button";b.textContent=text;b.className=active?"active":"";b.onclick=()=>{if(kind==="region"){region=val;type="All"}if(kind==="type")type=val;renderExplorerFilters()};return b
 }
 function countriesForCurrent(){return FEATURED_COUNTRIES}
 function renderCountryCards(){
@@ -306,7 +306,9 @@ function renderExplorerFilters(){
  let base=DISHES.filter(d=>d.country===country && (!currentKey||d.main.includes(currentKey)));
  if(currentKey&&!base.length){base=DISHES.filter(d=>d.country===country);$("explorerSubtitle").textContent=tr("No direct match for the searched food here, so showing all dishes from this country.","검색한 식품과 직접 연결된 요리가 없어 이 나라의 전체 요리를 보여드립니다.")}
  rf.appendChild(filterButton(tr("All regions","전체 지역"),"All","region",region==="All"));(REGION_META[country]||uniq(base.map(d=>d.region)).map(r=>[r,(base.find(x=>x.region===r)||{}).regionKo||r])).forEach(pair=>{const r=pair[0],ko=pair[1];rf.appendChild(filterButton(tr(r,ko),r,"region",region===r))});
+ const validRegions=new Set(base.map(d=>d.region));if(region!=="All"&&!validRegions.has(region))region="All";
  const regionBase=region==="All"?base:base.filter(d=>d.region===region);
+ const validTypes=new Set(regionBase.map(d=>d.type));if(type!=="All"&&!validTypes.has(type))type="All";
  tf.appendChild(filterButton(tr("All styles","전체 방식"),"All","type",type==="All"));uniq(regionBase.map(d=>d.type)).forEach(tp=>{const d=regionBase.find(x=>x.type===tp);tf.appendChild(filterButton(tr(tp,d.typeKo),tp,"type",type===tp))});
  let list=regionBase;if(type!=="All")list=list.filter(d=>d.type===type);renderDishCards(list,$("exploreGrid"));
 }
