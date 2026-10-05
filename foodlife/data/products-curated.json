@@ -1,0 +1,85 @@
+{
+  "version": "0.1.0",
+  "products": [
+    {
+      "id": "chilsung_cider_250ml",
+      "names": {
+        "ko": "칠성사이다 250ml 캔",
+        "en": "Chilsung Cider 250ml can"
+      },
+      "aliases": {
+        "ko": [
+          "칠성사이다",
+          "칠성사이다"
+        ],
+        "en": []
+      },
+      "category": "packaged_drink",
+      "verification_status": "product_label",
+      "nutrition_per_100g": {
+        "kcal": 44,
+        "carbs_g": 11.2,
+        "sugars_g": 10.8,
+        "sodium_mg": 2.4,
+        "protein_g": null,
+        "fat_g": null,
+        "sat_fat_g": null,
+        "cholesterol_mg": null
+      },
+      "sources": [
+        {
+          "source": "코스트코 코리아 제품 표시정보",
+          "source_url": "https://www.costco.co.kr/Foods/Beverages/SoftConcentrated-Drinks/Chilsung-Cider-250ml-x-30-Milkis-250ml-x-30/p/620743",
+          "basis": "100ml",
+          "label_basis": "250ml",
+          "package_amount": 250,
+          "package_unit": "ml",
+          "manufacturer": "롯데칠성음료(주)",
+          "declared_weight": "250ml",
+          "reference_date": "2026-10-05",
+          "data_type": "제품 표시정보"
+        }
+      ]
+    },
+    {
+      "id": "chilsung_cider_zero_250ml",
+      "names": {
+        "ko": "칠성사이다 제로 250ml 캔",
+        "en": "Chilsung Cider Zero 250ml can"
+      },
+      "aliases": {
+        "ko": [
+          "칠성사이다 제로",
+          "칠성사이다제로"
+        ],
+        "en": []
+      },
+      "category": "packaged_drink",
+      "verification_status": "product_label",
+      "nutrition_per_100g": {
+        "kcal": 0,
+        "carbs_g": 1.6,
+        "sugars_g": 0,
+        "sodium_mg": 2.4,
+        "protein_g": 0,
+        "fat_g": 0,
+        "sat_fat_g": 0,
+        "cholesterol_mg": 0
+      },
+      "sources": [
+        {
+          "source": "코스트코 코리아 제품 표시정보",
+          "source_url": "https://www.costco.co.kr/Foods/Beverages/SoftConcentrated-Drinks/Chilsung-Cider-Zero-250ml-x-30cans-x-2/p/642471",
+          "basis": "100ml",
+          "label_basis": "250ml",
+          "package_amount": 250,
+          "package_unit": "ml",
+          "manufacturer": "롯데칠성음료(주)",
+          "declared_weight": "250ml",
+          "reference_date": "2026-10-05",
+          "data_type": "제품 표시정보"
+        }
+      ]
+    }
+  ]
+}

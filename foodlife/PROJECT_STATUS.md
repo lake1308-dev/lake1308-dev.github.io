@@ -273,3 +273,9 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Search matches source-backed manufacturer names and combined manufacturer/product terms.
 - Food-name matches remain higher priority; no inferred brands added.
 - Ambiguous results explicitly prompt selecting product/vendor/basis.
+
+### Curated product pilot
+- Added Chilsung Cider regular/zero 250ml cans using Costco Korea product label disclosures retrieved 2026-10-05.
+- Stored retailer source URLs and original 250ml basis; converted to 100ml without density assumptions.
+- Regular: 110kcal, carbs28g, sugars27g, sodium6mg per250ml; undisclosed nutrients null. Zero:0kcal, carbs4g,sugars0g,sodium6mg,protein/fat/saturated fat/cholesterol0 per250ml.
+- Kept 50,000 official records separate from curated product records.
