@@ -77,7 +77,7 @@ async function loadRecipeDB(){
  try{
   const res=await fetch("data/recipes.json?v=0.2.0",{cache:"no-store"});
   const data=await res.json(); DB_RECIPES=data.recipes||[];
- }catch(err){console.warn("Recipe DB unavailable; using prototype fallback.",err)}
+ }catch(err){console.warn("Recipe DB unavailable; using bundled fallback.",err)}
 }
 function bulkToIngredient(row,cols){
  const x=Object.fromEntries(cols.map((k,i)=>[k,row[i]]));
@@ -116,7 +116,7 @@ async function loadIngredientDB(){
   const res=await fetch("data/ingredients.json?v=1.2.1",{cache:"no-store"});
   const data=await res.json(); DB_INGREDIENTS=(data.ingredients||[]).filter(x=>x.status!=="placeholder_pending_curation"); rebuildIngredientIndex();
   const c=$("coverageCount"); if(c)c.textContent=DB_INGREDIENTS.length;
- }catch(err){console.warn("Ingredient DB unavailable; using prototype fallback.",err)}
+ }catch(err){console.warn("Ingredient DB unavailable; using bundled fallback.",err)}
 }
 const SEARCH_GROUPS=[
  ["계란","달걀"],["소고기","쇠고기","우육"],["돼지고기","돈육"],["닭고기","계육"],["후라이","프라이"],["후라이드","프라이드"],
