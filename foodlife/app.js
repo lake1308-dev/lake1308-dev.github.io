@@ -7,7 +7,14 @@ let DB_RECIPES=[];
 let bulkLoadState="loading";
 let FOOD_DETAILS={};
 async function loadFoodDetails(){
- try{const res=await fetch("data/food-details.json?v=0.1.0",{cache:"no-store"});if(!res.ok)return;FOOD_DETAILS=(await res.json()).records||{}}catch(err){console.warn("Optional food details unavailable",err)}
+ try{
+ const records=await Promise.all(Array.from({length:10},async(_,i)=>{
+  const res=await fetch(`data/food-details-${i+1}.json.gz?v=0.2.0`,{cache:"no-store"});if(!res.ok)throw new Error("Food details unavailable");
+  const stream=new Blob([await res.arrayBuffer()]).stream().pipeThrough(new DecompressionStream("gzip"));
+  return (await new Response(stream).json()).records||{};
+ }));FOOD_DETAILS=Object.assign({},...records);
+ }catch(err){console.warn("Full food details unavailable; using starter details",err);try{const res=await fetch("data/food-details.json?v=0.1.0",{cache:"no-store"});if(res.ok)FOOD_DETAILS=(await res.json()).records||{}}catch{}}
+
 }
 function foodSearchIdentity(x){const s=x.sources?.[0]||{};return JSON.stringify([normalize(x.names.ko),s.basis||"100g",s.data_type||x.category,FOOD_DETAILS[s.food_code]||null,x.nutrition_per_100g])}
 const SMALL_SERVING_CATEGORIES=new Set(["spice","seasoning","sweetener","oil"]);

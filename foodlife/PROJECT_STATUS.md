@@ -262,3 +262,9 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Expandable guide explains domestic official data, imported items, record differences and missing values.
 - Calculator states its 100g/100ml basis and distinguishes actual consumed amount from whole-pack/cup values.
 - No density conversion or package quantity assumptions introduced.
+
+### Product identity metadata expansion
+- Source-derived vendor/manufacturer and declared weight metadata now covers all 50,000 existing records (10 compressed chunks).
+- Empty source fields remain empty. Nutrition and item counts unchanged.
+- Original 106-record metadata retained as fallback if optional metadata loading fails.
+- Search and source details use these fields to distinguish products; weight never automatically changes serving amount.
