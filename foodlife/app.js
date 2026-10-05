@@ -281,7 +281,8 @@ function renderCountryCards(){
  const host=$("countryCards"); if(!host)return; host.innerHTML="";
  const available=countriesForCurrent();
  available.forEach(c=>{
-  const meta=COUNTRY_META[c]||["🌍",c]; const all=DISHES.filter(d=>d.country===c && (!currentKey||d.main.includes(currentKey)));
+  const meta=COUNTRY_META[c]||["🌍",c]; let all=DISHES.filter(d=>d.country===c && (!currentKey||d.main.includes(currentKey)));
+  if(currentKey&&!all.length)all=DISHES.filter(d=>d.country===c);
   const regions=(REGION_META[c]||uniq(all.map(d=>d.region)).map(r=>[r,(all.find(x=>x.region===r)||{}).regionKo||r]));
   const card=document.createElement("article");card.className="country-card";
   const head=document.createElement("div");head.className="country-head";
