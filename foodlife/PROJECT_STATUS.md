@@ -227,3 +227,9 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Korean recipe ingredient labels now use readable names instead of internal IDs; nutrition verification is unchanged.
 - World food navigation scrolls to the visible explorer even before any ingredient search.
 - Automated data and interaction regression checks pass. Actual mobile-device verification remains outstanding.
+
+### Homepage quality 3
+- Restore preserves custom ingredient amounts across language switches.
+- Recipe amount inputs have ingredient-specific accessible labels.
+- Country search results support keyboard activation.
+- Narrow recipe controls wrap and product names display without truncation.

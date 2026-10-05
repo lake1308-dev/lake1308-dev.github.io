@@ -219,7 +219,7 @@ function applyLang(){
  $("countrySearchInput").placeholder=lang==="ko"?"베트남, 그리스, 브라질...":"Vietnam, Greece, Brazil...";
  renderExplorerFilters();
  if(currentKey) renderIngredient(currentKey,false,true);
- if(currentDish && !$("recipe").classList.contains("hidden")){if(currentDish.names&&currentDish.ingredients){const amounts=[...document.querySelectorAll(".recipe-amount")].map(x=>x.value);renderDBRecipe(currentDish,false);document.querySelectorAll(".recipe-amount").forEach((el,i)=>{if(amounts[i]!=null){el.value=amounts[i];const removed=Number(el.value)===0;el.closest("li")?.classList.toggle("removed",removed);const btn=el.closest("li")?.querySelector(".recipe-remove");if(btn)btn.textContent=removed?tr("Restore","복원"):tr("Remove","빼기")}});updateDBRecipeNutrition()}else renderRecipe(currentDish,false)}
+ if(currentDish && !$("recipe").classList.contains("hidden")){if(currentDish.names&&currentDish.ingredients){const amounts=[...document.querySelectorAll(".recipe-amount")].map(x=>({value:x.value,previous:x.dataset.previous}));renderDBRecipe(currentDish,false);document.querySelectorAll(".recipe-amount").forEach((el,i)=>{if(amounts[i]!=null){el.value=amounts[i].value;if(amounts[i].previous)el.dataset.previous=amounts[i].previous;const removed=Number(el.value)===0;el.closest("li")?.classList.toggle("removed",removed);const btn=el.closest("li")?.querySelector(".recipe-remove");if(btn)btn.textContent=removed?tr("Restore","복원"):tr("Remove","빼기")}});updateDBRecipeNutrition()}else renderRecipe(currentDish,false)}
 }
 function round1(n){return Math.round(n*10)/10}
 function updateNutrition(){
@@ -366,7 +366,7 @@ function countrySearch(q){
  if(!raw)return;
  const matches=Object.entries(COUNTRY_META).map(([en,m])=>{const a=normalize(en),b=normalize(m[1]);const score=a===raw||b===raw?0:a.startsWith(raw)||b.startsWith(raw)?1:a.includes(raw)||b.includes(raw)?2:Infinity;return {en,m,score}}).filter(x=>x.score<Infinity).sort((a,b)=>a.score-b.score||a.en.localeCompare(b.en)).slice(0,8).map(x=>[x.en,x.m]);
  if(!matches.length){host.innerHTML='<div class="recipe-no-result">'+tr("Country not found yet. We are expanding worldwide coverage.","아직 등록되지 않은 나라입니다. 전 세계 국가로 계속 확장하고 있습니다.")+'</div>';return}
- matches.forEach(([en,m])=>{const d=document.createElement("div");d.className="country-result";d.innerHTML='<span>'+m[0]+'</span><b>'+tr(en,m[1])+'</b><small>'+tr("Open →","보기 →")+'</small>';d.onclick=()=>openCountry(en,"All");host.appendChild(d)})
+ matches.forEach(([en,m])=>{const d=document.createElement("div");d.className="country-result";d.tabIndex=0;d.setAttribute("role","button");d.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();d.click()}});d.innerHTML='<span>'+m[0]+'</span><b>'+tr(en,m[1])+'</b><small>'+tr("Open →","보기 →")+'</small>';d.onclick=()=>openCountry(en,"All");host.appendChild(d)})
 }
 $("countrySearchForm").addEventListener("submit",e=>{e.preventDefault();countrySearch($("countrySearchInput").value)});
 const RECIPE_LABELS_KO={bacon:"베이컨",basil:"바질",beef_ground:"다진 소고기",beef_rib:"소갈비",bell_pepper:"피망",black_pepper:"후추",bread_white:"식빵",butter:"버터",canola_oil:"카놀라유",chili_powder_kr:"고춧가루",cumin:"커민",doenjang:"된장",fish_cake:"어묵",garaetteok:"가래떡",ginger:"생강",gochujang:"고추장",green_chili:"풋고추",heavy_cream:"생크림",kimchi:"김치",lime:"라임",olive_oil:"올리브유",parmesan:"파르메산 치즈",pasta_dry:"건조 파스타",pork_loin:"돼지 등심",radish:"무",rice_vinegar:"쌀식초",sesame_oil:"참기름",soy_sauce_kr:"간장",soybean_sprout:"콩나물",spinach:"시금치",tapioca:"타피오카",tortilla_wheat:"밀 토르티야",udon:"우동면",wheat_flour:"밀가루",white_sugar:"설탕",zucchini:"주키니"};
@@ -412,7 +412,7 @@ function renderDBRecipe(r,scroll=true){
  currentDish=r;$("recipe").classList.remove("hidden");
  $("recipeName").textContent=lang==="ko"?r.names.ko:r.names.en;
  $("recipeMeta").textContent=tr(r.country+" · "+r.region+" · "+r.servings+" servings",r.country+" · "+r.region+" · "+r.servings+"인분 · 표준 레시피 기준");
- $("recipeIngredients").innerHTML=r.ingredients.map((x,i)=>'<li data-ri="'+i+'"><span>'+dbIngredientName(x.ingredient_id)+'</span> <input class="recipe-amount" data-i="'+i+'" type="number" min="0" max="10000" step="1" inputmode="decimal" value="'+x.amount+'" style="width:78px"> '+x.unit+' <button type="button" class="recipe-remove" data-i="'+i+'">'+tr("Remove","빼기")+'</button></li>').join("");
+ $("recipeIngredients").innerHTML=r.ingredients.map((x,i)=>'<li data-ri="'+i+'"><span>'+dbIngredientName(x.ingredient_id)+'</span> <input class="recipe-amount" data-i="'+i+'" aria-label="'+dbIngredientName(x.ingredient_id)+' '+tr("amount (","섭취량 (")+x.unit+")"+'" type="number" min="0" max="10000" step="1" inputmode="decimal" value="'+x.amount+'" style="width:78px"> '+x.unit+' <button type="button" class="recipe-remove" data-i="'+i+'">'+tr("Remove","빼기")+'</button></li>').join("");
  $("recipeSteps").innerHTML=(lang==="ko"?r.steps.ko:r.steps.en).map(x=>"<li>"+x+"</li>").join("");
  let note=document.getElementById("recipeNutritionNotice");
  if(!note){note=document.createElement("p");note.id="recipeNutritionNotice";note.className="data-note";$("recipeMeta").after(note)}
