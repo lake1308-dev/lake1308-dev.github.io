@@ -123,7 +123,7 @@ const SEARCH_GROUPS=[
  ["아메리카노","아메리카노커피"],["커피","커피음료"],["콜라","탄산음료"],["사이다","탄산음료"],["라면","라멘"],
  ["김치찌개","김치 찌개"],["된장찌개","된장 찌개"],["순두부찌개","순두부 찌개"],["볶음밥","볶음 밥"],
  ["삼겹살","돼지고기 삼겹살"],["곱창","소곱창","돼지곱창"],["막창","돼지막창","소막창"],["대창","소대창"],
- ["우유","밀크"],["요거트","요구르트","요구르트"],["고구마","sweet potato"],["감자","potato"]
+ ["우유","밀크"],["요거트","요구르트"],["돈까스","돈가스"],["짜장면","자장면"],["햄버거","버거"],["치킨","닭고기"],["고구마","sweet potato"],["감자","potato"]
 ];
 const SEARCH_SYNONYMS=new Map();
 SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));
@@ -135,9 +135,11 @@ function editDistance(a,b,max=2){
 function searchTerms(raw){
  const q=normalize(raw),terms=[q,...(SEARCH_SYNONYMS.get(q)||[])];return [...new Set(terms.filter(Boolean))];
 }
+const SEARCH_FALSE_POSITIVES={"곱창":["곱창김"],"콜라":["콜라겐"],"사이다":["사이다비니거","사이다 비니거"]};
 function scoreFoodName(name,terms){
  const n=normalize(name),nc=compactSearch(n);let score=Infinity;
  for(const q of terms){const qc=compactSearch(q);if(n===q||nc===qc)score=Math.min(score,0);else if(n.startsWith(q)||nc.startsWith(qc))score=Math.min(score,1);else if(n.includes(q)||nc.includes(qc))score=Math.min(score,2)}
+ const primary=terms[0],bad=SEARCH_FALSE_POSITIVES[primary]||[];if(bad.some(x=>n.includes(normalize(x))))score+=20;
  return score;
 }
 function searchIngredients(raw,limit=20){
