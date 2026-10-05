@@ -257,3 +257,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Data and interaction checks cover 50,000 records, unit separation, missing nutrition, amount persistence, and suggestion keyboard navigation.
 - Desktop browser interaction has been verified throughout. Mobile CSS improved; actual mobile-device and narrow-viewport visual verification remain outstanding.
 - Homepage refinement pass complete; product expansion remains a separate deferred phase.
+
+### Homepage data guidance (quality 8)
+- Expandable guide explains domestic official data, imported items, record differences and missing values.
+- Calculator states its 100g/100ml basis and distinguishes actual consumed amount from whole-pack/cup values.
+- No density conversion or package quantity assumptions introduced.
