@@ -268,3 +268,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Empty source fields remain empty. Nutrition and item counts unchanged.
 - Original 106-record metadata retained as fallback if optional metadata loading fails.
 - Search and source details use these fields to distinguish products; weight never automatically changes serving amount.
+
+### Manufacturer search
+- Search matches source-backed manufacturer names and combined manufacturer/product terms.
+- Food-name matches remain higher priority; no inferred brands added.
+- Ambiguous results explicitly prompt selecting product/vendor/basis.
