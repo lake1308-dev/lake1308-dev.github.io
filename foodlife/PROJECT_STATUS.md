@@ -249,3 +249,11 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Selecting a new food closes the prior recipe and explorer. Language updates preserve open recipe edits.
 - Opening world food or a country closes stale recipe views.
 - Recipe back restores keyboard focus to its originating card, with a section fallback after language rerender.
+
+### Homepage completion review (quality 7)
+- New submissions clear old food/recipe/explorer state, including no-match and ambiguous searches.
+- World food hides the prior calculator rather than leaving a visible calculator with no selected food.
+- Blank recipe and country searches give explicit prompts.
+- Data and interaction checks cover 50,000 records, unit separation, missing nutrition, amount persistence, and suggestion keyboard navigation.
+- Desktop browser interaction has been verified throughout. Mobile CSS improved; actual mobile-device and narrow-viewport visual verification remain outstanding.
+- Homepage refinement pass complete; product expansion remains a separate deferred phase.
