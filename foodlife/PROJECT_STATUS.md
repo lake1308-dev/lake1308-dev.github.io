@@ -238,3 +238,9 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Quick searches show Korean names in Korean mode and dismiss stale suggestion/error panels.
 - Search input accessible labels follow language selection.
 - Existing food suggestions, recipe results and country results refresh when language changes.
+
+### Homepage quality 5
+- Cancel delayed suggestions when selecting, submitting, or dismissing search.
+- ArrowUp from an unselected list correctly selects the last candidate.
+- Combobox exposes expanded state and active candidate to assistive technology.
+- World explorer back navigation returns to visible search when no ingredient is open.
