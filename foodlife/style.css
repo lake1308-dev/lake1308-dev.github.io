@@ -2,7 +2,7 @@
 .ingredient-suggestions{display:none;max-width:760px;margin:-8px auto 14px;background:#fff;border:1px solid #dce3d8;border-radius:16px;overflow:hidden;text-align:left;box-shadow:0 14px 32px rgba(48,72,42,.08)}
 .ingredient-suggestions.show{display:grid;grid-template-columns:1fr 1fr}
 .ingredient-suggestion{display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;border-bottom:1px solid #edf0eb;background:#fff;padding:13px 16px;cursor:pointer;text-align:left}
-.ingredient-suggestion:hover{background:#f4f8f0}.ingredient-suggestion strong{font-size:15px}.ingredient-suggestion small{color:#879083}
+.ingredient-suggestion:hover,.ingredient-suggestion.active{background:#f4f8f0;outline:2px solid #315c2c;outline-offset:-2px}.ingredient-suggestion strong{font-size:15px}.ingredient-suggestion small{color:#879083}
 @media(max-width:760px){.ingredient-suggestions.show{grid-template-columns:1fr}}
 
 .ingredient-fallback{max-width:760px;margin:18px auto 0;padding:22px;background:#fff8e8;border:1px solid #ead9a8;border-radius:18px;text-align:left}
