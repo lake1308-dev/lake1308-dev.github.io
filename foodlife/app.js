@@ -334,7 +334,7 @@ function renderDBRecipeCard(r,host){
  const c=document.createElement("article");c.className="dish-card";
  const meta=[r.country,r.region].filter(Boolean).join(" · ");
  c.innerHTML='<span class="country">'+meta+'</span><h3>'+(lang==="ko"?r.names.ko:r.names.en)+'</h3><p>'+r.ingredients.slice(0,5).map(x=>dbIngredientName(x.ingredient_id)).join(" · ")+'</p><span class="open">'+tr("View editable recipe →","레시피·재료 보기 →")+'</span>';
- c.onclick=()=>renderDBRecipe(r);host.appendChild(c);
+ c.onclick=()=>{returnTarget=host.id==="ingredientRecipeResults"?"result":host.id==="exploreGrid"?"explorer":"recipeSearchResults";renderDBRecipe(r)};host.appendChild(c);
 }
 function calculateDBRecipeNutrition(r){
  const totals={kcal:0,protein_g:0,carbs_g:0,fat_g:0,sat_fat_g:0,sugars_g:0,sodium_mg:0,cholesterol_mg:0};
@@ -390,7 +390,7 @@ function recipeSearch(q){
  renderDishCards(matches,host);
 }
 $("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
-$("closeRecipe").onclick=()=>{$("recipe").classList.add("hidden");$(returnTarget)?.scrollIntoView({behavior:"smooth",block:"start"})};
+$("closeRecipe").onclick=()=>{$("recipe").classList.add("hidden");const target=$(returnTarget)||$("recipeSearchForm")||$("result");target?.scrollIntoView({behavior:"smooth",block:"start"})};
 loadIngredientDB().then(()=>Promise.all([loadBulkNutritionDB(),loadRecipeDB()])).then(()=>{renderCountryCards();applyLang()});
 
 function recipesForIngredient(id){
