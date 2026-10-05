@@ -140,3 +140,16 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - JavaScript literal \\n 오류 0개 재검증.
 - GitHub Pages smartsearch7 배포 성공 (head d620cf618260d1baeafcb927773d51b3555323bf).
 - 저장소/배포 파이프라인 기준 QA 완료. 외부 브라우저 직접 클릭 테스트는 현재 도구 접근 제한으로 별도 미확인.
+
+
+## 2026-10-05 스마트 검색 최종 마감
+- 최종 캐시 빌드: smartsearch-final.
+- 50,000건 공식 식품 로딩, 부분검색/자동완성, 동의어/관련어, 오타 보정, 검색 의도 순위, 대표 오탐 억제 완료.
+- 자동완성에 식품 유형, kcal, 공식 기준(100g/100ml) 표시.
+- 검색 후보명은 innerHTML 대신 textContent 기반 DOM 렌더링으로 변경.
+- 120ms 디바운스, ↑/↓/Enter/Esc 키보드 조작 및 aria-selected 접근성 상태 지원.
+- 검색 실패는 팝업 대신 인라인 안내, 재입력 즉시 이전 실패 안내 숨김.
+- 100g/100ml 영양 계산 단위 표시 연동.
+- 최종 정적 코드 QA 전 항목 통과, literal \\n 오류 0개.
+- GitHub Pages 최종 build/deploy/report-build-status 모두 success (run 37273395749, head 0f78fbae153ee21a441bcc3633cbe3cd77338dc6).
+- 검색 파트는 기능 개발 마감. 이후 실제 사용자 검색에서 발견되는 개별 검색어 품질 문제는 유지보수 튜닝으로 처리.
