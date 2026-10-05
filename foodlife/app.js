@@ -311,7 +311,7 @@ $("searchForm").addEventListener("submit",e=>{
  const fallback=$("ingredientFallback");if(fallback){fallback.classList.remove("hidden");fallback.textContent=tr(`No match for “${raw}”. Try a shorter name or another common spelling.`,`“${raw}” 검색 결과가 없습니다. 더 짧은 이름이나 다른 흔한 표기로 검색해 보세요.`)}
 });
 document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredientInput").value=b.dataset.query;renderIngredient(findIngredient(b.dataset.query))});
-$("amountInput").addEventListener("input",e=>{const v=Math.max(1,Math.min(5000,Number(e.target.value)||1));currentAmount=v;updateNutrition()});
+$("amountInput").addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<=0)return;const v=Math.max(1,Math.min(5000,raw));currentAmount=v;if(v!==raw)e.target.value=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.grams);if(!Number.isFinite(v)||v<=0)return;currentAmount=v;$("amountInput").value=currentAmount;updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
 function countrySearch(q){
