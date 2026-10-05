@@ -117,9 +117,18 @@ async function loadBulkNutritionDB(){
 }
 async function loadIngredientDB(){
  try{
-  const res=await fetch("data/ingredients.json?v=1.2.1",{cache:"no-store"});
-  const data=await res.json(); DB_INGREDIENTS=(data.ingredients||[]).filter(x=>x.status!=="placeholder_pending_curation"); rebuildIngredientIndex();
-  const c=$("coverageCount"); if(c)c.textContent=DB_INGREDIENTS.length;
+  const [baseRes,kfindRes]=await Promise.all([fetch("data/ingredients.json?v=1.2.1",{cache:"no-store"}),fetch("data/nutrition-kfind.json?v=0.1.16",{cache:"no-store"})]);
+  if(!baseRes.ok)throw new Error("ingredient DB "+baseRes.status);
+  const data=await baseRes.json(),base=(data.ingredients||[]).filter(x=>x.status!=="placeholder_pending_curation"),byId=new Map(base.map(x=>[x.id,x]));
+  if(kfindRes.ok){
+   const kfind=await kfindRes.json();
+   (kfind.records||[]).forEach(r=>{
+    const id=r.ingredient_id,existing=byId.get(id);
+    if(existing){existing.nutrition_per_100g=r.nutrition_per_100g;existing.verification_status="verified";existing.sources=existing.sources||[];return}
+    byId.set(id,{id,names:{ko:r.source_food_name,en:r.source_food_name},aliases:{ko:[],en:[]},category:"verified_food",nutrition_per_100g:r.nutrition_per_100g,verification_status:"verified",sources:[{source_key:"K-FIND",source_record_id:r.source_food_code,source_food_name:r.source_food_name,basis:"100g",source:r.source_url}]})
+   })
+  }else console.warn("K-FIND nutrition DB unavailable; keeping base ingredient DB.",kfindRes.status);
+  DB_INGREDIENTS=[...byId.values()];rebuildIngredientIndex();
  }catch(err){console.warn("Ingredient DB unavailable; using bundled fallback.",err)}
 }
 const SEARCH_GROUPS=[
