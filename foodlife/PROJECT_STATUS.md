@@ -306,3 +306,5 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 4. Operating information, actionable error reporting route, service and privacy notices grounded in actual behavior.
 5. Final public release checklist, metadata, and deployed-site verification.
 Scope: domestic-data beta; expanded products and monetization follow launch. Five rounds is a target, not a guarantee if a blocker is found.
+
+- Round 2: refresh pending typed/submitted searches after ingredient, bulk, and manufacturer data finish loading. Preserve Escape/selection dismissal; no automatic record selection. Representative calculation and alias checks passed. Actual mobile viewport remains pending.
