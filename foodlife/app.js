@@ -220,7 +220,7 @@ function renderIngredient(key,scroll=true){
  $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
- const officialBasis=db?.sources?.[0]?.basis||"100g";
+ const officialBasis=db?.sources?.[0]?.basis||"100g";\n const amountUnit=officialBasis==="100ml"?"ml":"g";if($("amountUnit"))$("amountUnit").textContent=amountUnit;$("amountInput").setAttribute("aria-label",lang==="ko"?`섭취량 (${amountUnit})`:`Amount (${amountUnit})`);
  $("ingredientNote").textContent=verified?tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
