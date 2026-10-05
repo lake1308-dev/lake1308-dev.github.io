@@ -233,3 +233,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Recipe amount inputs have ingredient-specific accessible labels.
 - Country search results support keyboard activation.
 - Narrow recipe controls wrap and product names display without truncation.
+
+### Homepage quality 4
+- Quick searches show Korean names in Korean mode and dismiss stale suggestion/error panels.
+- Search input accessible labels follow language selection.
+- Existing food suggestions, recipe results and country results refresh when language changes.

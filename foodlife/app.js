@@ -217,6 +217,12 @@ function applyLang(){
  $("ingredientInput").placeholder=lang==="ko"?"닭, 계란, 토마토, 밥...":"Chicken, egg, tomato, rice...";
  $("recipeSearchInput").placeholder=lang==="ko"?"닭볶음탕, 한국요리, 매운 요리...":"Chicken curry, Korean, spicy...";
  $("countrySearchInput").placeholder=lang==="ko"?"베트남, 그리스, 브라질...":"Vietnam, Greece, Brazil...";
+ $("ingredientInput").setAttribute("aria-label",tr("Food, product or ingredient search","음식·제품·재료 검색"));
+ $("recipeSearchInput").setAttribute("aria-label",tr("Recipe search","레시피 검색"));
+ $("countrySearchInput").setAttribute("aria-label",tr("Country search","나라 검색"));
+ if($("ingredientSuggestions").classList.contains("show"))renderIngredientSuggestions($("ingredientInput").value);
+ if($("recipeSearchResults").innerHTML.trim())recipeSearch($("recipeSearchInput").value);
+ if($("countrySearchResults").innerHTML.trim())countrySearch($("countrySearchInput").value);
  renderExplorerFilters();
  if(currentKey) renderIngredient(currentKey,false,true);
  if(currentDish && !$("recipe").classList.contains("hidden")){if(currentDish.names&&currentDish.ingredients){const amounts=[...document.querySelectorAll(".recipe-amount")].map(x=>({value:x.value,previous:x.dataset.previous}));renderDBRecipe(currentDish,false);document.querySelectorAll(".recipe-amount").forEach((el,i)=>{if(amounts[i]!=null){el.value=amounts[i].value;if(amounts[i].previous)el.dataset.previous=amounts[i].previous;const removed=Number(el.value)===0;el.closest("li")?.classList.toggle("removed",removed);const btn=el.closest("li")?.querySelector(".recipe-remove");if(btn)btn.textContent=removed?tr("Restore","복원"):tr("Remove","빼기")}});updateDBRecipeNutrition()}else renderRecipe(currentDish,false)}
@@ -355,7 +361,7 @@ $("searchForm").addEventListener("submit",e=>{
  $("ingredientSuggestions").classList.remove("show");$("result").classList.add("hidden");
  const fallback=$("ingredientFallback");if(fallback){fallback.classList.remove("hidden");fallback.textContent=bulkLoadState==="loading"?tr("Official food data is still loading. Please try the search again in a moment.","공식 식품 데이터를 불러오는 중입니다. 잠시 후 다시 검색해 주세요."):bulkLoadState==="failed"?tr("The official food database could not be loaded. Verified starter ingredients are still available.","공식 식품 데이터베이스를 불러오지 못했습니다. 검증된 기본 재료 검색은 사용할 수 있습니다."):tr(`No match for “${raw}”. Try a shorter name or another common spelling.`,`“${raw}” 검색 결과가 없습니다. 더 짧은 이름이나 다른 흔한 표기로 검색해 보세요.`)}
 });
-document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{const q=b.dataset.query;$("ingredientInput").value=q;const exact=findIngredientExact(q),list=searchIngredients(q,20);if(exact){renderIngredient(exact);return}if(list.length){renderIngredient(list[0].id);return}const fallback=$("ingredientFallback");$("result").classList.add("hidden");if(fallback){fallback.classList.remove("hidden");fallback.textContent=tr("No matching food found.","일치하는 식품을 찾지 못했습니다.")}});
+document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{const q=b.dataset.query;$("ingredientInput").value=lang==="ko"?b.textContent:q;$("ingredientSuggestions").classList.remove("show");$("ingredientFallback").classList.add("hidden");const exact=findIngredientExact(q),list=searchIngredients(q,20);if(exact){renderIngredient(exact);return}if(list.length){renderIngredient(list[0].id);return}const fallback=$("ingredientFallback");$("result").classList.add("hidden");if(fallback){fallback.classList.remove("hidden");fallback.textContent=tr("No matching food found.","일치하는 식품을 찾지 못했습니다.")}});
 $("amountInput").addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<=0){e.target.setAttribute("aria-invalid","true");$("amountError").textContent=tr("Enter an amount between 1 and 5,000.","섭취량을 1~5,000 사이로 입력해 주세요.");return}e.target.removeAttribute("aria-invalid");$("amountError").textContent="";const v=Math.max(1,Math.min(5000,raw));currentAmount=v;if(v!==raw)e.target.value=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.grams);if(!Number.isFinite(v)||v<=0)return;currentAmount=v;$("amountInput").value=currentAmount;$("amountInput").removeAttribute("aria-invalid");$("amountError").textContent="";updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
