@@ -222,7 +222,7 @@ function renderIngredient(key,scroll=true){
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
  const officialBasis=db?.sources?.[0]?.basis||"100g";\n const amountUnit=officialBasis==="100ml"?"ml":"g";if($("amountUnit"))$("amountUnit").textContent=amountUnit;$("amountInput").setAttribute("aria-label",lang==="ko"?`섭취량 (${amountUnit})`:`Amount (${amountUnit})`);
- $("ingredientNote").textContent=verified?tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");\n renderFoodSource(key);
+ $("ingredientNote").textContent=verified?(db?.verification_status==="official_bulk"?tr(`Official nutrition data per ${officialBasis}. Values below scale with the amount you enter.`,`공식 ${officialBasis} 기준 영양정보입니다. 아래 수치는 입력한 섭취량에 맞춰 계산됩니다.`):tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`)):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");\n renderFoodSource(key);
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
  renderCountryCards();
@@ -387,7 +387,9 @@ function recipesForIngredient(id){
  return DB_RECIPES.filter(r=>r.ingredients?.some(x=>x.ingredient_id===id));
 }
 function renderIngredientRecipes(id){
- const host=$("ingredientRecipeResults"),hint=$("ingredientRecipeHint");if(!host)return;host.innerHTML="";
+ const host=$("ingredientRecipeResults"),hint=$("ingredientRecipeHint"),section=host?.closest(".ingredient-recipes");if(!host)return;host.innerHTML="";
+ const food=getIngredient(id),src=food?.sources?.[0],isBulk=food?.verification_status==="official_bulk";
+ if(isBulk){if(section)section.classList.add("hidden");return}else if(section)section.classList.remove("hidden");
  const list=recipesForIngredient(id);
  if(hint)hint.textContent=tr(list.length+" recipes currently connected to this ingredient.", "현재 이 재료와 연결된 레시피 "+list.length+"개");
  if(!list.length){
