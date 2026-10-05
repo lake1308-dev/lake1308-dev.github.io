@@ -217,7 +217,7 @@ function renderAllergy(key){
 function renderIngredient(key,scroll=true){
  currentKey=key; const d=I[key], db=getIngredient(key);
  const presets=servingPresets(key); currentAmount=presets.includes(100)?100:(presets.includes(5)?5:presets[0]);
- document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.g=presets[i];b.textContent=presets[i]+(db?.sources?.[0]?.basis==="100ml"?"ml":"g");b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
+ document.querySelectorAll(".amount-chip").forEach((b,i)=>{if(presets[i]!=null){b.style.display="";b.dataset.grams=presets[i];b.textContent=presets[i]+(db?.sources?.[0]?.basis==="100ml"?"ml":"g");b.classList.toggle("active",presets[i]===currentAmount)}else b.style.display="none"});
  $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
@@ -312,7 +312,7 @@ $("searchForm").addEventListener("submit",e=>{
 });
 document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{$("ingredientInput").value=b.dataset.query;renderIngredient(findIngredient(b.dataset.query))});
 $("amountInput").addEventListener("input",e=>{const v=Math.max(1,Math.min(5000,Number(e.target.value)||1));currentAmount=v;updateNutrition()});
-document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{currentAmount=Number(b.dataset.grams);$("amountInput").value=currentAmount;updateNutrition()});
+document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.grams);if(!Number.isFinite(v)||v<=0)return;currentAmount=v;$("amountInput").value=currentAmount;updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
 function countrySearch(q){
  const raw=normalize(q),host=$("countrySearchResults");host.innerHTML="";
