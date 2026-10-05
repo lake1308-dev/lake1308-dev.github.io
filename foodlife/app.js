@@ -205,7 +205,7 @@ function servingPresets(id){
 function nutritionFor(id){
  const x=getIngredient(id);
  if(x){const n=x.nutrition_per_100g||{};if(x.verification_status==="verified"&&n.kcal!=null)return n;return n}
- if(I[id])return {kcal:I[id][2],protein_g:I[id][3],carbs_g:I[id][4],fat_g:I[id][5],legacy:true};
+ // Foods without connected official nutrition retain an unknown value.
  return {};
 }
 function applyLang(){
@@ -231,7 +231,7 @@ function updateNutrition(){
  $("carbs").textContent=val(n.carbs_g,"g");
  $("fat").textContent=val(n.fat_g,"g");
  $("nutritionCalories").textContent=n.kcal==null?"—":Math.round(n.kcal*factor)+" kcal";
- const x=EXTRA[currentKey]||{}, db=getIngredient(currentKey), dn=db?.nutrition_per_100g||{};
+ const x={}, db=getIngredient(currentKey), dn=db?.nutrition_per_100g||{};
  $("satfat").textContent=dn.sat_fat_g!=null?val(dn.sat_fat_g,"g"):(x.sat==null?"—":round1(x.sat*factor)+"g");
  $("sugars").textContent=dn.sugars_g!=null?val(dn.sugars_g,"g"):(x.sugar==null?"—":round1(x.sugar*factor)+"g");
  $("sodium").textContent=dn.sodium_mg!=null?Math.round(dn.sodium_mg*factor)+"mg":(x.sodium==null?"—":Math.round(x.sodium*factor)+"mg");
