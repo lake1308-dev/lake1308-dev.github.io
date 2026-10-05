@@ -187,7 +187,7 @@ function applyLang(){
  $("countrySearchInput").placeholder=lang==="ko"?"베트남, 그리스, 브라질...":"Vietnam, Greece, Brazil...";
  renderExplorerFilters();
  if(currentKey) renderIngredient(currentKey,false);
- if(currentDish && !$("recipe").classList.contains("hidden")) renderRecipe(currentDish,false);
+ if(currentDish && !$("recipe").classList.contains("hidden")){if(currentDish.names&&currentDish.ingredients)renderDBRecipe(currentDish,false);else renderRecipe(currentDish,false)}
 }
 function round1(n){return Math.round(n*10)/10}
 function updateNutrition(){
@@ -362,7 +362,7 @@ function updateDBRecipeNutrition(){
  '<div>'+tr("Protein","단백질")+': '+(out.verified?fmt(t.protein_g/servings,"g"):"—")+' · '+tr("Carbs","탄수화물")+': '+(out.verified?fmt(t.carbs_g/servings,"g"):"—")+' · '+tr("Fat","지방")+': '+(out.verified?fmt(t.fat_g/servings,"g"):"—")+'</div>'+
  (out.complete?'<small>'+tr("All included ingredients use verified nutrition data.","포함된 모든 재료가 검증된 영양정보를 사용합니다.")+'</small>':'<small>'+tr("Not a full-recipe total. Missing verified data: ","전체 레시피 영양값이 아닙니다. 미포함 재료: ")+out.missing.join(", ")+'</small>');
 }
-function renderDBRecipe(r){
+function renderDBRecipe(r,scroll=true){
  currentDish=r;$("recipe").classList.remove("hidden");
  $("recipeName").textContent=lang==="ko"?r.names.ko:r.names.en;
  $("recipeMeta").textContent=tr(r.country+" · "+r.region+" · "+r.servings+" servings",r.country+" · "+r.region+" · "+r.servings+"인분 · 표준 레시피 기준");
@@ -374,7 +374,7 @@ function renderDBRecipe(r){
  let live=document.getElementById("recipeNutritionLive");if(!live){live=document.createElement("div");live.id="recipeNutritionLive";live.className="recipe-nutrition-live";$("recipeIngredients").after(live)}
  document.querySelectorAll(".recipe-amount").forEach(el=>el.addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<0){e.target.value=0}else if(raw>10000){e.target.value=10000}const li=e.target.closest("li"),btn=li?.querySelector(".recipe-remove");if(Number(e.target.value)>0){li?.classList.remove("removed");if(btn)btn.textContent=tr("Remove","빼기")}updateDBRecipeNutrition()}));
  document.querySelectorAll(".recipe-remove").forEach(btn=>btn.onclick=()=>{const input=document.querySelector('.recipe-amount[data-i="'+btn.dataset.i+'"]'),li=btn.closest("li");if(!input)return;if(Number(input.value)>0){input.dataset.previous=input.value;input.value=0;li?.classList.add("removed");btn.textContent=tr("Restore","복원")}else{input.value=input.dataset.previous||r.ingredients[Number(btn.dataset.i)]?.amount||0;li?.classList.remove("removed");btn.textContent=tr("Remove","빼기")}updateDBRecipeNutrition()});
- updateDBRecipeNutrition();$("recipe").scrollIntoView({behavior:"smooth",block:"start"});
+ updateDBRecipeNutrition();if(scroll)$("recipe").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function recipeMatchScore(raw,fields){
  const vals=fields.filter(Boolean).map(x=>normalize(String(x)));let best=Infinity;
