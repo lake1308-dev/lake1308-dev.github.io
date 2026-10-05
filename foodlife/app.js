@@ -330,7 +330,7 @@ $("exploreBack").onclick=()=>{$("explorer").classList.add("hidden");$("countryCa
 function countrySearch(q){
  const raw=normalize(q),host=$("countrySearchResults");host.innerHTML="";
  if(!raw)return;
- const matches=Object.entries(COUNTRY_META).filter(([en,m])=>normalize(en).includes(raw)||normalize(m[1]).includes(raw)).slice(0,8);
+ const matches=Object.entries(COUNTRY_META).map(([en,m])=>{const a=normalize(en),b=normalize(m[1]);const score=a===raw||b===raw?0:a.startsWith(raw)||b.startsWith(raw)?1:a.includes(raw)||b.includes(raw)?2:Infinity;return {en,m,score}}).filter(x=>x.score<Infinity).sort((a,b)=>a.score-b.score||a.en.localeCompare(b.en)).slice(0,8).map(x=>[x.en,x.m]);
  if(!matches.length){host.innerHTML='<div class="recipe-no-result">'+tr("Country not found yet. We are expanding worldwide coverage.","아직 등록되지 않은 나라입니다. 전 세계 국가로 계속 확장하고 있습니다.")+'</div>';return}
  matches.forEach(([en,m])=>{const d=document.createElement("div");d.className="country-result";d.innerHTML='<span>'+m[0]+'</span><b>'+tr(en,m[1])+'</b><small>'+tr("Open →","보기 →")+'</small>';d.onclick=()=>openCountry(en,"All");host.appendChild(d)})
 }
