@@ -310,3 +310,5 @@ Scope: domestic-data beta; expanded products and monetization follow launch. Fiv
 - Round 2: refresh pending typed/submitted searches after ingredient, bulk, and manufacturer data finish loading. Preserve Escape/selection dismissal; no automatic record selection. Representative calculation and alias checks passed. Actual mobile viewport remains pending.
 
 - Round 3: expand bilingual data guide for source scope, generic versus branded foods, missing versus zero, amount and units, allergens and partial recipe totals. Rename source card label to avoid implying retail labels are official government data. Complete pending-search no-match guidance after loading.
+
+- Round 4: add bilingual service and input/privacy notices based on actual code behavior, including GitHub Pages IP logging and external links. Existing public repository has Issues enabled; connect user-initiated report draft with template, login/public visibility notice. No report is automatically submitted. Actual mobile viewport and final release checks remain for round 5.
