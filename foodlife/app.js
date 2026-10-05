@@ -1,10 +1,14 @@
 const $=id=>document.getElementById(id);
-let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";\nlet suggestionIndex=-1;
+let lang=(navigator.language||"en").toLowerCase().startsWith("ko")?"ko":"en";
+let suggestionIndex=-1;
 let currentKey=null,currentDish=null,returnTarget="result",currentAmount=100;
 let DB_INGREDIENTS=[],DB_ALIAS=new Map(),DB_BULK=[],DB_BULK_BY_NAME=new Map(),DB_BULK_BY_ID=new Map();
 let DB_RECIPES=[];
 let bulkLoadState="loading";
 const SMALL_SERVING_CATEGORIES=new Set(["spice","seasoning","sweetener","oil"]);
+const VERIFIED_RECIPE_IDS={tomato:"tomato_raw",onion:"onion_raw",garlic:"garlic_raw",minced_garlic:"garlic_raw",carrot:"carrot_root_raw",green_onion:"green_onion_raw",pork_tenderloin:"pork_tenderloin_raw",pork_shoulder:"pork_shoulder_raw",rice_cooked:"cooked_white_rice"};
+function canonicalIngredientId(id){return VERIFIED_RECIPE_IDS[id]||id}
+function dishUsesIngredient(d,id){return d.main.some(x=>canonicalIngredientId(x)===canonicalIngredientId(id))}
 
 const I={
  chicken:["Chicken","닭고기",165,31,0,3.6,["chicken","닭","닭고기","닭가슴살"]],
@@ -73,10 +77,14 @@ function rebuildIngredientIndex(){
   const terms=[x.names?.ko,x.names?.en,...(x.aliases?.ko||[]),...(x.aliases?.en||[])].filter(Boolean);
   terms.forEach(t=>DB_ALIAS.set(normalize(t),x.id));
  });
+ Object.entries(VERIFIED_RECIPE_IDS).forEach(([legacy,id])=>{
+  if(!DB_INGREDIENTS.some(x=>x.id===id))return;
+  [legacy,...(I[legacy]?.[6]||[])].forEach(term=>DB_ALIAS.set(normalize(term),id));
+ });
 }
 async function loadRecipeDB(){
  try{
-  const res=await fetch("data/recipes.json?v=0.2.0",{cache:"no-store"});
+  const res=await fetch("data/recipes.json?v=0.2.1",{cache:"no-store"});
   const data=await res.json(); DB_RECIPES=data.recipes||[];
  }catch(err){console.warn("Recipe DB unavailable; using bundled fallback.",err)}
 }
@@ -139,7 +147,8 @@ const SEARCH_GROUPS=[
  ["우유","밀크"],["요거트","요구르트"],["돈까스","돈가스"],["짜장면","자장면"],["햄버거","버거"],["카레","커리"],["초밥","스시"],["쥬스","주스"],["제육","제육볶음"],["순대국","순댓국"],["닭도리탕","닭볶음탕"],["고구마","sweet potato"],["감자","potato"]
 ];
 const SEARCH_SYNONYMS=new Map();
-SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));\nconst SEARCH_RELATED={"콜라":["탄산음료"],"사이다":["탄산음료"],"치킨":["닭고기"],"제육":["돼지고기볶음"]};
+SEARCH_GROUPS.forEach(g=>g.forEach(x=>SEARCH_SYNONYMS.set(normalize(x),g.filter(y=>normalize(y)!==normalize(x)).map(normalize))));
+const SEARCH_RELATED={"콜라":["탄산음료"],"사이다":["탄산음료"],"치킨":["닭고기"],"제육":["돼지고기볶음"]};
 function compactSearch(s){return normalize(s).replace(/[\s_\-()\[\],.·]/g,"")}
 function editDistance(a,b,max=2){
  if(Math.abs(a.length-b.length)>max)return max+1;let prev=Array.from({length:b.length+1},(_,i)=>i);
@@ -178,7 +187,9 @@ function renderIngredientSuggestions(raw){
  list.forEach(x=>{const item=getIngredient(x.id),src=item?.sources?.[0],b=document.createElement("button"),left=document.createElement("span"),title=document.createElement("strong"),meta=document.createElement("small"),right=document.createElement("small");b.type="button";b.className="ingredient-suggestion";b.setAttribute("role","option");b.setAttribute("aria-selected","false");left.className="ingredient-suggestion-main";title.textContent=x.name;meta.className="ingredient-suggestion-meta";const type=src?.data_type||tr("Verified ingredient","검증 재료");const kcal=item?.nutrition_per_100g?.kcal;meta.textContent=type+(kcal!=null?` · ${Math.round(kcal)} kcal`:"");right.className="ingredient-suggestion-basis";right.textContent=src?.basis||"100g";left.append(title,meta);b.append(left,right);b.onclick=()=>{$("ingredientInput").value=x.name;host.classList.remove("show");renderIngredient(x.id)};host.appendChild(b)});
  suggestionIndex=-1;host.classList.toggle("show",list.length>0);
 }
-function moveSuggestion(delta){const host=$("ingredientSuggestions"),items=[...host.querySelectorAll(".ingredient-suggestion")];if(!items.length)return;suggestionIndex=(suggestionIndex+delta+items.length)%items.length;items.forEach((x,i)=>{const active=i===suggestionIndex;x.classList.toggle("active",active);x.setAttribute("aria-selected",active?"true":"false")});items[suggestionIndex].scrollIntoView({block:"nearest"})}\nfunction chooseSuggestion(){const items=[...$("ingredientSuggestions").querySelectorAll(".ingredient-suggestion")];if(suggestionIndex>=0&&items[suggestionIndex]){items[suggestionIndex].click();return true}return false}\nfunction getIngredient(id){return DB_INGREDIENTS.find(x=>x.id===id)||DB_BULK_BY_ID.get(id)||null}
+function moveSuggestion(delta){const host=$("ingredientSuggestions"),items=[...host.querySelectorAll(".ingredient-suggestion")];if(!items.length)return;suggestionIndex=(suggestionIndex+delta+items.length)%items.length;items.forEach((x,i)=>{const active=i===suggestionIndex;x.classList.toggle("active",active);x.setAttribute("aria-selected",active?"true":"false")});items[suggestionIndex].scrollIntoView({block:"nearest"})}
+function chooseSuggestion(){const items=[...$("ingredientSuggestions").querySelectorAll(".ingredient-suggestion")];if(suggestionIndex>=0&&items[suggestionIndex]){items[suggestionIndex].click();return true}return false}
+function getIngredient(id){const canonical=canonicalIngredientId(id);return DB_INGREDIENTS.find(x=>x.id===canonical)||DB_BULK_BY_ID.get(id)||null}
 function servingPresets(id){
  const x=getIngredient(id);
  if(x && SMALL_SERVING_CATEGORIES.has(x.category)) return [1,5,10,15,30];
@@ -234,8 +245,10 @@ function renderIngredient(key,scroll=true){
  $("amountInput").value=currentAmount;
  $("ingredientName").textContent=db?(lang==="ko"?db.names.ko:db.names.en):(lang==="ko"?d[1]:d[0]);
  const verified=(db?.verification_status==="verified"||db?.verification_status==="official_bulk")&&db?.nutrition_per_100g?.kcal!=null;
- const officialBasis=db?.sources?.[0]?.basis||"100g";\n const amountUnit=officialBasis==="100ml"?"ml":"g";if($("amountUnit"))$("amountUnit").textContent=amountUnit;$("amountInput").setAttribute("aria-label",lang==="ko"?`섭취량 (${amountUnit})`:`Amount (${amountUnit})`);
- $("ingredientNote").textContent=verified?(db?.verification_status==="official_bulk"?tr(`Official nutrition data per ${officialBasis}. Values below scale with the amount you enter.`,`공식 ${officialBasis} 기준 영양정보입니다. 아래 수치는 입력한 섭취량에 맞춰 계산됩니다.`):tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`)):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");\n renderFoodSource(key);
+ const officialBasis=db?.sources?.[0]?.basis||"100g";
+ const amountUnit=officialBasis==="100ml"?"ml":"g";if($("amountUnit"))$("amountUnit").textContent=amountUnit;$("amountInput").setAttribute("aria-label",lang==="ko"?`섭취량 (${amountUnit})`:`Amount (${amountUnit})`);
+ $("ingredientNote").textContent=verified?(db?.verification_status==="official_bulk"?tr(`Official nutrition data per ${officialBasis}. Values below scale with the amount you enter.`,`공식 ${officialBasis} 기준 영양정보입니다. 아래 수치는 입력한 섭취량에 맞춰 계산됩니다.`):tr(`Verified nutrition per ${officialBasis}. Choose a dish below or browse by country.`,`검증된 ${officialBasis} 기준 영양정보입니다. 아래 요리를 고르거나 나라별로 둘러보세요.`)):tr("Nutrition data is being matched to official sources. Unverified values are not displayed.","공식 자료와 영양정보를 대조 중입니다. 검증되지 않은 수치는 표시하지 않습니다.");
+ renderFoodSource(key);
  $("amountInput").value=currentAmount; updateNutrition(); renderAllergy(key);
  $("result").classList.remove("hidden");
  renderCountryCards();
@@ -290,7 +303,7 @@ function renderCountryCards(){
  const host=$("countryCards"); if(!host)return; host.innerHTML="";
  const available=countriesForCurrent();
  available.forEach(c=>{
-  const meta=COUNTRY_META[c]||["🌍",c]; let all=DISHES.filter(d=>d.country===c && (!currentKey||d.main.includes(currentKey)));
+  const meta=COUNTRY_META[c]||["🌍",c]; let all=DISHES.filter(d=>d.country===c && (!currentKey||dishUsesIngredient(d,currentKey)));
   if(currentKey&&!all.length)all=DISHES.filter(d=>d.country===c);
   const regions=(REGION_META[c]||uniq(all.map(d=>d.region)).map(r=>[r,(all.find(x=>x.region===r)||{}).regionKo||r]));
   const card=document.createElement("article");card.className="country-card";
@@ -305,14 +318,14 @@ function renderCountryCards(){
 }
 function openCountry(c,r="All"){
  country=c;region=r;type="All";$("explorer").classList.remove("hidden");
- const filtered=DISHES.filter(d=>d.country===c&&(!currentKey||d.main.includes(currentKey)));
+ const filtered=DISHES.filter(d=>d.country===c&&(!currentKey||dishUsesIngredient(d,currentKey)));
  if(currentKey&&!filtered.length){const x=getIngredient(currentKey),isBulk=x?.verification_status==="official_bulk";if(isBulk)currentKey=null}
  renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderExplorerFilters(){
  const rf=$("regionFilters"),tf=$("typeFilters");rf.innerHTML=tf.innerHTML="";
  const meta=COUNTRY_META[country]||["🌍",country];$("explorerFlag").textContent=meta[0];$("explorerTitle").textContent=tr(country,meta[1]);$("explorerSubtitle").textContent=tr("Choose a region or cooking style.","지역 또는 요리방식을 선택하세요.");
- let base=DISHES.filter(d=>d.country===country && (!currentKey||d.main.includes(currentKey)));
+ let base=DISHES.filter(d=>d.country===country && (!currentKey||dishUsesIngredient(d,currentKey)));
  if(currentKey&&!base.length){base=DISHES.filter(d=>d.country===country);$("explorerSubtitle").textContent=tr("No direct match for the searched food here, so showing all dishes from this country.","검색한 식품과 직접 연결된 요리가 없어 이 나라의 전체 요리를 보여드립니다.")}
  rf.appendChild(filterButton(tr("All regions","전체 지역"),"All","region",region==="All"));(REGION_META[country]||uniq(base.map(d=>d.region)).map(r=>[r,(base.find(x=>x.region===r)||{}).regionKo||r])).forEach(pair=>{const r=pair[0],ko=pair[1];rf.appendChild(filterButton(tr(r,ko),r,"region",region===r))});
  const validRegions=new Set(base.map(d=>d.region));if(region!=="All"&&!validRegions.has(region))region="All";
@@ -321,7 +334,8 @@ function renderExplorerFilters(){
  tf.appendChild(filterButton(tr("All styles","전체 방식"),"All","type",type==="All"));uniq(regionBase.map(d=>d.type)).forEach(tp=>{const d=regionBase.find(x=>x.type===tp);tf.appendChild(filterButton(tr(tp,d.typeKo),tp,"type",type===tp))});
  let list=regionBase;if(type!=="All")list=list.filter(d=>d.type===type);renderDishCards(list,$("exploreGrid"));
 }
-let searchTimer=null;$("ingredientInput").addEventListener("input",e=>{clearTimeout(searchTimer);$("ingredientFallback")?.classList.add("hidden");searchTimer=setTimeout(()=>renderIngredientSuggestions(e.target.value),120)});\n$("ingredientInput").addEventListener("keydown",e=>{const host=$("ingredientSuggestions");if(e.key==="Escape"){host.classList.remove("show");suggestionIndex=-1}else if(host.classList.contains("show")&&e.key==="ArrowDown"){e.preventDefault();moveSuggestion(1)}else if(host.classList.contains("show")&&e.key==="ArrowUp"){e.preventDefault();moveSuggestion(-1)}else if(host.classList.contains("show")&&e.key==="Enter"&&suggestionIndex>=0){e.preventDefault();chooseSuggestion()}});
+let searchTimer=null;$("ingredientInput").addEventListener("input",e=>{clearTimeout(searchTimer);$("ingredientFallback")?.classList.add("hidden");searchTimer=setTimeout(()=>renderIngredientSuggestions(e.target.value),120)});
+$("ingredientInput").addEventListener("keydown",e=>{const host=$("ingredientSuggestions");if(e.key==="Escape"){host.classList.remove("show");suggestionIndex=-1}else if(host.classList.contains("show")&&e.key==="ArrowDown"){e.preventDefault();moveSuggestion(1)}else if(host.classList.contains("show")&&e.key==="ArrowUp"){e.preventDefault();moveSuggestion(-1)}else if(host.classList.contains("show")&&e.key==="Enter"&&suggestionIndex>=0){e.preventDefault();chooseSuggestion()}});
 $("searchForm").addEventListener("submit",e=>{
  e.preventDefault();const raw=$("ingredientInput").value,list=searchIngredients(raw,20),k=findIngredientExact(raw);
  if(k){$("ingredientSuggestions").classList.remove("show");$("ingredientFallback")?.classList.add("hidden");renderIngredient(k);return}
@@ -356,28 +370,30 @@ function renderDBRecipeCard(r,host){
 }
 function calculateDBRecipeNutrition(r){
  const totals={kcal:0,protein_g:0,carbs_g:0,fat_g:0,sat_fat_g:0,sugars_g:0,sodium_mg:0,cholesterol_mg:0};
- let verified=0,missing=[];
+ let verified=0,missing=[],missingNutrients=new Set();
  r.ingredients.forEach((line,i)=>{
   const input=document.querySelector('.recipe-amount[data-i="'+i+'"]');
   const amount=input?Math.max(0,Number(input.value)||0):line.amount;
   if(amount===0)return;
   const ing=getIngredient(line.ingredient_id), n=ing?.nutrition_per_100g;
-  if(!ing || ing.verification_status!=="verified" || !n || n.kcal==null){missing.push(dbIngredientName(line.ingredient_id));return}
+  if(line.unit!=="g" || !ing || ing.verification_status!=="verified" || !n || !Number.isFinite(n.kcal)){missing.push(dbIngredientName(line.ingredient_id));return}
   verified++; const f=amount/100;
-  Object.keys(totals).forEach(k=>{if(n[k]!=null)totals[k]+=n[k]*f});
+  Object.keys(totals).forEach(k=>{if(Number.isFinite(n[k]))totals[k]+=n[k]*f;else missingNutrients.add(k)});
  });
+ if(!verified)Object.keys(totals).forEach(k=>missingNutrients.add(k));
+ missingNutrients.forEach(k=>totals[k]=null);
  return {totals,verified,missing,complete:missing.length===0};
 }
 function updateDBRecipeNutrition(){
  const r=currentDish;if(!r||!r.ingredients)return;
  const out=calculateDBRecipeNutrition(r), servings=Math.max(1,Number(r.servings)||1), t=out.totals;
  const box=document.getElementById("recipeNutritionLive");if(!box)return;
- const fmt=(v,u)=>Math.round(v*10)/10+u, partial=out.verified&&!out.complete;
+ const fmt=(v,u)=>v==null?"—":Math.round(v*10)/10+u, partial=out.verified&&!out.complete;
  const prefix=partial?tr("Verified ingredients subtotal","검증된 재료 부분합계"):tr("Calculated nutrition","계산된 영양정보");
  box.innerHTML='<strong>'+prefix+'</strong>'+
  '<div>'+tr(partial?"Verified subtotal":"Whole recipe",partial?"검증분 합계":"전체 레시피")+': '+(out.verified?Math.round(t.kcal)+" kcal":"—")+'</div>'+
  '<div>'+tr(partial?"Verified subtotal per serving":"Per serving",partial?"검증분 1인분":"1인분")+': '+(out.verified?Math.round(t.kcal/servings)+" kcal":"—")+'</div>'+
- '<div>'+tr("Protein","단백질")+': '+(out.verified?fmt(t.protein_g/servings,"g"):"—")+' · '+tr("Carbs","탄수화물")+': '+(out.verified?fmt(t.carbs_g/servings,"g"):"—")+' · '+tr("Fat","지방")+': '+(out.verified?fmt(t.fat_g/servings,"g"):"—")+'</div>'+
+ '<div>'+tr("Protein","단백질")+': '+(out.verified?fmt(t.protein_g==null?null:t.protein_g/servings,"g"):"—")+' · '+tr("Carbs","탄수화물")+': '+(out.verified?fmt(t.carbs_g==null?null:t.carbs_g/servings,"g"):"—")+' · '+tr("Fat","지방")+': '+(out.verified?fmt(t.fat_g==null?null:t.fat_g/servings,"g"):"—")+'</div>'+
  (out.complete?'<small>'+tr("All included ingredients use verified nutrition data.","포함된 모든 재료가 검증된 영양정보를 사용합니다.")+'</small>':'<small>'+tr("Not a full-recipe total. Missing verified data: ","전체 레시피 영양값이 아닙니다. 미포함 재료: ")+out.missing.join(", ")+'</small>');
 }
 function renderDBRecipe(r,scroll=true){
@@ -412,7 +428,7 @@ $("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");const target=$(
 loadIngredientDB().then(()=>Promise.all([loadBulkNutritionDB(),loadRecipeDB()])).then(()=>{renderCountryCards();applyLang()});
 
 function recipesForIngredient(id){
- return DB_RECIPES.filter(r=>r.ingredients?.some(x=>x.ingredient_id===id));
+ return DB_RECIPES.filter(r=>r.ingredients?.some(x=>canonicalIngredientId(x.ingredient_id)===canonicalIngredientId(id)));
 }
 function renderIngredientRecipes(id){
  const host=$("ingredientRecipeResults"),hint=$("ingredientRecipeHint"),section=host?.closest(".ingredient-recipes");if(!host)return;host.innerHTML="";
