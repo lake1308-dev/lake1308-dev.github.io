@@ -284,3 +284,8 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Common basic ingredients have short Korean display names and top-ranked exact aliases.
 - Canonical nutrient record and original source names remain unchanged and visible in source details.
 - Peanut basic entry added as nutrition-pending; no raw peanut verified data exists in current loaded set, so no nutrient values guessed.
+
+### Peanut completion
+- Replaced pending raw placeholder with explicit dried peanut representative R105-007000002-0000, verified in live K-FIND (National Institute of Crop Science), 100g:520kcal, protein25.74g, carbs18.36g, fat42.57g, saturated8.04g, sugars4.4g, fiber13.4g,sodium5mg,cholesterol0mg.
+- Basic display remains 땅콩; provenance and preparation disclosed. No raw/roasted equivalence assumed.
+- Source-backed peanut allergen information shown independently from package shared-facility notices.
