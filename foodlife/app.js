@@ -290,12 +290,16 @@ function renderCountryCards(){
  });
 }
 function openCountry(c,r="All"){
- country=c;region=r;type="All";$("explorer").classList.remove("hidden");renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"});
+ country=c;region=r;type="All";$("explorer").classList.remove("hidden");
+ const filtered=DISHES.filter(d=>d.country===c&&(!currentKey||d.main.includes(currentKey)));
+ if(currentKey&&!filtered.length){const x=getIngredient(currentKey),isBulk=x?.verification_status==="official_bulk";if(isBulk)currentKey=null}
+ renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"});
 }
 function renderExplorerFilters(){
  const rf=$("regionFilters"),tf=$("typeFilters");rf.innerHTML=tf.innerHTML="";
  const meta=COUNTRY_META[country]||["🌍",country];$("explorerFlag").textContent=meta[0];$("explorerTitle").textContent=tr(country,meta[1]);$("explorerSubtitle").textContent=tr("Choose a region or cooking style.","지역 또는 요리방식을 선택하세요.");
  let base=DISHES.filter(d=>d.country===country && (!currentKey||d.main.includes(currentKey)));
+ if(currentKey&&!base.length){base=DISHES.filter(d=>d.country===country);$("explorerSubtitle").textContent=tr("No direct match for the searched food here, so showing all dishes from this country.","검색한 식품과 직접 연결된 요리가 없어 이 나라의 전체 요리를 보여드립니다.")}
  rf.appendChild(filterButton(tr("All regions","전체 지역"),"All","region",region==="All"));(REGION_META[country]||uniq(base.map(d=>d.region)).map(r=>[r,(base.find(x=>x.region===r)||{}).regionKo||r])).forEach(pair=>{const r=pair[0],ko=pair[1];rf.appendChild(filterButton(tr(r,ko),r,"region",region===r))});
  const regionBase=region==="All"?base:base.filter(d=>d.region===region);
  tf.appendChild(filterButton(tr("All styles","전체 방식"),"All","type",type==="All"));uniq(regionBase.map(d=>d.type)).forEach(tp=>{const d=regionBase.find(x=>x.type===tp);tf.appendChild(filterButton(tr(tp,d.typeKo),tp,"type",type===tp))});
