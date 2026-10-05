@@ -103,12 +103,14 @@ async function loadBulkNutritionDB(){
    }else txt=new TextDecoder().decode(u8);
    return JSON.parse(txt);
   };
-  const sets=await Promise.all(urls.map(loadGzipJson));
+  const settled=await Promise.allSettled(urls.map(loadGzipJson)),sets=settled.filter(x=>x.status==="fulfilled").map(x=>x.value),failed=settled.filter(x=>x.status==="rejected");
   DB_BULK=[];
   sets.forEach(data=>{const cols=data.columns||[];DB_BULK.push(...(data.rows||[]).map(r=>bulkToIngredient(r,cols)))});
   DB_BULK_BY_NAME=new Map();DB_BULK_BY_ID=new Map();
   DB_BULK.forEach(x=>{DB_BULK_BY_ID.set(x.id,x);DB_BULK_BY_NAME.set(normalize(x.names.ko),x.id)});
   const c=$("coverageCount");if(c)c.textContent=DB_BULK.length;
+  if(failed.length)console.warn("Some bulk nutrition chunks failed; keeping loaded records.",failed.length,failed.map(x=>x.reason?.message||String(x.reason)));
+  if(!sets.length)throw new Error("all bulk nutrition chunks failed");
  }catch(err){console.warn("Bulk nutrition DB unavailable; keeping verified starter DB.",err)}
 }
 async function loadIngredientDB(){
