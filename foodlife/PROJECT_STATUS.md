@@ -296,3 +296,5 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - Bilingual allergen names and ingredient/product cross-contact distinction retained.
 
 - 2026-10-06: distinguish ingredient nutrition-source links from retail product-label links; show K-FIND source links using the existing source field. Recipe ingredient names already use basic display names.
+
+- 2026-10-06: search suggestions display source status and explicit calorie basis to clarify ingredient, dish, and retail label records before selection.
