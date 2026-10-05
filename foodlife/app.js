@@ -390,7 +390,7 @@ function recipeSearch(q){
  renderDishCards(matches,host);
 }
 $("recipeSearchForm").addEventListener("submit",e=>{e.preventDefault();recipeSearch($("recipeSearchInput").value)});
-$("closeRecipe").onclick=()=>{$("recipe").classList.add("hidden");const target=$(returnTarget)||$("recipeSearchForm")||$("result");target?.scrollIntoView({behavior:"smooth",block:"start"})};
+$("recipeBack").onclick=()=>{$("recipe").classList.add("hidden");const target=$(returnTarget)||$("recipeSearchForm")||$("result");target?.scrollIntoView({behavior:"smooth",block:"start"})};
 loadIngredientDB().then(()=>Promise.all([loadBulkNutritionDB(),loadRecipeDB()])).then(()=>{renderCountryCards();applyLang()});
 
 function recipesForIngredient(id){
