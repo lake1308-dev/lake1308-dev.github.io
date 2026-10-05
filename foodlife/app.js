@@ -350,12 +350,13 @@ function updateDBRecipeNutrition(){
  const r=currentDish;if(!r||!r.ingredients)return;
  const out=calculateDBRecipeNutrition(r), servings=Math.max(1,Number(r.servings)||1), t=out.totals;
  const box=document.getElementById("recipeNutritionLive");if(!box)return;
- const fmt=(v,u)=>Math.round(v*10)/10+u;
- box.innerHTML='<strong>'+tr("Calculated nutrition","계산된 영양정보")+'</strong>'+
- '<div>'+tr("Whole recipe","전체 레시피")+': '+(out.verified?Math.round(t.kcal)+" kcal":"—")+'</div>'+
- '<div>'+tr("Per serving","1인분")+': '+(out.verified?Math.round(t.kcal/servings)+" kcal":"—")+'</div>'+
+ const fmt=(v,u)=>Math.round(v*10)/10+u, partial=out.verified&&!out.complete;
+ const prefix=partial?tr("Verified ingredients subtotal","검증된 재료 부분합계"):tr("Calculated nutrition","계산된 영양정보");
+ box.innerHTML='<strong>'+prefix+'</strong>'+
+ '<div>'+tr(partial?"Verified subtotal":"Whole recipe",partial?"검증분 합계":"전체 레시피")+': '+(out.verified?Math.round(t.kcal)+" kcal":"—")+'</div>'+
+ '<div>'+tr(partial?"Verified subtotal per serving":"Per serving",partial?"검증분 1인분":"1인분")+': '+(out.verified?Math.round(t.kcal/servings)+" kcal":"—")+'</div>'+
  '<div>'+tr("Protein","단백질")+': '+(out.verified?fmt(t.protein_g/servings,"g"):"—")+' · '+tr("Carbs","탄수화물")+': '+(out.verified?fmt(t.carbs_g/servings,"g"):"—")+' · '+tr("Fat","지방")+': '+(out.verified?fmt(t.fat_g/servings,"g"):"—")+'</div>'+
- (out.complete?'<small>'+tr("All included ingredients use verified nutrition data.","포함된 모든 재료가 검증된 영양정보를 사용합니다.")+'</small>':'<small>'+tr("Partial only. Missing verified data: ","일부 계산값입니다. 영양정보 검증 전 재료: ")+out.missing.join(", ")+'</small>');
+ (out.complete?'<small>'+tr("All included ingredients use verified nutrition data.","포함된 모든 재료가 검증된 영양정보를 사용합니다.")+'</small>':'<small>'+tr("Not a full-recipe total. Missing verified data: ","전체 레시피 영양값이 아닙니다. 미포함 재료: ")+out.missing.join(", ")+'</small>');
 }
 function renderDBRecipe(r){
  currentDish=r;$("recipe").classList.remove("hidden");
@@ -365,7 +366,7 @@ function renderDBRecipe(r){
  $("recipeSteps").innerHTML=(lang==="ko"?r.steps.ko:r.steps.en).map(x=>"<li>"+x+"</li>").join("");
  let note=document.getElementById("recipeNutritionNotice");
  if(!note){note=document.createElement("p");note.id="recipeNutritionNotice";note.className="data-note";$("recipeMeta").after(note)}
- note.textContent=tr("Estimated nutrition will recalculate from the ingredient amounts below. Only verified ingredient data is included.","아래 재료 양을 바꾸면 예상 영양정보가 다시 계산됩니다. 검증된 재료 데이터만 계산에 포함합니다.");
+ note.textContent=tr("Nutrition recalculates from the amounts below. If any ingredient lacks verified data, the result is clearly shown as a verified-ingredient subtotal, not a full-recipe total.","아래 재료 양에 따라 영양정보가 다시 계산됩니다. 검증 데이터가 없는 재료가 있으면 전체 레시피 값이 아니라 검증된 재료의 부분합계로 명확히 표시합니다.");
  let live=document.getElementById("recipeNutritionLive");if(!live){live=document.createElement("div");live.id="recipeNutritionLive";live.className="recipe-nutrition-live";$("recipeIngredients").after(live)}
  document.querySelectorAll(".recipe-amount").forEach(el=>el.addEventListener("input",updateDBRecipeNutrition));
  document.querySelectorAll(".recipe-remove").forEach(btn=>btn.onclick=()=>{const input=document.querySelector('.recipe-amount[data-i="'+btn.dataset.i+'"]');if(input){input.value=0;btn.closest("li").classList.add("removed");updateDBRecipeNutrition()}});
