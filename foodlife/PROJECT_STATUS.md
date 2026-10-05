@@ -220,3 +220,10 @@ K-FIND/식품안전나라 원본과 식품코드를 provenance로 계속 보존�
 - 추가 동작 검증: 250g 언어전환 유지, g↔ml 프리셋 및 단위 전환, 빈 입력 오류/정상 재입력 회복, HTML ID 중복/참조 검사 통과.
 - Playwright 패키지는 있으나 실행할 브라우저 바이너리가 없어 실제 브라우저 시각/클릭 검사는 미수행. 화면 완성도 검증의 남은 항목으로 유지.
 - 최종 캐시 버전 20261005-quality1.
+
+
+### Homepage quality follow-up (2026-10-05)
+- Live browser verified 50,000-record loading, tomato search, 250g persistence on language change, empty amount error, 100g preset, and distinct ramen candidates.
+- Korean recipe ingredient labels now use readable names instead of internal IDs; nutrition verification is unchanged.
+- World food navigation scrolls to the visible explorer even before any ingredient search.
+- Automated data and interaction regression checks pass. Actual mobile-device verification remains outstanding.

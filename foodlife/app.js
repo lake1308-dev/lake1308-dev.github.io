@@ -359,7 +359,7 @@ document.querySelectorAll(".quick button").forEach(b=>b.onclick=()=>{const q=b.d
 $("amountInput").addEventListener("input",e=>{const raw=Number(e.target.value);if(!Number.isFinite(raw)||raw<=0){e.target.setAttribute("aria-invalid","true");$("amountError").textContent=tr("Enter an amount between 1 and 5,000.","섭취량을 1~5,000 사이로 입력해 주세요.");return}e.target.removeAttribute("aria-invalid");$("amountError").textContent="";const v=Math.max(1,Math.min(5000,raw));currentAmount=v;if(v!==raw)e.target.value=v;updateNutrition()});
 document.querySelectorAll(".amount-presets button").forEach(b=>b.onclick=()=>{const v=Number(b.dataset.grams);if(!Number.isFinite(v)||v<=0)return;currentAmount=v;$("amountInput").value=currentAmount;$("amountInput").removeAttribute("aria-invalid");$("amountError").textContent="";updateNutrition()});
 $("langBtn").onclick=()=>{lang=lang==="ko"?"en":"ko";applyLang()};
-$("exploreBtn").onclick=()=>{currentKey=null;country="Korea";region="All";type="All";$("explorer").classList.remove("hidden");renderCountryCards();renderExplorerFilters();$("countryCards")?.scrollIntoView({behavior:"smooth",block:"start"})};
+$("exploreBtn").onclick=()=>{currentKey=null;country="Korea";region="All";type="All";$("explorer").classList.remove("hidden");renderCountryCards();renderExplorerFilters();$("explorer").scrollIntoView({behavior:"smooth",block:"start"})};
 $("exploreBack").onclick=()=>{$("explorer").classList.add("hidden");$("countryCards")?.scrollIntoView({behavior:"smooth",block:"start"})};
 function countrySearch(q){
  const raw=normalize(q),host=$("countrySearchResults");host.innerHTML="";
@@ -369,9 +369,10 @@ function countrySearch(q){
  matches.forEach(([en,m])=>{const d=document.createElement("div");d.className="country-result";d.innerHTML='<span>'+m[0]+'</span><b>'+tr(en,m[1])+'</b><small>'+tr("Open →","보기 →")+'</small>';d.onclick=()=>openCountry(en,"All");host.appendChild(d)})
 }
 $("countrySearchForm").addEventListener("submit",e=>{e.preventDefault();countrySearch($("countrySearchInput").value)});
+const RECIPE_LABELS_KO={bacon:"베이컨",basil:"바질",beef_ground:"다진 소고기",beef_rib:"소갈비",bell_pepper:"피망",black_pepper:"후추",bread_white:"식빵",butter:"버터",canola_oil:"카놀라유",chili_powder_kr:"고춧가루",cumin:"커민",doenjang:"된장",fish_cake:"어묵",garaetteok:"가래떡",ginger:"생강",gochujang:"고추장",green_chili:"풋고추",heavy_cream:"생크림",kimchi:"김치",lime:"라임",olive_oil:"올리브유",parmesan:"파르메산 치즈",pasta_dry:"건조 파스타",pork_loin:"돼지 등심",radish:"무",rice_vinegar:"쌀식초",sesame_oil:"참기름",soy_sauce_kr:"간장",soybean_sprout:"콩나물",spinach:"시금치",tapioca:"타피오카",tortilla_wheat:"밀 토르티야",udon:"우동면",wheat_flour:"밀가루",white_sugar:"설탕",zucchini:"주키니"};
 function dbIngredientName(id){
  const x=getIngredient(id); if(x)return lang==="ko"?x.names.ko:x.names.en;
- return id.replaceAll("_"," ");
+ return lang==="ko"?(RECIPE_LABELS_KO[id]||id.replaceAll("_"," ")):id.replaceAll("_"," ");
 }
 function renderDBRecipeCard(r,host){
  const c=document.createElement("article");c.className="dish-card";c.tabIndex=0;c.setAttribute("role","button");c.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();c.click()}});
